@@ -53,7 +53,7 @@
 <body>
     {% include 'navbar.html' %}
     <header class="header">
-        <h3>AI Tools</h3>
+        <h3>AI, JSON Tools</h3>
     </header>
 
     <div class="toolbox">
@@ -65,29 +65,30 @@
             <div class="col-md-4">
                 <div class="box">
                    
-                     <a href="{{ external_url }}" target="_blank" rel="noopener noreferrer">Url Extractor</a> 
+                     {% comment %} <a href="{{ external_url }}" target="_blank" rel="noopener noreferrer">Url Extractor</a>  {% endcomment %}
+                     <a href="{{ external_url_1 }}" target="_blank" rel="noopener noreferrer">Url Extractor</a> 
+                    </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box">
+                    <a href="{{ external_url_2 }}" target="_blank" rel="noopener noreferrer">Awards/Opportunity/Grants Extractor</a> 
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="box">
-                    <a href="{% url 'qa_checklist' %}">Tool2</a>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="box">
-                    <a href="{% url 'qa_checklist' %}">Tool3</a>
+                    <a href="{{ external_url_3 }}" target="_blank" rel="noopener noreferrer">ASJC Code Matcher</a> 
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">
                 <div class="box">
-                    <a href="{% url 'qa_checklist' %}">Tool4</a>
+                    <a href="{{ external_url_4}}" target="_blank" rel="noopener noreferrer">Speical Character Remover</a> 
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="box">
-                    <a href="{% url 'qa_checklist' %}">Tool5</a>
+                    <a href="{% url 'qa_checklist' %}">Json Creater</a>
                 </div>
             </div>
             <div class="col-md-4">

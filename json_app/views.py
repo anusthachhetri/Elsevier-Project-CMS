@@ -48,12 +48,29 @@ def qa_checklist(request):
 ##########################end############################
 
 #######url for toolbox##########
-def toolbox(request):
-#     # return render(request, 'toolbox.html')
-      external_url = "http://fa-macmillanlearning.highwire.org:8502/"
+# def toolbox(request):
+#       # return render(request, 'toolbox.html')
+#       external_url = "http://fa-macmillanlearning.highwire.org:8502/"
      
     
-      return render(request, 'toolbox.html', {'external_url': external_url})
+#       return render(request, 'toolbox.html', {'external_url': external_url})
+#updated code
+def toolbox(request):
+    # External URLs
+    external_url_1 = "http://fa-macmillanlearning.highwire.org:8502/"
+    external_url_2 = "http://fa-macmillanlearning.highwire.org:8501/"
+    external_url_3 =  "http://fa-macmillanlearning.highwire.org:8503/"
+
+    external_url_4 =  "http://fa-macmillanlearning.highwire.org:8504/"
+
+    # Pass these external URLs to the template
+    return render(request, 'toolbox.html', {
+        'external_url_1': external_url_1,
+        'external_url_2': external_url_2,
+        'external_url_3': external_url_3,
+        'external_url_4': external_url_4,
+        
+    })
 
 
 
