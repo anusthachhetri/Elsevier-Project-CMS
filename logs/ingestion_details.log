@@ -8474,6 +8474,7 @@ django.template.exceptions.TemplateSyntaxError: Invalid filter: 'batch'
 2025-02-05 14:05:17,080 - INFO - X:\json_project_1\json_app\views.py changed, reloading.
 2025-02-05 14:05:17,111 - INFO - X:\json_project_1\json_app\views.py changed, reloading.
 2025-02-05 14:05:17,168 - INFO - X:\json_project_1\json_app\views.py changed, reloading.
+<<<<<<< HEAD
 2025-02-05 09:28:55,602 - INFO - generated new fontManager
 2025-02-05 10:29:20,858 - WARNING - Not Found: /static/images/logoimage.jpg
 2025-02-05 10:29:22,523 - WARNING - Not Found: /static/images/logoimage.jpg
@@ -8839,3 +8840,10 @@ django.db.utils.DatabaseError
 2025-02-05 11:57:36,651 - WARNING - Not Found: /static/images/logoimage.jpg
 2025-02-05 11:57:38,327 - WARNING - Not Found: /static/images/logoimage.jpg
 2025-02-05 11:57:39,730 - WARNING - Not Found: /static/images/logoimage.jpg
+=======
+2025-02-05 14:50:18,778 - INFO - X:\json_project_1\json_app\views.py changed, reloading.
+2025-02-05 14:53:39,180 - INFO - X:\json_project_1\json_app\views.py changed, reloading.
+2025-02-05 14:55:07,051 - WARNING - Not Found: /favicon.ico
+2025-02-05 14:58:35,062 - INFO - X:\json_project_1\json_project\settings.py changed, reloading.
+2025-02-05 14:59:03,128 - INFO - X:\json_project_1\json_project\settings.py changed, reloading.
+>>>>>>> ff8cc348ca185fbfc7c1581d2507680f3344e10f
