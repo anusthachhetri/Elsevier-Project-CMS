@@ -8474,3 +8474,368 @@ django.template.exceptions.TemplateSyntaxError: Invalid filter: 'batch'
 2025-02-05 14:05:17,080 - INFO - X:\json_project_1\json_app\views.py changed, reloading.
 2025-02-05 14:05:17,111 - INFO - X:\json_project_1\json_app\views.py changed, reloading.
 2025-02-05 14:05:17,168 - INFO - X:\json_project_1\json_app\views.py changed, reloading.
+2025-02-05 09:28:55,602 - INFO - generated new fontManager
+2025-02-05 10:29:20,858 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 10:29:22,523 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 10:29:47,108 - WARNING - Not Found: /favicon.ico
+2025-02-05 10:29:56,261 - WARNING - Not Found: /static/pdfs/FundingDataCaptureGuidelinesJSON.pdf
+2025-02-05 10:29:59,108 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 10:29:59,447 - WARNING - Not Found: /favicon.ico
+2025-02-05 10:30:14,019 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 10:30:15,225 - WARNING - Not Found: /favicon.ico
+2025-02-05 10:30:18,375 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 10:30:26,631 - WARNING - Not Found: /favicon.ico
+2025-02-05 10:30:50,732 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 10:30:51,143 - WARNING - Not Found: /static/pdfs/Funding_Body.pdf
+2025-02-05 10:30:53,557 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 10:30:54,164 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 10:31:01,774 - WARNING - Not Found: /static/pdfs/Funding_Body.pdf
+2025-02-05 10:31:02,210 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 10:31:20,757 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 10:31:33,093 - WARNING - Not Found: /static/pdfs/Funding_Body.pdf
+2025-02-05 10:31:46,645 - WARNING - Not Found: /static/pdfs/Funding_Body.pdf
+2025-02-05 10:31:47,772 - WARNING - Not Found: /favicon.ico
+2025-02-05 10:31:48,027 - WARNING - Not Found: /favicon.ico
+2025-02-05 10:31:49,607 - WARNING - Not Found: /favicon.ico
+2025-02-05 10:32:02,015 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 10:33:07,406 - WARNING - Not Found: /static/pdfs/Funding_Body.pdf
+2025-02-05 10:33:13,173 - WARNING - Not Found: /static/pdfs/FundingDataCaptureGuidelinesJSON.pdf
+2025-02-05 10:33:22,418 - WARNING - Not Found: /static/pdfs/Funding_Body.pdf
+2025-02-05 10:34:29,833 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 10:34:44,282 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 10:34:51,233 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 10:34:56,992 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 10:36:58,959 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 10:37:01,231 - WARNING - Not Found: /static/pdfs/FundingDataCaptureGuidelinesJSON.pdf
+2025-02-05 10:38:03,501 - WARNING - Not Found: /robots.txt
+2025-02-05 10:39:01,373 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 10:39:01,979 - WARNING - Not Found: /favicon.ico
+2025-02-05 10:39:15,930 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 10:39:19,818 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 10:39:20,926 - WARNING - Not Found: /static/pdfs/FundingDataCaptureGuidelinesJSON.pdf
+2025-02-05 10:39:28,098 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 10:39:29,011 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 10:39:31,340 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 10:39:33,614 - WARNING - Not Found: /static/pdfs/FundingDataCaptureGuidelinesJSON.pdf
+2025-02-05 10:39:38,279 - WARNING - Not Found: /static/pdfs/Funding_Body.pdf
+2025-02-05 10:43:44,261 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 10:43:47,793 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 10:43:49,647 - WARNING - Not Found: /static/pdfs/FundingDataCaptureGuidelinesJSON.pdf
+2025-02-05 10:44:28,936 - INFO - Form submitted by user: 
+2025-02-05 10:44:29,565 - INFO - User:  - Token generation status: Success
+2025-02-05 10:44:50,910 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 10:44:54,827 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 10:45:12,259 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 10:45:51,257 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 10:55:31,940 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 10:55:43,195 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 10:55:49,769 - WARNING - Not Found: /favicon.ico
+2025-02-05 10:56:03,681 - WARNING - Not Found: /static/pdfs/Funding_Body.pdf
+2025-02-05 10:56:06,900 - WARNING - Not Found: /static/pdfs/Funding_Body.pdf
+2025-02-05 10:56:08,072 - WARNING - Not Found: /favicon.ico
+2025-02-05 10:56:08,375 - WARNING - Not Found: /favicon.ico
+2025-02-05 10:56:10,397 - WARNING - Not Found: /favicon.ico
+2025-02-05 10:56:40,139 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 10:56:56,046 - ERROR - Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/harvesting/CMS/Elsevier-Project-CMS/json_app/views.py", line 3077, in dashboard_view
+    'chart_data': chart_data,  # Bar chart
+UnboundLocalError: local variable 'chart_data' referenced before assignment
+2025-02-05 10:57:01,192 - ERROR - Internal Server Error: /funding_body_view/
+Traceback (most recent call last):
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/query.py", line 854, in parse
+    return handler(self, statement)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/query.py", line 930, in _select
+    return SelectQuery(self.db, self.connection_properties, sm, self._params)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/query.py", line 116, in __init__
+    super().__init__(*args)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/query.py", line 62, in __init__
+    self.parse()
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/query.py", line 152, in parse
+    self.where = WhereConverter(self, statement)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/converters.py", line 27, in __init__
+    self.parse()
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/converters.py", line 119, in parse
+    self.op = WhereOp(
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/operators.py", line 498, in __init__
+    self._statement2ops()
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/operators.py", line 451, in _statement2ops
+    op = self._token2op(tok, statement)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/operators.py", line 418, in _token2op
+    op = CmpOp(tok, self.query)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/operators.py", line 532, in __init__
+    self._operator = OPERATOR_MAP[self.statement.token_next(0)[1].value]
+KeyError: 'iLIKE'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/cursor.py", line 51, in execute
+    self.result = Query(
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/query.py", line 781, in __init__
+    self._query = self.parse()
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/query.py", line 882, in parse
+    raise exe from e
+djongo.exceptions.SQLDecodeError: 
+
+	Keyword: None
+	Sub SQL: None
+	FAILED SQL: SELECT COUNT(*) AS "__count" FROM "json_app_jsonfile" WHERE "json_app_jsonfile"."file_type" iLIKE %(0)s
+	Params: ('FundingBody',)
+	Version: 1.3.7
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/cursor.py", line 59, in execute
+    raise db_exe from e
+djongo.database.DatabaseError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/harvesting/CMS/Elsevier-Project-CMS/json_app/views.py", line 1771, in funding_body_view
+    print(f"Files Found: {files.count()}")  # Debugging
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/db/models/query.py", line 608, in count
+    return self.query.get_count(using=self.db)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/db/models/sql/query.py", line 568, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/db/models/sql/query.py", line 554, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/cursor.py", line 59, in execute
+    raise db_exe from e
+django.db.utils.DatabaseError
+2025-02-05 10:57:22,499 - WARNING - Not Found: /static/pdfs/FundingDataCaptureGuidelinesJSON.pdf
+2025-02-05 10:57:30,952 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 10:57:33,583 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 10:57:43,740 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 10:57:46,390 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 10:57:55,228 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 11:08:14,821 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 11:08:15,138 - WARNING - Not Found: /favicon.ico
+2025-02-05 11:23:17,908 - WARNING - Not Found: /favicon.ico
+2025-02-05 11:48:57,978 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 11:48:58,231 - WARNING - Not Found: /favicon.ico
+2025-02-05 11:48:59,498 - WARNING - Not Found: /static/pdfs/FundingDataCaptureGuidelinesJSON.pdf
+2025-02-05 11:53:29,904 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 11:53:30,846 - WARNING - Not Found: /favicon.ico
+2025-02-05 11:53:35,341 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 11:53:39,732 - WARNING - Not Found: /favicon.ico
+2025-02-05 11:53:46,663 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 11:53:53,188 - WARNING - Not Found: /static/pdfs/Funding_Body.pdf
+2025-02-05 11:53:55,427 - WARNING - Not Found: /static/pdfs/Funding_Body.pdf
+2025-02-05 11:53:57,166 - WARNING - Not Found: /favicon.ico
+2025-02-05 11:53:57,404 - WARNING - Not Found: /favicon.ico
+2025-02-05 11:53:59,981 - WARNING - Not Found: /favicon.ico
+2025-02-05 11:54:05,639 - ERROR - Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/harvesting/CMS/Elsevier-Project-CMS/json_app/views.py", line 3077, in dashboard_view
+    'chart_data': chart_data,  # Bar chart
+UnboundLocalError: local variable 'chart_data' referenced before assignment
+2025-02-05 11:54:25,815 - ERROR - Internal Server Error: /funding_body_view/
+Traceback (most recent call last):
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/query.py", line 854, in parse
+    return handler(self, statement)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/query.py", line 930, in _select
+    return SelectQuery(self.db, self.connection_properties, sm, self._params)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/query.py", line 116, in __init__
+    super().__init__(*args)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/query.py", line 62, in __init__
+    self.parse()
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/query.py", line 152, in parse
+    self.where = WhereConverter(self, statement)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/converters.py", line 27, in __init__
+    self.parse()
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/converters.py", line 119, in parse
+    self.op = WhereOp(
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/operators.py", line 498, in __init__
+    self._statement2ops()
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/operators.py", line 451, in _statement2ops
+    op = self._token2op(tok, statement)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/operators.py", line 418, in _token2op
+    op = CmpOp(tok, self.query)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/operators.py", line 532, in __init__
+    self._operator = OPERATOR_MAP[self.statement.token_next(0)[1].value]
+KeyError: 'iLIKE'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/cursor.py", line 51, in execute
+    self.result = Query(
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/query.py", line 781, in __init__
+    self._query = self.parse()
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/query.py", line 882, in parse
+    raise exe from e
+djongo.exceptions.SQLDecodeError: 
+
+	Keyword: None
+	Sub SQL: None
+	FAILED SQL: SELECT COUNT(*) AS "__count" FROM "json_app_jsonfile" WHERE "json_app_jsonfile"."file_type" iLIKE %(0)s
+	Params: ('FundingBody',)
+	Version: 1.3.7
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/cursor.py", line 59, in execute
+    raise db_exe from e
+djongo.database.DatabaseError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/harvesting/CMS/Elsevier-Project-CMS/json_app/views.py", line 1771, in funding_body_view
+    print(f"Files Found: {files.count()}")  # Debugging
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/db/models/query.py", line 608, in count
+    return self.query.get_count(using=self.db)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/db/models/sql/query.py", line 568, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/db/models/sql/query.py", line 554, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/cursor.py", line 59, in execute
+    raise db_exe from e
+django.db.utils.DatabaseError
+2025-02-05 11:55:04,056 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 11:55:20,360 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 11:55:27,180 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 11:55:43,345 - ERROR - Internal Server Error: /funding_body_view/
+Traceback (most recent call last):
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/query.py", line 854, in parse
+    return handler(self, statement)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/query.py", line 930, in _select
+    return SelectQuery(self.db, self.connection_properties, sm, self._params)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/query.py", line 116, in __init__
+    super().__init__(*args)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/query.py", line 62, in __init__
+    self.parse()
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/query.py", line 152, in parse
+    self.where = WhereConverter(self, statement)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/converters.py", line 27, in __init__
+    self.parse()
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/converters.py", line 119, in parse
+    self.op = WhereOp(
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/operators.py", line 498, in __init__
+    self._statement2ops()
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/operators.py", line 451, in _statement2ops
+    op = self._token2op(tok, statement)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/operators.py", line 418, in _token2op
+    op = CmpOp(tok, self.query)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/operators.py", line 532, in __init__
+    self._operator = OPERATOR_MAP[self.statement.token_next(0)[1].value]
+KeyError: 'iLIKE'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/cursor.py", line 51, in execute
+    self.result = Query(
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/query.py", line 781, in __init__
+    self._query = self.parse()
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/sql2mongo/query.py", line 882, in parse
+    raise exe from e
+djongo.exceptions.SQLDecodeError: 
+
+	Keyword: None
+	Sub SQL: None
+	FAILED SQL: SELECT COUNT(*) AS "__count" FROM "json_app_jsonfile" WHERE "json_app_jsonfile"."file_type" iLIKE %(0)s
+	Params: ('FundingBody',)
+	Version: 1.3.7
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/cursor.py", line 59, in execute
+    raise db_exe from e
+djongo.database.DatabaseError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/harvesting/CMS/Elsevier-Project-CMS/json_app/views.py", line 1771, in funding_body_view
+    print(f"Files Found: {files.count()}")  # Debugging
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/db/models/query.py", line 608, in count
+    return self.query.get_count(using=self.db)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/db/models/sql/query.py", line 568, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/db/models/sql/query.py", line 554, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/harvesting/.local/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/harvesting/.local/lib/python3.8/site-packages/djongo/cursor.py", line 59, in execute
+    raise db_exe from e
+django.db.utils.DatabaseError
+2025-02-05 11:57:26,852 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 11:57:29,724 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 11:57:32,074 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 11:57:33,267 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 11:57:34,789 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 11:57:36,651 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 11:57:38,327 - WARNING - Not Found: /static/images/logoimage.jpg
+2025-02-05 11:57:39,730 - WARNING - Not Found: /static/images/logoimage.jpg
