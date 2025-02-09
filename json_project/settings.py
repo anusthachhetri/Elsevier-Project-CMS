@@ -26,10 +26,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 
-# from django.conf import settings
-# from django.conf.urls.static import static
 
-# if settings.DEBUG:
+#from django.conf import settings
+#from django.conf.urls.static import static
+#if settings.DEBUG:
 #     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
@@ -86,8 +86,7 @@ DATABASE_ROUTERS = ['json_project.migration_router.MongoDBRouter']
 
 
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 LOGIN_URL = '/login/'
 LOGOUT_URL = '/logout/'
 # # Default Auto Field

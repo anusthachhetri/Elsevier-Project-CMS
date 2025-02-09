@@ -416,9 +416,9 @@
                     <a href="{% static 'pdfs/Funding_Body.pdf' %}">Funding Body Guidelines</a>
                 </li>
                 <li><i class="fas fa-download"></i><a href="{% url 'pdf_viewer' %}">funding guidelines in srch view</a></li>
-                <li><i class="fas fa-eye"></i><a href="{% url 'upload_json' %}">View Updated JSONs</a></li>
-                <li><i class="fas fa-plus"></i><a href="{% url 'update_json' %}">View Added JSONs</a></li>
-                <li><i class="fas fa-history"></i><a href="{% url 'download_json' batch_id='example_id' %}">View History</a></li>
+                <li><i class="fas fa-download"></i></i><a href="{% static 'pdfs/asjc_mapping.xlsx' %}"> ASJC Mapping Sheet</a></li>
+                <li><i class="fas fa-plus"></i><a href="{% url 'funding_body' %}">View Added JSONs</a></li>
+                <li><i class="fas fa-history"></i><a href="{% url 'funding_body' %}">View History</a></li>
             </ul>
         </div>
 
@@ -443,7 +443,7 @@
                     <a href="{% url 'upload_json' %}">Upload JSONs</a>
                 </div>
                 <div class="action-box">
-                    <a href="{% url 'dashboard' %}">Dashboard</a>
+                    <a href="{% url 'getdata' %}"> View Added JSON </a>
                 </div>
                 <div class="action-box">
                     <a href="{% url 'funding_body_view' %}">Funding Data</a>
@@ -458,10 +458,10 @@
                 
                 
                 <div class="action-box">
-                    <a href="{% url 'getdata' %}">View Added JSON</a>
+                    <a href="{% url 'dashboard' %}">Dashboard</a>
                 </div>
                 <div class="action-box">
-                    <a href="{% url 'qa_checklist' %}">QA Checklist</a>
+                    <a href="{% url 'qa_process' %}">QA Process</a>
                 </div>
             </div>
             

@@ -25,7 +25,8 @@ from django.contrib import admin
 from django.urls import path, include
 from json_app import views  # Import views from your app
 from django.contrib.auth import views as auth_views
-
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
   path('admin/', admin.site.urls),
@@ -55,8 +56,8 @@ urlpatterns = [
   
   
   
-  #ingestion view path
-  # path('ingestion_template/', views.file_ingestion, name='file_ingestion'),
+#ingestion view path
+# path('ingestion_template/', views.file_ingestion, name='file_ingestion'),
  path('ingestion_template/', views.file_ingestion, name='ingestion_template'),
 # path('ingestion/', views.file_ingestion, name='file_ingestion'),
 
@@ -84,9 +85,20 @@ urlpatterns = [
      path('toolbox/', views.toolbox, name='toolbox'),  # Toolbox page URL
    
    path('pdf-viewer/', views.pdf_viewer, name='pdf_viewer'),
+   
+   
+    path('upload_file/', views.upload_file, name='upload_file'), #route for json creater
+    
+    
+     path("qa_process/", views.qa_process, name="qa_process"),  #QA PROCESS
+     
+    # path("qa_process/", views.vtooltemp, name="vtooltemp"),  #V TOOL 
+    
+    path('run_java_tool/', views.run_java_tool, name='run_java_tool'),
+    
 ]
-
-
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # # json_project/urls.py
 # from django.contrib import admin

@@ -108,6 +108,8 @@ urlpatterns = [
       
       
       path('pdf-viewer/', views.pdf_viewer, name='pdf_viewer'),
+      
+     path('upload_file/', views.upload_file, name='upload_file')
     
 ]
 
