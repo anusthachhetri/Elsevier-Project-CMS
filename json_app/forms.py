@@ -268,3 +268,14 @@ class UserRegistrationForm(forms.ModelForm):
             raise forms.ValidationError("Passwords do not match.")
 
         return cleaned_data
+    
+    
+    
+    
+    
+    #json creator form code
+from django import forms
+class CSVInputForm(forms.Form):    
+        csv_file = forms.FileField(label='Select a CSV file')    
+        output_directory = forms.CharField(label="Output Directory", max_length=255, required=True)
+

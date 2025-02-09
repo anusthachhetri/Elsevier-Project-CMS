@@ -431,19 +431,19 @@
                         <td>{{ metadata.assigned_to }}</td>
                         <td>{{ metadata.frequency_of_site_updates }}</td>
                         <td>{{ metadata.site_last_checked }}</td>
-                        <td>
+                       <td>
                             {{ metadata.source_file_upload }}
                             
                         </td>   
-                        {% comment %} <td>
+                     {% comment %} <td>
                             {% if metadata.source_file_upload %}
                                 {{ metadata.source_file_upload.filename|slice:"8:" }} <!-- Display file name without 'uploads/' -->
                             {% else %}
                                 No file uploaded
                             {% endif %}
-                        </td>
-                       {% endcomment %}
-                      
+                        </td> {% endcomment %}
+                     
+                  
                         <td>{{ metadata.json_file_name }}</td>
                         <td>{{ metadata.json_upload_date }}</td>
                         <td>{{ metadata.sup_id }}</td>

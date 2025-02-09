@@ -2,7 +2,7 @@ JSON Schema 5.0 Data Field,Value from the Source or as determined by Supplier,
 fundingBodyAwardId,not found,0
 grantType,RESEARCH,1
 title ,Repurposing epidrugs for functional enhancement of human pancreatic beta cells,2
-startDate,01-01-2024,3
+startDate,1/1/2024,3
 endDate,not found,4
 noticeDate,not found,5
 homePage/link,https://www.drwf.org.uk/drwf-research/funded-research/,6
@@ -54,7 +54,7 @@ funds/startDate,not found,51
 funds/endDate,not found,52
 funds/link,not found,53
 funds/hasPostalAddress,not found,54
-funds/status,CLOSE,55
+funds/status,CLOSED,55
 awardee country,GBR,56
 awardee addressLocality,not found,57
 awardee addressPostalCode,not found,58

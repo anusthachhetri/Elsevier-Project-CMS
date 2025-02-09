@@ -36,6 +36,13 @@ def opportunity(request):
 def awards(request):
     return render(request, 'awards.html')
 
+#############QA PROCESS ######################
+######QA  Page Render #############
+def qa_process(request):
+    return render(request, "qa_process.html")
+
+
+
 
 #QA checklist##############################
 #################################
@@ -1658,13 +1665,22 @@ def edit_source_metadata(request, metadata_id):
     if request.method == 'POST':
         form = SourceMetadataForm(request.POST, request.FILES)
         if form.is_valid():
+            uploaded_file = request.FILES.get('source_file_upload') 
+            if uploaded_file:
+                upload_dir = os.path.join(settings.MEDIA_ROOT, 'source_files')
+                os.makedirs(upload_dir, exist_ok=True)  # Ensure the directory exists
+                file_path = os.path.join(upload_dir, uploaded_file.name)
+                with open(file_path, 'wb+') as destination:
+                    for chunk in uploaded_file.chunks():
+                        destination.write(chunk)
+                source_metadata.source_file_upload = uploaded_file.name
             # Update the metadata object
             source_metadata.import_url = form.cleaned_data['import_url']
             source_metadata.date_of_arrival = form.cleaned_data['date_of_arrival']
             source_metadata.assigned_to = form.cleaned_data['assigned_to']
             source_metadata.frequency_of_site_updates = form.cleaned_data['frequency_of_site_updates']
             source_metadata.site_last_checked = form.cleaned_data['site_last_checked']
-            source_metadata.source_file_upload = form.cleaned_data.get('source_file_upload') or source_metadata.source_file_upload
+            #source_metadata.source_file_upload = uploaded_file.name if uploaded_file else None,
             source_metadata.json_file_name = form.cleaned_data['json_file_name']
             source_metadata.json_upload_date = form.cleaned_data['json_upload_date']
             source_metadata.sup_id = form.cleaned_data['sup_id']
@@ -2517,7 +2533,11 @@ def opportunity_view(request):
 #     return render(request, "ingestion_template.html", context)
 
 
-#now 17:40
+# 17:40
+
+#view code of ingestion of files ###########################
+################################################################################################
+##############################################################################################
 
 from django import forms
 import os
@@ -2687,6 +2707,10 @@ def file_ingestion(request):
                     logging.exception(f"User: {user_name} - Exception occurred during file ingestion: {e}")
 
     return render(request, "ingestion_template.html", context)
+
+
+
+###########################ending view of ingestion ###############################################################
 
 
 
@@ -2968,6 +2992,8 @@ def file_ingestion(request):
 #     }
 
 #     return render(request, 'dashboard.html', context)
+
+
 from django.contrib.auth.models import User
 from django.shortcuts import render
 import pandas as pd
@@ -3098,3 +3124,121 @@ def dashboard_view(request):
     }
 
     return render(request, 'dashboard.html', context)
+
+
+
+
+
+#json creation view code
+# import os
+# import json
+# from django.shortcuts import render
+# from .forms import CSVInputForm
+# from .utils import s_date,format_date,generate_small_hash_uuid,generate_small_hash_AID,get_and_update_ids,process_csv_to_json # Assuming you have these functions defined
+ 
+# def upload_file(request):
+#     if request.method == 'POST':
+#         form = CSVInputForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             csv_file_path = form.cleaned_data['csv_file_path']
+#             output_directory = form.cleaned_data['output_directory']
+ 
+#             # Ensure the output directory exists
+#             os.makedirs(output_directory, exist_ok=True)
+ 
+#             # Process the provided CSV file path
+#             json_filename = os.path.splitext(os.path.basename(csv_file_path))[0] + '.json'
+#             json_output_path = os.path.join(output_directory, json_filename)
+ 
+#             # Process the CSV and generate JSON
+#             process_csv_to_json(csv_file_path, json_output_path)
+ 
+#             # Read the generated JSON file and clean it (if you have clean_data defined)
+#             with open(json_output_path, 'r', encoding='utf-8-sig') as file:
+#                 data = json.load(file)
+ 
+#             cleaned_data = clean_data(data)  # Assuming this function is defined elsewhere
+#             final_data = remove_outermost(cleaned_data)  # Assuming this function is defined elsewhere
+#             # Save cleaned JSON data to a new file
+#             cleaned_json_filename = os.path.splitext(json_filename)[0] + '_N.json'
+#             cleaned_json_output_path = os.path.join(output_directory, cleaned_json_filename)
+#             with open(cleaned_json_output_path, 'w', encoding='utf-8') as file:
+#                 json.dump(final_data, file, ensure_ascii=False, separators=(',', ':'))
+ 
+#             return render(request, 'upload_file.html', {'form': form, 'success': True,
+#                                                              'cleaned_json_path': cleaned_json_output_path})
+#     else:
+#         form = CSVInputForm()
+#     return render(request, 'upload_file.html', {'form': form})
+
+#json creator  code ##############################
+
+import os
+import json
+from django.shortcuts import render
+from .forms import CSVInputForm
+from .utils import process_csv_to_json
+
+def upload_file(request):
+    if request.method == 'POST':
+        form = CSVInputForm(request.POST, request.FILES)  # Include request.FILES
+        if form.is_valid():
+            csv_file = form.cleaned_data['csv_file']  # Get the uploaded file
+            output_directory = form.cleaned_data['output_directory']
+
+            os.makedirs(output_directory, exist_ok=True)  # Ensure output directory exists
+
+            # Save the uploaded file to the output directory
+            csv_file_path = os.path.join(output_directory, csv_file.name)
+            with open(csv_file_path, 'wb+') as destination:
+                for chunk in csv_file.chunks():
+                    destination.write(chunk)
+
+            # Process the CSV file
+            json_filename = os.path.splitext(csv_file.name)[0] + '.json'
+            json_output_path = os.path.join(output_directory, json_filename)
+
+            process_csv_to_json(csv_file_path, json_output_path)
+
+            return render(request, 'upload_file.html', {'form': form, 'success': True, 'cleaned_json_path': json_output_path})
+    else:
+        form = CSVInputForm()
+
+    return render(request, 'upload_file.html', {'form': form})
+
+
+################ending the json creator code#####################
+#####################################################################
+
+
+
+################# v tool code ##########################
+#########################################################################
+from django.contrib import messages
+from django.views.decorators.http import require_POST
+import subprocess 
+
+@require_POST
+def run_java_tool(request):
+    json_file = request.POST.get('json_file')
+    log_file = request.POST.get('log_file')
+   
+   
+    # Define the command. Adjust the path to your Vtool.jar accordingly.
+    command = [
+        'java',
+        '-jar',
+        r'X:\json_project_1\Vtool-5.93.1-p1\Vtool.jar',
+        '--vjson', 'grant',
+        '-file', json_file,
+        '-log', log_file
+    ]
+   
+    try:
+        # Run the command and capture the output (if needed)
+        result = subprocess.run(command, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        messages.success(request, f"Tool ran successfully. Output: {result.stdout}")
+    except subprocess.CalledProcessError as e:
+        messages.error(request, f"Error running tool: {e.stderr}")
+   
+    return redirect('qa_process')
