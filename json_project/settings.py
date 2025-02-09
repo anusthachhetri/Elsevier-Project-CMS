@@ -28,7 +28,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # from django.conf import settings
 # from django.conf.urls.static import static
-
+SITE_ID = 1
 # if settings.DEBUG:
 #     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
@@ -56,7 +56,7 @@ SECRET_KEY = 'django-insecure-k@vs2$wy%^x9!q_t5=x26%klt2)3r*l55p1sxs!npmp^aun@ge
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True  # Set to False for production, but make sure ALLOWED_HOSTS is configured
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']  # Replace with your domains or IPs as needed
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost','34.86.171.130','data-monitor-harvesting-rfp']  # Replace with your domains or IPs as needed
 
 
 
@@ -71,7 +71,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'json_app',
     'allauth.account',
-    # 'allauth.socialaccount',
+    'allauth.socialaccount',
    
 
 ]
@@ -107,7 +107,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-  
+    #'allauth.middleware.AccountMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'json_project.urls'
