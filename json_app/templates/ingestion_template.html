@@ -476,6 +476,38 @@
         {% endif %}
     </div>
     
+    <!-- Step 5: Check Ingestion Status -->
+    <div class="form-section">
+        <h3>Step 5: Check Ingestion Status</h3>
+        <form method="post">
+            {% csrf_token %}
+            <input type="hidden" name="action" value="check_ingestion_status">
+            <input type="hidden" name="user_name" value="{{ user_name }}">
+    
+            <div class="mb-3">
+                <label for="ingestion_id" class="form-label">Enter Ingestion ID:</label>
+                <input type="text" name="ingestion_id" id="ingestion_id" class="form-control" 
+                       placeholder="Enter Ingestion ID" value="{{ ingestion_id|default:'' }}">
+            </div>
+    
+            <div class="mb-3">
+                <label for="data_type" class="form-label">Select Data Type:</label>
+                <select name="data_type" id="data_type" class="form-select">
+                    <option value="award">Award</option>
+                    <option value="opportunity">Opportunity</option>
+                    <option value="funding-body">Funding Body</option>
+                </select>
+            </div>
+    
+            <button type="submit" class="btn btn-primary">Check Status</button>
+        </form>
+    
+        {% if ingestion_status_message %}
+        <p class="mt-3">{{ ingestion_status_message }}</p>
+        {% endif %}
+    </div>
+    
+    
     
     <!-- Step 4: Enter Name 
     <div class="form-section">

@@ -28,6 +28,7 @@ from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
 
+
 urlpatterns = [
   path('admin/', admin.site.urls),
  path('upload/', views.upload_json, name='upload_json'),
@@ -95,6 +96,8 @@ urlpatterns = [
     # path("qa_process/", views.vtooltemp, name="vtooltemp"),  #V TOOL 
     
     path('run_java_tool/', views.run_java_tool, name='run_java_tool'),
+    path('toolbox/', include('json_app.urls')),
+    
     
 ]
 if settings.DEBUG:

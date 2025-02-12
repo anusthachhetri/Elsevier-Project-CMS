@@ -3,7 +3,6 @@ import uuid
 from django.shortcuts import render
 from django.http import JsonResponse, HttpResponse
 from pymongo import MongoClient
-
 from .models import JSONFile
 from django.http import HttpResponse
 from django.urls import reverse
@@ -12,32 +11,240 @@ from urllib.parse import quote_plus
 import datetime
 
 
-#adding home view 
+#adding home view##############################
+#############################################################################
+
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
+@login_required
 def home(request):
     return render(request, 'home.html')  # for our home template
 
 
 
+#scrapper tool#######################################################
+######################################################################################3
+
+def scraper_tool(request):
+    #tags = ["h1","h4","em", "h2", "h3", "p", "span", "a", "div", "li", "ul", "ol", "table", "tr", "td", "th"]
+   
+    #print("✅ View is being executed!")  # Debugging
+    #print("Tags passed to template:", tags)  # Debugging
+   
+    return render(request, "scraper.html")
+ 
+ 
+import asyncio
+import pandas as pd
+from django.shortcuts import render
+from django.http import JsonResponse
+from bs4 import BeautifulSoup
+from playwright.async_api import async_playwright
+ 
+ 
+def extract_tag_sequences(html_content, tag_sequence):
+    """
+    Extract structured data based on a sequential list of HTML tags.
+    Each tag in the sequence will be paired with its corresponding content.
+    """
+    soup = BeautifulSoup(html_content, 'html.parser')
+    extracted_data = []
+    elements = soup.find_all(tag_sequence[0])
+ 
+    for element in elements:
+        entry = {tag_sequence[0]: element.get_text(strip=True)}
+ 
+        # Traverse subsequent tags in sequence
+        for next_tag in tag_sequence[1:]:
+            next_element = element.find_next(next_tag)
+            entry[next_tag] = next_element.get_text(strip=True) if next_element else None
+            element = next_element if next_element else element
+ 
+        extracted_data.append(entry)
+ 
+    return extracted_data
+ 
+ 
+async def scrape_page_content(url, tag_sequence):
+    """
+    Asynchronous scraping function using Playwright.
+    """
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(headless=True)
+        try:
+            page = await browser.new_page()
+            await page.goto(url, timeout=60000)
+            page_source = await page.content()
+            return extract_tag_sequences(page_source, tag_sequence)
+        except Exception as e:
+            return [{"Error": str(e)}]
+        finally:
+            await browser.close()
+ 
+ 
+def scraper_view(request):
+    if request.method == "POST":
+        url = request.POST.get("url")
+        tags = request.POST.getlist("tags")  # Get selected tags as a list
+ 
+        if url and tags:
+            result = asyncio.run(scrape_page_content(url, tags))
+            df = pd.DataFrame(result)
+            csv_file = df.to_csv(index=False)
+ 
+            return JsonResponse({"data": result, "csv": csv_file})
+ 
+    return render(request, "scraper.html")
+
+###ending here########################################################
+
+
+#######################################scrapper tool 2 for awardieee#####################################
+###################################################################################
+
+# import asyncio
+# import pandas as pd
+# from django.shortcuts import render
+# from django.http import JsonResponse, HttpResponse
+# from bs4 import BeautifulSoup
+# from playwright.async_api import async_playwright
+
+
+# def extract_tag_sequences(html_content, tag_sequence):
+#     soup = BeautifulSoup(html_content, 'html.parser')
+#     extracted_data = []
+#     elements = soup.find_all(tag_sequence[0])
+
+#     for element in elements:
+#         entry = {tag_sequence[0]: element.get_text(strip=True)}
+
+#         for next_tag in tag_sequence[1:]:
+#             next_element = element.find_next(next_tag)
+#             entry[next_tag] = next_element.get_text(strip=True) if next_element else None
+#             element = next_element if next_element else element
+
+#         extracted_data.append(entry)
+
+#     return extracted_data
+
+
+# async def scrape_page_content(url, tag_sequence):
+#     async with async_playwright() as p:
+#         browser = await p.chromium.launch(headless=True)
+#         try:
+#             page = await browser.new_page()
+#             await page.goto(url, timeout=60000)
+
+#             initial_data = extract_tag_sequences(await page.content(), tag_sequence)
+#             return initial_data
+#         except Exception as e:
+#             return [{"Error": str(e)}]
+#         finally:
+#             await browser.close()
+
+
+# def web_scraper_view(request):
+#     if request.method == "POST":
+#         url = request.POST.get("url")
+#         tag_sequence = request.POST.getlist("tags[]")
+
+#         if not url or not tag_sequence:
+#             return JsonResponse({"error": "Please provide a valid URL and select tags."}, status=400)
+
+#         scraped_data = asyncio.run(scrape_page_content(url, tag_sequence))
+
+#         if "download" in request.POST:
+#             df = pd.DataFrame(scraped_data)
+#             response = HttpResponse(df.to_csv(index=False), content_type="text/csv")
+#             response["Content-Disposition"] = 'attachment; filename="scraped_content.csv"'
+#             return response
+
+#         return JsonResponse({"data": scraped_data}, safe=False)
+
+#     return render(request, "web_scraper.html")
+
+import asyncio
+import pandas as pd
+from django.shortcuts import render
+from django.http import JsonResponse, HttpResponse
+from bs4 import BeautifulSoup
+from playwright.async_api import async_playwright
+from asgiref.sync import async_to_sync
+import validators
+
+def extract_tag_sequences(html_content, tag_sequence):
+    soup = BeautifulSoup(html_content, 'html.parser')
+    extracted_data = []
+
+    for tag in tag_sequence:
+        elements = soup.find_all(tag)
+        for element in elements:
+            extracted_data.append({tag: element.get_text(strip=True)})
+
+    return extracted_data if extracted_data else [{"Message": "No data found for selected tags"}]
+
+async def scrape_page_content(url, tag_sequence):
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(headless=True)
+        try:
+            page = await browser.new_page()
+            await page.goto(url, timeout=60000)
+            scraped_data = extract_tag_sequences(await page.content(), tag_sequence)
+            return scraped_data
+        except Exception as e:
+            return [{"Error": str(e)}]
+        finally:
+            await browser.close()
+
+def web_scraper_view(request):
+    if request.method == "POST":
+        url = request.POST.get("url")
+        tag_sequence = request.POST.getlist("tags[]")
+
+        if not url or not tag_sequence or not validators.url(url):
+            return JsonResponse({"error": "Invalid input."}, status=400)
+
+        scraped_data = async_to_sync(scrape_page_content)(url, tag_sequence)
+
+        if "download" in request.POST:
+            df = pd.DataFrame(scraped_data)
+            response = HttpResponse(df.to_csv(index=False), content_type="text/csv")
+            response["Content-Disposition"] = 'attachment; filename="scraped_content.csv"'
+            return response
+
+        return JsonResponse({"data": scraped_data}, safe=False)
+
+    return render(request, "web_scraper.html")
+
+
+###################################ending here#######################################################
+
 #view for funding body /award/opportunity
 from django.shortcuts import render
-
 # def funding_body(request):
 #     return render(request, 'funding_body.html')
+
+@login_required
 def funding_body(request):
     return render(request, 'funding_body.html')
     # Replace this with your dynamic URL
     # external_url = "http://fa-macmillanlearning.highwire.org:8501/"
     # return render(request, 'funding_body.html', {'external_url': external_url})
-
+    
+    
+@login_required
 def opportunity(request):
     return render(request, 'opportunity.html')
 
+
+@login_required
 def awards(request):
     return render(request, 'awards.html')
 
 #############QA PROCESS ######################
 ######QA  Page Render #############
+
+@login_required
 def qa_process(request):
     return render(request, "qa_process.html")
 
@@ -47,6 +254,7 @@ def qa_process(request):
 #QA checklist##############################
 #################################
 
+@login_required
 def qa_checklist(request):
     return render(request, 'qa_checklist.html')
 
@@ -62,6 +270,7 @@ def qa_checklist(request):
     
 #       return render(request, 'toolbox.html', {'external_url': external_url})
 #updated code
+@login_required
 def toolbox(request):
     # External URLs
     external_url_1 = "http://fa-macmillanlearning.highwire.org:8502/"
@@ -257,7 +466,7 @@ collection = db['Elsevier_Batch']
 #     # Render the upload template for non-POST requests
 #     return render(request, 'upload.html')
 
-
+@login_required
 def upload_json(request):
     if request.method == 'POST':
         uploader_name = request.POST.get('uploader_name')  # Retrieve the uploader's name
@@ -541,7 +750,7 @@ from django.urls import reverse
 from datetime import datetime, timedelta
 from .models import JSONFile
 
-
+@login_required
 def getdata(request):
     try:
          
@@ -1472,6 +1681,7 @@ from datetime import datetime
 import os
 from django.conf import settings
 #Upload view
+@login_required
 def upload_source_metadata(request):
     if request.method == 'POST':
         form = SourceMetadataForm(request.POST, request.FILES)
@@ -1522,6 +1732,7 @@ def upload_source_metadata(request):
 
 
  # View source metadata
+@login_required
 def view_source_metadata(request):
     # Fetch all source metadata records from MongoDB
     source_metadata_list = SourceMetadata.objects.all()
@@ -1785,6 +1996,7 @@ def edit_source_metadata(request, metadata_id):
 
 #code for viewing only funding /award/opportunity data
 # View for Funding Body
+@login_required
 def funding_body_view(request):
     if request.method == 'GET':
         # Extract funding_body_id from GET parameters
@@ -1827,7 +2039,7 @@ def funding_body_view(request):
         return render(request, 'funding_body_view.html', {'files': response_data})
 
 #award data view function################################################################
-
+@login_required
 def award_view(request):
     if request.method == 'GET':
         # Extract award_id from GET parameters
@@ -1869,7 +2081,7 @@ def award_view(request):
         # Render the results to the template
         return render(request, 'award_view.html', {'files': response_data})
 
-
+@login_required
 def opportunity_view(request):
     if request.method == 'GET':
         # Extract opportunity_id from GET parameters
@@ -2584,6 +2796,7 @@ def get_oauth_token(key, secret):
 
 
 @csrf_exempt
+@login_required
 def file_ingestion(request):
     global global_token
     context = {"form": FileIngestionForm()}
@@ -2705,6 +2918,36 @@ def file_ingestion(request):
                 except Exception as e:
                     context["message"] = "An error occurred during file ingestion."
                     logging.exception(f"User: {user_name} - Exception occurred during file ingestion: {e}")
+                    
+ # Step 5: Check Ingestion Status
+            elif action == "check_ingestion_status":
+                ingestion_id = request.POST.get("ingestion_id")
+                data_type = request.POST.get("data_type")
+
+                if not ingestion_id:
+                    context["ingestion_status_message"] = "Please provide an ingestion ID."
+                    return render(request, "ingestion_template.html", context)
+
+                base_urls = {
+                    "award": "https://uat.business.api.elsevier.com/v1/funding-ingestion/award/",
+                    "opportunity": "https://uat.business.api.elsevier.com/v1/funding-ingestion/opportunity/",
+                    "funding-body": "https://uat.business.api.elsevier.com/v1/funding-ingestion/funding-body/"
+                }
+
+                url = f"{base_urls[data_type]}{ingestion_id}"
+                headers = {"accept": "application/json", "Authorization": f"Bearer {global_token}"}
+
+                try:
+                    response = requests.get(url, headers=headers)
+                    if response.status_code == 200:
+                        response_data = response.json()
+                        context["ingestion_status_message"] = f"Status: {response_data.get('status', 'Unknown')}"
+                    else:
+                        context["ingestion_status_message"] = f"Failed to fetch status. Response Code: {response.status_code}"
+                except Exception as e:
+                    context["ingestion_status_message"] = "An error occurred while checking ingestion status."
+                    logging.exception(f"User: {user_name} - Exception during status check: {e}")
+                    context["ingestion_status_message"] = "Failed to fetch status."
 
     return render(request, "ingestion_template.html", context)
 
@@ -3002,7 +3245,7 @@ from io import BytesIO
 from collections import defaultdict
 import base64
 from .models import SourceMetadata
-
+@login_required
 def dashboard_view(request):
     # Fetch all source metadata records from MongoDB
     source_metadata_list = SourceMetadata.objects.all()
@@ -3178,7 +3421,7 @@ import json
 from django.shortcuts import render
 from .forms import CSVInputForm
 from .utils import process_csv_to_json
-
+@login_required
 def upload_file(request):
     if request.method == 'POST':
         form = CSVInputForm(request.POST, request.FILES)  # Include request.FILES
@@ -3219,6 +3462,7 @@ from django.views.decorators.http import require_POST
 import subprocess 
 
 @require_POST
+@login_required
 def run_java_tool(request):
     json_file = request.POST.get('json_file')
     log_file = request.POST.get('log_file')

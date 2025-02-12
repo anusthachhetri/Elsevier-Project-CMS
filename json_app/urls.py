@@ -34,6 +34,9 @@
 from django.urls import path
 from . import views
 from django.contrib.auth import views as auth_views
+from .views import scraper_view
+from django.urls import include, path
+from .views import web_scraper_view
 
 
 
@@ -109,7 +112,14 @@ urlpatterns = [
       
       path('pdf-viewer/', views.pdf_viewer, name='pdf_viewer'),
       
-     path('upload_file/', views.upload_file, name='upload_file')
+     path('upload_file/', views.upload_file, name='upload_file'),
+     
+     
+     
+
+     path('scraper/', scraper_view, name='scraper_tool'),
+     
+      path('web-scraper/', web_scraper_view, name='web_scraper_tool'),
     
 ]
 
