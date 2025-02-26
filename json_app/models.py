@@ -73,8 +73,23 @@ class SourceMetadata(Document):
 
     # def __str__(self):
     #     return f"{self.file_name} (Version {self.version})"
-  
-  
+    
+    
+#model code for ingeston
+from django.db import models
+from django.utils.timezone import now
+
+class IngestionLog(models.Model):
+    user_name = models.CharField(max_length=255)
+    ingestion_id = models.CharField(max_length=255, unique=True)
+    ingestion_item_id = models.CharField(max_length=255, null=True, blank=True)
+    batch_id = models.CharField(max_length=255, null=True, blank=True)
+    status = models.CharField(max_length=50, default="Pending")
+    created_at = models.DateTimeField(default=now)
+
+    def __str__(self):
+        return f"Ingestion {self.ingestion_id} - {self.status}"
+
     
 # class CustomUser(models.Model):
 #     username = models.CharField(max_length=150, unique=True, null=True)  # Set null=True if needed

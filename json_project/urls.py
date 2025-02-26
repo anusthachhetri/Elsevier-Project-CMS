@@ -31,39 +31,40 @@ from django.conf.urls.static import static
 
 urlpatterns = [
   path('admin/', admin.site.urls),
- path('upload/', views.upload_json, name='upload_json'),
+  path('upload/', views.upload_json, name='upload_json'),
   path('getdata/', views.getdata, name='getdata'),  # Add this line for the get-json-files view
- path('update/', views.update_json, name='update_json'),
+  path('update/', views.update_json, name='update_json'),
   path('download/<str:batch_id>/', views.download_json, name='download_json'),
-   path('', views.home, name='home'),  # Add this line to set the home view for the root URL
- path('view/<str:batch_id>/', views.view_json, name='view_json'),  # Add this line
- path('upload-source-metadata/', views.upload_source_metadata, name='upload_source_metadata'),
- path('view_source_metadata/', views.view_source_metadata, name='view_source_metadata'),  # Home page to view data
- #new 
- path('edit-source-metadata/<str:metadata_id>/', views.edit_source_metadata, name='edit_source_metadata'),
+  path('', views.home, name='home'),  # Add this line to set the home view for the root URL
+  path('view/<str:batch_id>/', views.view_json, name='view_json'),  # Add this line
+  path('upload-source-metadata/', views.upload_source_metadata, name='upload_source_metadata'),
+  path('view_source_metadata/', views.view_source_metadata, name='view_source_metadata'),  # Home page to view data
+  #new 
+  path('edit-source-metadata/<str:metadata_id>/', views.edit_source_metadata, name='edit_source_metadata'),
  
  
  
- path('funding_body/', views.funding_body, name='funding_body'),
-    path('opportunity/', views.opportunity, name='opportunity'),
-    path('awards/', views.awards, name='awards'),
+  path('funding_body/', views.funding_body, name='funding_body'),
+  path('opportunity/', views.opportunity, name='opportunity'),
+  path('awards/', views.awards, name='awards'),
  
  
  
    #only respective data urls
-   path('funding_body_view/', views.funding_body_view, name='funding_body_view'),
+  path('funding_body_view/', views.funding_body_view, name='funding_body_view'),
   path('award_view/', views.award_view, name='award_view'),
   path('opportunity_view/',views.opportunity_view, name='opportunity_view'),
   
   
   
-#ingestion view path
-# path('ingestion_template/', views.file_ingestion, name='file_ingestion'),
- path('ingestion_template/', views.file_ingestion, name='ingestion_template'),
-# path('ingestion/', views.file_ingestion, name='file_ingestion'),
+  #ingestion view path
+  # path('ingestion_template/', views.file_ingestion, name='file_ingestion'),
+  path('ingestion_template/', views.file_ingestion, name='ingestion_template'),
+ 
+  # path('ingestion/', views.file_ingestion, name='file_ingestion'),
 
-  #  path('manage-files/', views.manage_files, name='manage_files'),
-  #   path('updated-files/', views.updated_files, name='updated_files'),
+  #path('manage-files/', views.manage_files, name='manage_files'),
+   #   path('updated-files/', views.updated_files, name='updated_files'),
   
   
   
@@ -72,36 +73,57 @@ urlpatterns = [
           # path('accounts/', include('allauth.urls')), 
           
           
-    #new links
-    path('login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
-    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+  #new links
+  path('login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
+  path('logout/', auth_views.LogoutView.as_view(), name='logout'),
    
-    # Include allauth URLs
-    path('accounts/', include('allauth.urls')),
+  # Include allauth URLs
+  path('accounts/', include('allauth.urls')),
    
-   path('dashboard/', views.dashboard_view, name='dashboard'), 
+  path('dashboard/', views.dashboard_view, name='dashboard'), 
    
-    path('qa-checklist/', views.qa_checklist, name='qa_checklist'),
+  path('qa-checklist/', views.qa_checklist, name='qa_checklist'),
     
-     path('toolbox/', views.toolbox, name='toolbox'),  # Toolbox page URL
+  path('toolbox/', views.toolbox, name='toolbox'),  # Toolbox page URL
    
-   path('pdf-viewer/', views.pdf_viewer, name='pdf_viewer'),
+  path('pdf-viewer/', views.pdf_viewer, name='pdf_viewer'),
    
    
-    path('upload_file/', views.upload_file, name='upload_file'), #route for json creater
+  path('upload_file/', views.upload_file, name='upload_file'), #route for json creater
     
     
-     path("qa_process/", views.qa_process, name="qa_process"),  #QA PROCESS
+  path("qa_process/", views.qa_process, name="qa_process"),  #QA PROCESS
      
-    # path("qa_process/", views.vtooltemp, name="vtooltemp"),  #V TOOL 
+  # path("qa_process/", views.vtooltemp, name="vtooltemp"),  #V TOOL 
     
-    path('run_java_tool/', views.run_java_tool, name='run_java_tool'),
-    path('toolbox/', include('json_app.urls')),
+  path('run_java_tool/', views.run_java_tool, name='run_java_tool'),
+  path('toolbox/', include('json_app.urls')),
     
     
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 # # json_project/urls.py
 # from django.contrib import admin

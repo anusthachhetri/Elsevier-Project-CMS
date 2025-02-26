@@ -96,7 +96,7 @@ def scraper_view(request):
  
     return render(request, "scraper.html")
 
-###ending here########################################################
+#########################ending here########################################################
 
 
 #######################################scrapper tool 2 for awardieee#####################################
@@ -172,7 +172,7 @@ from playwright.async_api import async_playwright
 from asgiref.sync import async_to_sync
 import validators
 
-def extract_tag_sequences(html_content, tag_sequence):
+def extracts_tags_sequences(html_content, tag_sequence):
     soup = BeautifulSoup(html_content, 'html.parser')
     extracted_data = []
 
@@ -183,13 +183,13 @@ def extract_tag_sequences(html_content, tag_sequence):
 
     return extracted_data if extracted_data else [{"Message": "No data found for selected tags"}]
 
-async def scrape_page_content(url, tag_sequence):
+async def scrp_pag_content(url, tag_sequence):
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
         try:
             page = await browser.new_page()
             await page.goto(url, timeout=60000)
-            scraped_data = extract_tag_sequences(await page.content(), tag_sequence)
+            scraped_data = extracts_tags_sequences(await page.content(), tag_sequence)
             return scraped_data
         except Exception as e:
             return [{"Error": str(e)}]
@@ -204,7 +204,7 @@ def web_scraper_view(request):
         if not url or not tag_sequence or not validators.url(url):
             return JsonResponse({"error": "Invalid input."}, status=400)
 
-        scraped_data = async_to_sync(scrape_page_content)(url, tag_sequence)
+        scraped_data = async_to_sync(scrp_pag_content)(url, tag_sequence)
 
         if "download" in request.POST:
             df = pd.DataFrame(scraped_data)
@@ -218,6 +218,1141 @@ def web_scraper_view(request):
 
 
 ###################################ending here#######################################################
+
+
+###############ASJC CODE MATCHER MODIFIED###########################
+# from django.shortcuts import render
+# from sentence_transformers import SentenceTransformer, util
+# import torch
+
+# # Load Sentence Transformers model for semantic similarity
+# sbert_model = SentenceTransformer("all-MiniLM-L6-v2")
+
+# # ASJC mapping dictionary
+# asjc_mapping = {
+#     "1000": "General",
+#     "1100": "Agricultural and Biological Sciences (all)",
+#     "1101": "Agricultural and Biological Sciences (miscellaneous)",
+#     "1102": "Agronomy and Crop Science",
+#     "1103": "Animal Science and Zoology",
+#     "1104": "Aquatic Science",
+#     "1105": "Ecology, Behavior and Systematics",
+#     "1106": "Food Science",
+#     "1107": "Forestry",
+#     "1108": "Horticulture",
+#     "1109": "Insect Science",
+#     "1110": "Plant Science",
+#     "1111": "Soil Science",
+#     "1200": "Arts and Humanities (all)",
+#     "1201": "Arts and Humanities (miscellaneous)",
+#     "1202": "History",
+#     "1203": "Language and Linguistics",
+#     "1204": "Archaeology",
+#     "1205": "Classics",
+#     "1206": "Conservation",
+#     "1207": "History and Philosophy of Science",
+#     "1208": "Literature and Literary Theory",
+#     "1209": "Museology",
+#     "1210": "Music",
+#     "1211": "Philosophy",
+#     "1212": "Religious Studies",
+#     "1213": "Visual Arts and Performing Arts",
+#     "1302": "Ageing",
+#     "1303": "Biochemistry",
+#     "1304": "Biophysics",
+#     "1305": "Biotechnology",
+#     "1306": "Cancer Research",
+#     "1307": "Cell Biology",
+#     "1308": "Clinical Biochemistry",
+#     "1309": "Developmental Biology",
+#     "1310": "Endocrinology",
+#     "1311": "Genetics",
+#     "1312": "Molecular Biology",
+#     "1313": "Molecular Medicine",
+#     "1314": "Physiology",
+#     "1315": "Structural Biology",
+#     "1402": "Accounting",
+#     "1403": "Business and International Management",
+#     "1404": "Management Information Systems",
+#     "1405": "Management of Technology and Innovation",
+#     "1406": "Business",
+#     "1407": "Organizational Behavior and Human Resource Management",
+#     "1408": "Strategy and Management",
+#     "1409": "Tourism",
+#     "1410": "Industrial Relations",
+#     "1500": "Chemical Engineering (all)",
+#     "1501": "Chemical Engineering (miscellaneous)",
+#     "1502": "Bioengineering",
+#     "1503": "Catalysis",
+#     "1504": "Chemical Health and Safety",
+#     "1505": "Colloid and Surface Chemistry",
+#     "1506": "Filtration and Separation",
+#     "1507": "Fluid Flow and Transfer Processes",
+#     "1508": "Process Chemistry and Technology",
+#     "1600": "Chemistry (all)",
+#     "1601": "Chemistry (miscellaneous)",
+#     "1602": "Analytical Chemistry",
+#     "1603": "Electrochemistry",
+#     "1604": "Inorganic Chemistry",
+#     "1605": "Organic Chemistry",
+#     "1606": "Physical and Theoretical Chemistry",
+#     "1607": "Spectroscopy",
+#     "1700": "Computer Science (all)",
+#     "1701": "Computer Science (miscellaneous)",
+#     "1702": "Artificial Intelligence",
+#     "1703": "Computational Theory and Mathematics",
+#     "1704": "Computer Graphics and Computer-Aided Design",
+#     "1705": "Computer Networks and Communications",
+#     "1706": "Computer Science Applications",
+#     "1707": "Computer Vision and Pattern Recognition",
+#     "1708": "Hardware and Architecture",
+#     "1709": "Human-Computer Interaction",
+#     "1710": "Information Systems",
+#     "1711": "Signal Processing",
+#     "1712": "Software",
+#     "1800": "Decision Sciences (all)",
+#     "1801": "Decision Sciences (miscellaneous)",
+#     "1802": "Information Systems and Management",
+#     "1803": "Management Science and Operations Research",
+#     "1804": "Statistics",
+#     "1900": "Earth and Planetary Sciences (all)",
+#     "1901": "Earth and Planetary Sciences (miscellaneous)",
+#     "1902": "Atmospheric Science",
+#     "1903": "Computers in Earth Sciences",
+#     "1904": "Earth-Surface Processes",
+#     "1905": "Economic Geology",
+#     "1906": "Geochemistry and Petrology",
+#     "1907": "Geology",
+#     "1908": "Geophysics",
+#     "1909": "Geotechnical Engineering and Engineering Geology",
+#     "1910": "Oceanography",
+#     "1911": "Palaeontology",
+#     "1912": "Space and Planetary Science",
+#     "1913": "Stratigraphy",
+#     "2002": "Economics and Econometrics",
+#     "2003": "Finance",
+#     "2100": "Energy (all)",
+#     "2101": "Energy (miscellaneous)",
+#     "2102": "Energy Engineering and Power Technology",
+#     "2103": "Fuel Technology",
+#     "2104": "Nuclear Energy and Engineering",
+#     "2105": "Renewable Energy",
+#     "2200": "Engineering (all)",
+#     "2201": "Engineering (miscellaneous)",
+#     "2202": "Aerospace Engineering",
+#     "2203": "Automotive Engineering",
+#     "2204": "Biomedical Engineering",
+#     "2205": "Civil and Structural Engineering",
+#     "2206": "Computational Mechanics",
+#     "2207": "Control and Systems Engineering",
+#     "2208": "Electrical and Electronic Engineering",
+#     "2209": "Industrial and Manufacturing Engineering",
+#     "2210": "Mechanical Engineering",
+#     "2211": "Mechanics of Materials",
+#     "2212": "Ocean Engineering",
+#     "2213": "Safety, Reliability and Quality",
+#     "2214": "Media Technology",
+#     "2215": "Building and Construction",
+#     "2216": "Architecture",
+#     "2300": "Environmental Science (all)",
+#     "2301": "Environmental Science (miscellaneous)",
+#     "2302": "Ecological Modelling",
+#     "2303": "Ecology",
+#     "2304": "Environmental Chemistry",
+#     "2305": "Environmental Engineering",
+#     "2306": "Global and Planetary Change",
+#     "2308": "Management Policy and Law",
+#     "2309": "Nature and Landscape Conservation",
+#     "2310": "Pollution",
+#     "2311": "Waste Management and Disposal",
+#     "2312": "Water Science and Technology",
+#     "2400": "Immunology and Microbiology (all)",
+#     "2401": "Immunology and Microbiology (miscellaneous)",
+#     "2402": "Applied Microbiology and Biotechnology",
+#     "2403": "Immunology",
+#     "2404": "Microbiology",
+#     "2405": "Parasitology",
+#     "2406": "Virology",
+#     "2500": "Materials Science (all)",
+#     "2501": "Materials Science (miscellaneous)",
+#     "2502": "Biomaterials",
+#     "2503": "Ceramics and Composites",
+#     "2505": "Materials Chemistry",
+#     "2506": "Metals and Alloys",
+#     "2507": "Polymers and Plastics",
+#     "2600": "Mathematics (all)",
+#     "2601": "Mathematics (miscellaneous)",
+#     "2602": "Algebra and Number Theory",
+#     "2603": "Analysis",
+#     "2604": "Applied Mathematics",
+#     "2605": "Computational Mathematics",
+#     "2606": "Control and Optimization",
+#     "2607": "Discrete Mathematics and Combinatorics",
+#     "2608": "Geometry and Topology",
+#     "2609": "Logic",
+#     "2610": "Mathematical Physics",
+#     "2611": "Modelling and Simulation",
+#     "2612": "Numerical Analysis",
+#     "2613": "Statistics and Probability",
+#     "2614": "Theoretical Computer Science",
+#     "2700": "Medicine (all)",
+#     "2701": "Medicine (miscellaneous)",
+#     "2702": "Anatomy",
+#     "2703": "Anesthesiology and Pain Medicine",
+#     "2705": "Cardiology and Cardiovascular Medicine",
+#     "2706": "Critical Care and Intensive Care Medicine",
+#     "2707": "Complementary and Alternative Medicine",
+#     "2708": "Dermatology",
+#     "2709": "Drug Guides",
+#     "2710": "Embryology",
+#     "2711": "Emergency Medicine",
+#     "2713": "Epidemiology",
+#     "2714": "Family Practice",
+#     "2715": "Gastroenterology",
+#     "2716": "Genetics (clinical)",
+#     "2717": "Geriatrics and Gerontology",
+#     "2718": "Health Informatics",
+#     "2719": "Health Policy",
+#     "2720": "Hematology",
+#     "2721": "Hepatology",
+#     "2722": "Histology",
+#     "2723": "Immunology and Allergy",
+#     "2724": "Internal Medicine",
+#     "2725": "Infectious Diseases",
+#     "2726": "Microbiology (medical)",
+#     "2727": "Nephrology",
+#     "2728": "Clinical Neurology",
+#     "2729": "Obstetrics and Gynaecology",
+#     "2730": "Oncology",
+#     "2731": "Ophthalmology",
+#     "2732": "Orthopedics and Sports Medicine",
+#     "2733": "Otorhinolaryngology",
+#     "2734": "Pathology and Forensic Medicine",
+#     "2735": "Pediatrics and Child Health",
+#     "2736": "Pharmacology (medical)",
+#     "2737": "Physiology (medical)",
+#     "2738": "Psychiatry and Mental Health",
+#     "2739": "Public Health",
+#     "2740": "Pulmonary and Respiratory Medicine",
+#     "2741": "Radiology Nuclear Medicine and Imaging",
+#     "2742": "Rehabilitation",
+#     "2743": "Reproductive Medicine",
+#     "2745": "Rheumatology",
+#     "2746": "Surgery",
+#     "2747": "Transplantation",
+#     "2748": "Urology",
+#     "2800": "Neuroscience (all)",
+#     "2801": "Neuroscience (miscellaneous)",
+#     "2802": "Behavioral Neuroscience",
+#     "2803": "Biological Psychiatry",
+#     "2804": "Cellular and Molecular Neuroscience",
+#     "2805": "Cognitive Neuroscience",
+#     "2806": "Developmental Neuroscience",
+#     "2807": "Endocrine and Autonomic Systems",
+#     "2808": "Neurology",
+#     "2809": "Sensory Systems",
+#     "2900": "Nursing (all)",
+#     "2901": "Nursing (miscellaneous)",
+#     "2902": "Advanced and Specialised Nursing",
+#     "2903": "Assessment and Diagnosis",
+#     "2904": "Care Planning",
+#     "2905": "Community and Home Care",
+#     "2906": "Critical Care",
+#     "2907": "Emergency",
+#     "2908": "Fundamentals and Skills",
+#     "2909": "Gerontology",
+#     "2911": "Leadership and Management",
+#     "2912": "LPN and LVN",
+#     "2913": "Maternity and Midwifery",
+#     "2914": "Medical–Surgical",
+#     "2915": "Nurse Assisting",
+#     "2916": "Nutrition and Dietetics",
+#     "2917": "Oncology (nursing)",
+#     "2918": "Pathophysiology",
+#     "2919": "Pediatrics",
+#     "2920": "Pharmacology (nursing)",
+#     "2921": "Phychiatric Mental Health",
+#     "2922": "Research and Theory",
+#     "2923": "Review and Exam Preparation",
+#     "3002": "Drug Discovery",
+#     "3003": "Pharmaceutical Science",
+#     "3004": "Pharmacology",
+#     "3005": "Toxicology",
+#     "3100": "Physics and Astronomy (all)",
+#     "3101": "Physics and Astronomy (miscellaneous)",
+#     "3102": "Acoustics and Ultrasonics",
+#     "3103": "Astronomy and Astrophysics",
+#     "3104": "Condensed Matter Physics",
+#     "3105": "Instrumentation",
+#     "3106": "Nuclear and High Energy Physics",
+#     "3107": "Atomic and Molecular Physics",
+#     "3108": "Radiation",
+#     "3109": "Statistical and Nonlinear Physics",
+#     "3110": "Surfaces and Interfaces",
+#     "3200": "Psychology (all)",
+#     "3201": "Psychology (miscellaneous)",
+#     "3202": "Applied Psychology",
+#     "3203": "Clinical Psychology",
+#     "3204": "Developmental and Educational Psychology",
+#     "3205": "Experimental and Cognitive Psychology",
+#     "3206": "Neuropsychology and Physiological Psychology",
+#     "3207": "Social Psychology",
+#     "3300": "Social Sciences (all)",
+#     "3301": "Social Sciences (miscellaneous)",
+#     "3302": "Archaeology",
+#     "3303": "Development",
+#     "3304": "Education",
+#     "3305": "Geography",
+#     "3306": "Health (social science)",
+#     "3307": "Human Factors and Ergonomics",
+#     "3308": "Law",
+#     "3309": "Library and Information Sciences",
+#     "3310": "Linguistics and Language",
+#     "3311": "Safety Research",
+#     "3312": "Sociology and Political Science",
+#     "3313": "Transportation",
+#     "3314": "Anthropology",
+#     "3315": "Communication",
+#     "3316": "Cultural Studies",
+#     "3317": "Demography",
+#     "3318": "Gender Studies",
+#     "3319": "Life-span and Life-course Studies",
+#     "3320": "Political Science and International Relations",
+#     "3321": "Public Administration",
+#     "3322": "Urban Studies",
+#     "3400": "Veterinary (all)",
+#     "3401": "Veterinary (miscellaneous)",
+#     "3402": "Equine",
+#     "3403": "Food Animals",
+#     "3404": "Small Animals",
+#     "3500": "Dentistry (all)",
+#     "3501": "Dentistry (miscellaneous)",
+#     "3502": "Dental Assisting",
+#     "3503": "Dental Hygiene",
+#     "3504": "Oral Surgery",
+#     "3505": "Orthodontics",
+#     "3506": "Periodontics",
+#     "3600": "Health Professions (all)",
+#     "3601": "Health Professions (miscellaneous)",
+#     "3602": "Chiropractics",
+#     "3603": "Complementary and Manual Therapy",
+#     "3604": "Emergency Medical Services",
+#     "3605": "Health Information Management",
+#     "3606": "Medical Assisting and Transcription",
+#     "3607": "Medical Laboratory Technology",
+#     "3608": "Medical Terminology",
+#     "3609": "Occupational Therapy",
+#     "3610": "Optometry",
+#     "3611": "Pharmacy",
+#     "3613": "Podiatry",
+#     "3614": "Radiological and Ultrasound Technology",
+#     "3615": "Respiratory Care",
+#     "3616": "Speech and Hearing",
+#     # Add more categories as needed...
+# }
+
+# # Precompute ASJC embeddings
+# asjc_embeddings = {code: sbert_model.encode(category, convert_to_tensor=True) for code, category in asjc_mapping.items()}
+
+# def match_asjc_codes(text):
+#     """Matches input text with ASJC codes based on similarity."""
+#     if not text.strip():
+#         return []
+
+#     input_embedding = sbert_model.encode(text, convert_to_tensor=True)
+#     scores = []
+
+#     for code, category_embedding in asjc_embeddings.items():
+#         similarity = util.pytorch_cos_sim(input_embedding, category_embedding).item()
+#         scores.append((code, asjc_mapping[code], similarity))
+
+#     # Sort by similarity (highest first)
+#     scores.sort(key=lambda x: x[2], reverse=True)
+
+#     # Return top 3-5 matches dynamically
+#     if len(scores) > 3 and scores[3][2] > 0.65:
+#         return scores[:5] if len(scores) > 4 and scores[4][2] > 0.6 else scores[:4]
+    
+#     return scores[:3]
+
+# def asjc_matcher_view(request):
+#     """Django view to handle ASJC code matching."""
+#     matched_codes = []
+#     input_text = ""
+
+#     if request.method == "POST":
+#         input_text = request.POST.get("text", "")
+#         matched_codes = match_asjc_codes(input_text)
+
+#     return render(request, "asjc_matcher.html", {"matched_codes": matched_codes, "input_text": input_text})
+
+
+
+import json
+import pandas as pd
+import spacy
+import torch
+from django.shortcuts import render
+from django.http import JsonResponse
+from sentence_transformers import SentenceTransformer, util
+
+# Load spaCy model
+nlp = spacy.load("en_core_web_md")
+
+# Load Sentence Transformers model
+sbert_model = SentenceTransformer("all-MiniLM-L6-v2")
+
+# ASJC Mapping Dictionary
+asjc_mapping = {
+     "1000": "General",
+    "1100": "Agricultural and Biological Sciences (all)",
+    "1101": "Agricultural and Biological Sciences (miscellaneous)",
+    "1102": "Agronomy and Crop Science",
+    "1103": "Animal Science and Zoology",
+    "1104": "Aquatic Science",
+    "1105": "Ecology, Behavior and Systematics",
+    "1106": "Food Science",
+    "1107": "Forestry",
+    "1108": "Horticulture",
+    "1109": "Insect Science",
+    "1110": "Plant Science",
+    "1111": "Soil Science",
+    "1200": "Arts and Humanities (all)",
+    "1201": "Arts and Humanities (miscellaneous)",
+    "1202": "History",
+    "1203": "Language and Linguistics",
+    "1204": "Archaeology",
+    "1205": "Classics",
+    "1206": "Conservation",
+    "1207": "History and Philosophy of Science",
+    "1208": "Literature and Literary Theory",
+    "1209": "Museology",
+    "1210": "Music",
+    "1211": "Philosophy",
+    "1212": "Religious Studies",
+    "1213": "Visual Arts and Performing Arts",
+    "1302": "Ageing",
+    "1303": "Biochemistry",
+    "1304": "Biophysics",
+    "1305": "Biotechnology",
+    "1306": "Cancer Research",
+    "1307": "Cell Biology",
+    "1308": "Clinical Biochemistry",
+    "1309": "Developmental Biology",
+    "1310": "Endocrinology",
+    "1311": "Genetics",
+    "1312": "Molecular Biology",
+    "1313": "Molecular Medicine",
+    "1314": "Physiology",
+    "1315": "Structural Biology",
+    "1402": "Accounting",
+    "1403": "Business and International Management",
+    "1404": "Management Information Systems",
+    "1405": "Management of Technology and Innovation",
+    "1406": "Business",
+    "1407": "Organizational Behavior and Human Resource Management",
+    "1408": "Strategy and Management",
+    "1409": "Tourism",
+    "1410": "Industrial Relations",
+    "1500": "Chemical Engineering (all)",
+    "1501": "Chemical Engineering (miscellaneous)",
+    "1502": "Bioengineering",
+    "1503": "Catalysis",
+    "1504": "Chemical Health and Safety",
+    "1505": "Colloid and Surface Chemistry",
+    "1506": "Filtration and Separation",
+    "1507": "Fluid Flow and Transfer Processes",
+    "1508": "Process Chemistry and Technology",
+    "1600": "Chemistry (all)",
+    "1601": "Chemistry (miscellaneous)",
+    "1602": "Analytical Chemistry",
+    "1603": "Electrochemistry",
+    "1604": "Inorganic Chemistry",
+    "1605": "Organic Chemistry",
+    "1606": "Physical and Theoretical Chemistry",
+    "1607": "Spectroscopy",
+    "1700": "Computer Science (all)",
+    "1701": "Computer Science (miscellaneous)",
+    "1702": "Artificial Intelligence",
+    "1703": "Computational Theory and Mathematics",
+    "1704": "Computer Graphics and Computer-Aided Design",
+    "1705": "Computer Networks and Communications",
+    "1706": "Computer Science Applications",
+    "1707": "Computer Vision and Pattern Recognition",
+    "1708": "Hardware and Architecture",
+    "1709": "Human-Computer Interaction",
+    "1710": "Information Systems",
+    "1711": "Signal Processing",
+    "1712": "Software",
+    "1800": "Decision Sciences (all)",
+    "1801": "Decision Sciences (miscellaneous)",
+    "1802": "Information Systems and Management",
+    "1803": "Management Science and Operations Research",
+    "1804": "Statistics",
+    "1900": "Earth and Planetary Sciences (all)",
+    "1901": "Earth and Planetary Sciences (miscellaneous)",
+    "1902": "Atmospheric Science",
+    "1903": "Computers in Earth Sciences",
+    "1904": "Earth-Surface Processes",
+    "1905": "Economic Geology",
+    "1906": "Geochemistry and Petrology",
+    "1907": "Geology",
+    "1908": "Geophysics",
+    "1909": "Geotechnical Engineering and Engineering Geology",
+    "1910": "Oceanography",
+    "1911": "Palaeontology",
+    "1912": "Space and Planetary Science",
+    "1913": "Stratigraphy",
+    "2002": "Economics and Econometrics",
+    "2003": "Finance",
+    "2100": "Energy (all)",
+    "2101": "Energy (miscellaneous)",
+    "2102": "Energy Engineering and Power Technology",
+    "2103": "Fuel Technology",
+    "2104": "Nuclear Energy and Engineering",
+    "2105": "Renewable Energy",
+    "2200": "Engineering (all)",
+    "2201": "Engineering (miscellaneous)",
+    "2202": "Aerospace Engineering",
+    "2203": "Automotive Engineering",
+    "2204": "Biomedical Engineering",
+    "2205": "Civil and Structural Engineering",
+    "2206": "Computational Mechanics",
+    "2207": "Control and Systems Engineering",
+    "2208": "Electrical and Electronic Engineering",
+    "2209": "Industrial and Manufacturing Engineering",
+    "2210": "Mechanical Engineering",
+    "2211": "Mechanics of Materials",
+    "2212": "Ocean Engineering",
+    "2213": "Safety, Reliability and Quality",
+    "2214": "Media Technology",
+    "2215": "Building and Construction",
+    "2216": "Architecture",
+    "2300": "Environmental Science (all)",
+    "2301": "Environmental Science (miscellaneous)",
+    "2302": "Ecological Modelling",
+    "2303": "Ecology",
+    "2304": "Environmental Chemistry",
+    "2305": "Environmental Engineering",
+    "2306": "Global and Planetary Change",
+    "2308": "Management Policy and Law",
+    "2309": "Nature and Landscape Conservation",
+    "2310": "Pollution",
+    "2311": "Waste Management and Disposal",
+    "2312": "Water Science and Technology",
+    "2400": "Immunology and Microbiology (all)",
+    "2401": "Immunology and Microbiology (miscellaneous)",
+    "2402": "Applied Microbiology and Biotechnology",
+    "2403": "Immunology",
+    "2404": "Microbiology",
+    "2405": "Parasitology",
+    "2406": "Virology",
+    "2500": "Materials Science (all)",
+    "2501": "Materials Science (miscellaneous)",
+    "2502": "Biomaterials",
+    "2503": "Ceramics and Composites",
+    "2505": "Materials Chemistry",
+    "2506": "Metals and Alloys",
+    "2507": "Polymers and Plastics",
+    "2600": "Mathematics (all)",
+    "2601": "Mathematics (miscellaneous)",
+    "2602": "Algebra and Number Theory",
+    "2603": "Analysis",
+    "2604": "Applied Mathematics",
+    "2605": "Computational Mathematics",
+    "2606": "Control and Optimization",
+    "2607": "Discrete Mathematics and Combinatorics",
+    "2608": "Geometry and Topology",
+    "2609": "Logic",
+    "2610": "Mathematical Physics",
+    "2611": "Modelling and Simulation",
+    "2612": "Numerical Analysis",
+    "2613": "Statistics and Probability",
+    "2614": "Theoretical Computer Science",
+    "2700": "Medicine (all)",
+    "2701": "Medicine (miscellaneous)",
+    "2702": "Anatomy",
+    "2703": "Anesthesiology and Pain Medicine",
+    "2705": "Cardiology and Cardiovascular Medicine",
+    "2706": "Critical Care and Intensive Care Medicine",
+    "2707": "Complementary and Alternative Medicine",
+    "2708": "Dermatology",
+    "2709": "Drug Guides",
+    "2710": "Embryology",
+    "2711": "Emergency Medicine",
+    "2713": "Epidemiology",
+    "2714": "Family Practice",
+    "2715": "Gastroenterology",
+    "2716": "Genetics (clinical)",
+    "2717": "Geriatrics and Gerontology",
+    "2718": "Health Informatics",
+    "2719": "Health Policy",
+    "2720": "Hematology",
+    "2721": "Hepatology",
+    "2722": "Histology",
+    "2723": "Immunology and Allergy",
+    "2724": "Internal Medicine",
+    "2725": "Infectious Diseases",
+    "2726": "Microbiology (medical)",
+    "2727": "Nephrology",
+    "2728": "Clinical Neurology",
+    "2729": "Obstetrics and Gynaecology",
+    "2730": "Oncology",
+    "2731": "Ophthalmology",
+    "2732": "Orthopedics and Sports Medicine",
+    "2733": "Otorhinolaryngology",
+    "2734": "Pathology and Forensic Medicine",
+    "2735": "Pediatrics and Child Health",
+    "2736": "Pharmacology (medical)",
+    "2737": "Physiology (medical)",
+    "2738": "Psychiatry and Mental Health",
+    "2739": "Public Health",
+    "2740": "Pulmonary and Respiratory Medicine",
+    "2741": "Radiology Nuclear Medicine and Imaging",
+    "2742": "Rehabilitation",
+    "2743": "Reproductive Medicine",
+    "2745": "Rheumatology",
+    "2746": "Surgery",
+    "2747": "Transplantation",
+    "2748": "Urology",
+    "2800": "Neuroscience (all)",
+    "2801": "Neuroscience (miscellaneous)",
+    "2802": "Behavioral Neuroscience",
+    "2803": "Biological Psychiatry",
+    "2804": "Cellular and Molecular Neuroscience",
+    "2805": "Cognitive Neuroscience",
+    "2806": "Developmental Neuroscience",
+    "2807": "Endocrine and Autonomic Systems",
+    "2808": "Neurology",
+    "2809": "Sensory Systems",
+    "2900": "Nursing (all)",
+    "2901": "Nursing (miscellaneous)",
+    "2902": "Advanced and Specialised Nursing",
+    "2903": "Assessment and Diagnosis",
+    "2904": "Care Planning",
+    "2905": "Community and Home Care",
+    "2906": "Critical Care",
+    "2907": "Emergency",
+    "2908": "Fundamentals and Skills",
+    "2909": "Gerontology",
+    "2911": "Leadership and Management",
+    "2912": "LPN and LVN",
+    "2913": "Maternity and Midwifery",
+    "2914": "Medical–Surgical",
+    "2915": "Nurse Assisting",
+    "2916": "Nutrition and Dietetics",
+    "2917": "Oncology (nursing)",
+    "2918": "Pathophysiology",
+    "2919": "Pediatrics",
+    "2920": "Pharmacology (nursing)",
+    "2921": "Phychiatric Mental Health",
+    "2922": "Research and Theory",
+    "2923": "Review and Exam Preparation",
+    "3002": "Drug Discovery",
+    "3003": "Pharmaceutical Science",
+    "3004": "Pharmacology",
+    "3005": "Toxicology",
+    "3100": "Physics and Astronomy (all)",
+    "3101": "Physics and Astronomy (miscellaneous)",
+    "3102": "Acoustics and Ultrasonics",
+    "3103": "Astronomy and Astrophysics",
+    "3104": "Condensed Matter Physics",
+    "3105": "Instrumentation",
+    "3106": "Nuclear and High Energy Physics",
+    "3107": "Atomic and Molecular Physics",
+    "3108": "Radiation",
+    "3109": "Statistical and Nonlinear Physics",
+    "3110": "Surfaces and Interfaces",
+    "3200": "Psychology (all)",
+    "3201": "Psychology (miscellaneous)",
+    "3202": "Applied Psychology",
+    "3203": "Clinical Psychology",
+    "3204": "Developmental and Educational Psychology",
+    "3205": "Experimental and Cognitive Psychology",
+    "3206": "Neuropsychology and Physiological Psychology",
+    "3207": "Social Psychology",
+    "3300": "Social Sciences (all)",
+    "3301": "Social Sciences (miscellaneous)",
+    "3302": "Archaeology",
+    "3303": "Development",
+    "3304": "Education",
+    "3305": "Geography",
+    "3306": "Health (social science)",
+    "3307": "Human Factors and Ergonomics",
+    "3308": "Law",
+    "3309": "Library and Information Sciences",
+    "3310": "Linguistics and Language",
+    "3311": "Safety Research",
+    "3312": "Sociology and Political Science",
+    "3313": "Transportation",
+    "3314": "Anthropology",
+    "3315": "Communication",
+    "3316": "Cultural Studies",
+    "3317": "Demography",
+    "3318": "Gender Studies",
+    "3319": "Life-span and Life-course Studies",
+    "3320": "Political Science and International Relations",
+    "3321": "Public Administration",
+    "3322": "Urban Studies",
+    "3400": "Veterinary (all)",
+    "3401": "Veterinary (miscellaneous)",
+    "3402": "Equine",
+    "3403": "Food Animals",
+    "3404": "Small Animals",
+    "3500": "Dentistry (all)",
+    "3501": "Dentistry (miscellaneous)",
+    "3502": "Dental Assisting",
+    "3503": "Dental Hygiene",
+    "3504": "Oral Surgery",
+    "3505": "Orthodontics",
+    "3506": "Periodontics",
+    "3600": "Health Professions (all)",
+    "3601": "Health Professions (miscellaneous)",
+    "3602": "Chiropractics",
+    "3603": "Complementary and Manual Therapy",
+    "3604": "Emergency Medical Services",
+    "3605": "Health Information Management",
+    "3606": "Medical Assisting and Transcription",
+    "3607": "Medical Laboratory Technology",
+    "3608": "Medical Terminology",
+    "3609": "Occupational Therapy",
+    "3610": "Optometry",
+    "3611": "Pharmacy",
+    "3613": "Podiatry",
+    "3614": "Radiological and Ultrasound Technology",
+    "3615": "Respiratory Care",
+    "3616": "Speech and Hearing",
+    # Add more codes as needed...
+}
+
+# Precompute ASJC embeddings
+asjc_embeddings = {code: sbert_model.encode(category, convert_to_tensor=True) for code, category in asjc_mapping.items()}
+
+def match_asjc_codes(text):
+    """Matches input text with ASJC codes based on similarity."""
+    if not text.strip():
+        return []
+
+    input_embedding = sbert_model.encode(text, convert_to_tensor=True)
+    scores = []
+
+    for code, category_embedding in asjc_embeddings.items():
+        similarity = util.pytorch_cos_sim(input_embedding, category_embedding).item()
+        scores.append((code, asjc_mapping[code], similarity))
+
+    scores.sort(key=lambda x: x[2], reverse=True)
+
+    # Dynamically select 3 to 5 matches
+
+    if scores[3][2] > 0.65:  # If the 4th match has a strong score, return 4 matches
+        if len(scores) > 4 and scores[4][2] > 0.6:  # If 5th match is also strong, return 5
+            return scores[:5]
+        return scores[:4]
+    return scores[:3]
+     
+    
+def asjc_matcher_view(request):
+    """Handles ASJC code matching via text input or CSV upload."""
+    if request.method == "POST":
+        if "text" in request.POST:
+            # Single text input
+            text = request.POST.get("text", "").strip()
+            if not text:
+                return JsonResponse({"error": "Text input is empty."}, status=400)
+
+            results = match_asjc_codes(text)  # Assume it returns a list of (code, category, similarity)
+            formatted_results = [
+                {"input_text": text, "asjc_code": code, "category": category, "similarity": similarity}
+                for code, category, similarity in results
+            ]
+
+            return JsonResponse({"matches": formatted_results})
+
+
+        elif "file" in request.FILES:
+            # Handle file upload
+            file = request.FILES.get("file", None)
+            if not file:
+                return JsonResponse({"error": "No file uploaded."}, status=400)
+
+            try:
+                df = pd.read_csv(file)
+                if "Title" not in df.columns and "Synopsis" not in df.columns:
+                    return JsonResponse({"error": "CSV must contain a 'Title' or 'Synopsis' column."}, status=400)
+
+                text_column = "Title" if "Title" in df.columns else "Synopsis"
+                results = []
+
+                for _, row in df.iterrows():
+                    text = str(row[text_column])
+                    matched_results = match_asjc_codes(text)
+                    for code, category, similarity in matched_results:
+                        results.append([text, code, category, similarity])
+
+                # Convert results to DataFrame
+                result_df = pd.DataFrame(results, columns=["Input Text", "ASJC Code", "Category", "Similarity"])
+                csv_data = result_df.to_csv(index=False)
+
+                return JsonResponse({"csv_data": csv_data, "matches": results})
+
+            except Exception as e:
+                return JsonResponse({"error": f"Error processing file: {str(e)}"}, status=400)
+
+    return render(request, "asjc_matcher.html")
+
+
+
+
+################################END HERE######################################
+
+#########speical character remover #################
+from django.shortcuts import render
+from django.http import HttpResponse
+import pandas as pd
+import re
+from io import StringIO
+
+# Define restricted characters
+restricted_chars = {
+    "\"": "quotation mark (U+0022)",
+    "\\": "reverse solidus (U+005C)",
+    "\b": "backspace (U+0008)",
+    "\f": "form feed (U+000C)",
+    "\n": "line feed (U+000A)",
+    "\r": "carriage return (U+000D)",
+    "\t": "tabulation (U+0009)"
+}
+
+# Compile regex pattern for checking restricted characters
+pattern = re.compile("|".join(re.escape(char) for char in restricted_chars.keys()))
+
+def scan_csv_for_invalid_chars(df):
+    """
+    Scans a DataFrame for restricted characters and returns errors.
+    """
+    errors = []
+    for col in df.columns:
+        if df[col].dtype == 'object':  # Only check string columns
+            for idx, value in df[col].items():
+                if isinstance(value, str):
+                    match = pattern.search(value)
+                    if match:
+                        errors.append(
+                            f"❌ Restricted character '{match.group()}' found in column '{col}' at row {idx + 1}. ({restricted_chars[match.group()]})"
+                        )
+    return errors
+
+def clean_csv(df):
+    """
+    Removes restricted characters from string data in the DataFrame.
+    """
+    for col in df.columns:
+        if df[col].dtype == 'object':
+            df[col] = df[col].apply(lambda x: pattern.sub("", x) if isinstance(x, str) else x)
+    return df
+
+def csv_validator_view(request):
+    """
+    Handles CSV upload, validation, correction, and download.
+    """
+    context = {"errors": [], "original_csv": None, "fixed_csv": None, "fixed_filename": None}
+
+    if request.method == "POST" and request.FILES.get("csv_file"):
+        uploaded_file = request.FILES["csv_file"]
+        original_filename = uploaded_file.name
+        fixed_filename = original_filename.replace(".csv", "_fixed.csv")
+
+        try:
+            # Read CSV into DataFrame
+            csv_data = pd.read_csv(uploaded_file)
+
+            # Scan for invalid characters
+            errors = scan_csv_for_invalid_chars(csv_data)
+
+            if errors:
+                context["errors"] = errors
+
+                # Clean CSV
+                fixed_csv_data = clean_csv(csv_data.copy())
+
+                # Convert to CSV for rendering and download
+                csv_buffer = StringIO()
+                fixed_csv_data.to_csv(csv_buffer, index=False)
+                csv_buffer.seek(0)
+
+                # Store CSV data in context for download
+                context["fixed_csv"] = csv_buffer.getvalue()
+                context["fixed_filename"] = fixed_filename
+
+            context["original_csv"] = csv_data.to_html(classes="table table-bordered", index=False)
+
+        except Exception as e:
+            context["errors"].append(f"❌ Error processing CSV file: {e}")
+
+    # Handle CSV download
+    if request.method == "POST" and "download_csv" in request.POST:
+        fixed_csv_data = request.POST.get("fixed_csv")
+        fixed_filename = request.POST.get("fixed_filename", "fixed_file.csv")
+
+        if fixed_csv_data:
+            response = HttpResponse(fixed_csv_data, content_type="text/csv")
+            response["Content-Disposition"] = f'attachment; filename="{fixed_filename}"'
+            return response
+
+    return render(request, "csv_validator.html", context)
+
+
+########### end  #############################
+
+
+#################scrapper using selenium Toool #######################################
+
+import time
+import pandas as pd
+import csv
+import io
+from django.shortcuts import render
+from django.http import HttpResponse
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from bs4 import BeautifulSoup
+
+def extract_tr_data(html_content):
+    """Extracts unique <tr> data from a page."""
+    soup = BeautifulSoup(html_content, "html.parser")
+    extracted_data = []
+    rows = soup.find_all("tr")
+
+    for row in rows:
+        cells = tuple(cell.get_text(strip=True) for cell in row.find_all(["td", "th"]))
+        if cells and cells not in extracted_data:
+            extracted_data.append(cells)  # Ensure no duplicates
+
+    return extracted_data
+
+def extract_additional_tags(html_content):
+    """Extracts specific tags like <div><p><em> and <p><time>."""
+    soup = BeautifulSoup(html_content, "html.parser")
+    extracted_data = []
+
+    for tag in soup.find_all(["div", "p", "em", "time"]):
+        text = tag.get_text(strip=True)
+        if text and text not in extracted_data:
+            extracted_data.append(text)
+
+    return extracted_data
+
+def handle_cookies(driver):
+    """Handles cookie popups by clicking Accept/OK if found."""
+    cookie_buttons = [
+        "//button[contains(text(), 'Accept')]",
+        "//button[contains(text(), 'I Agree')]",
+        "//button[contains(text(), 'OK')]",
+        "//button[contains(text(), 'Close')]",
+    ]
+    for xpath in cookie_buttons:
+        try:
+            button = WebDriverWait(driver, 3).until(EC.element_to_be_clickable((By.XPATH, xpath)))
+            button.click()
+            time.sleep(2)
+            break
+        except:
+            continue
+
+def get_all_read_more_links(driver):
+    """Finds all 'Read More' links and returns unique hrefs."""
+    read_more_links = set()
+    read_more_buttons = driver.find_elements(
+        By.XPATH, "//a[contains(translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'read')]"
+    )
+
+    for btn in read_more_buttons:
+        try:
+            link = btn.get_attribute("href")
+            if link:
+                read_more_links.add(link)  # Using set to remove duplicates
+        except:
+            continue
+
+    return list(read_more_links)  # Convert back to list for indexing
+
+def scrape_all_pages(url):
+    """Extracts all 'Read More' data dynamically and returns it as a list of dictionaries."""
+    
+    # Initialize Selenium WebDriver
+    chrome_options = Options()
+    chrome_options.add_argument("--headless")  # Run in headless mode
+    chrome_options.add_argument("--start-maximized")
+
+    service = Service(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=service, options=chrome_options)
+    driver.get(url)
+    time.sleep(3)
+
+    handle_cookies(driver)
+
+    scraped_data = []
+
+    # Step 1: Collect all unique "Read More" links first
+    read_more_links = get_all_read_more_links(driver)
+
+    # Step 2: Visit each link and extract data, then return to main page
+    for index, link in enumerate(read_more_links):
+        try:
+            driver.execute_script("window.open('', '_blank');")
+            driver.switch_to.window(driver.window_handles[1])
+            driver.get(link)
+            time.sleep(3)
+
+            handle_cookies(driver)
+
+            # Extract title
+            try:
+                title_element = driver.find_element(By.XPATH, "//h1|//h2|//h3")
+                title_text = title_element.text.strip() if title_element.text.strip() else f"Entry {index+1}"
+            except:
+                title_text = f"Entry {index+1}"
+
+            # Extract <tr> data
+            page_source = driver.page_source
+            tr_data = extract_tr_data(page_source)
+            additional_data = extract_additional_tags(page_source)
+
+            # Store extracted data, avoiding duplicates
+            for row in tr_data:
+                record = {"Title": title_text, "Row_Data": row, "Additional_Tags": " | ".join(additional_data)}
+               
+
+                if record not in scraped_data:
+                    scraped_data.append(record)
+
+            driver.close()
+            driver.switch_to.window(driver.window_handles[0])
+
+        except Exception as e:
+            print(f"[ERROR] Skipping link {index}: {e}")
+
+    driver.quit()
+    return scraped_data
+
+def scrapper_views(request):
+    """Handles web scraping and displays results with a download option."""
+    data = []
+
+    if request.method == "POST":
+        url = request.POST.get("url")
+        if url:
+            data = scrape_all_pages(url)
+            request.session["scraped_data"] = data  # Store data in session
+
+    return render(request, "selenium_scrapper.html", {"data": data})
+
+def download_csv(request):
+    """Exports scraped data to CSV."""
+    data = request.session.get("scraped_data", [])
+    if not data:
+        return HttpResponse("No data to export", content_type="text/plain")
+
+    response = HttpResponse(content_type="text/csv")
+    response["Content-Disposition"] = 'attachment; filename="scraped_content.csv"'
+
+    writer = csv.writer(response)
+    writer.writerow(["Title", "Row_Data", "Additional_Tags"])
+
+    for item in data:
+        writer.writerow([item["Title"], ", ".join(item["Row_Data"]), item["Additional_Tags"]])
+
+    return response
+
+
+##############################################################################################
+
+
+#############json validator############################
+################################################
+
+
+# import json
+# import re
+# from django.shortcuts import render
+# from django.http import HttpResponse
+# from django.views.decorators.csrf import csrf_exempt
+
+# # Define restricted characters
+# restricted_chars = {
+#     "\"": "quotation mark (U+0022)",
+#     "\\": "reverse solidus (U+005C)",
+#     "\b": "backspace (U+0008)",
+#     "\f": "form feed (U+000C)",
+#     "\n": "line feed (U+000A)",
+#     "\r": "carriage return (U+000D)",
+#     "\t": "tabulation (U+0009)"
+# }
+
+# # Compile regex pattern for checking restricted characters
+# pattern = re.compile("|".join(re.escape(char) for char in restricted_chars.keys()))
+
+# def scan_json_for_invalid_chars(json_data, path="root"):
+#     """ Recursively scans JSON data for restricted characters """
+#     errors = []
+#     if isinstance(json_data, dict):
+#         for key, value in json_data.items():
+#             errors.extend(scan_json_for_invalid_chars(key, f"{path} -> key '{key}'"))
+#             errors.extend(scan_json_for_invalid_chars(value, f"{path} -> key '{key}'"))
+#     elif isinstance(json_data, list):
+#         for index, item in enumerate(json_data):
+#             errors.extend(scan_json_for_invalid_chars(item, f"{path} -> index [{index}]"))
+#     elif isinstance(json_data, str):
+#         match = pattern.search(json_data)
+#         if match:
+#             errors.append(f"❌ Restricted character '{match.group()}' found at {path}. ({restricted_chars[match.group()]})")
+#     return errors
+
+# def clean_json(json_data):
+#     """ Recursively removes restricted characters from JSON data but keeps slashes (`/`) """
+#     if isinstance(json_data, dict):
+#         return {key: clean_json(value) for key, value in json_data.items()}
+#     elif isinstance(json_data, list):
+#         return [clean_json(item) for item in json_data]
+#     elif isinstance(json_data, str):
+#         return pattern.sub("", json_data)  # Remove restricted characters but not `/`
+#     return json_data
+
+# @csrf_exempt
+# def json_validator_view(request):
+#     if request.method == "POST" and request.FILES.get("json_file"):
+#         uploaded_file = request.FILES["json_file"]
+
+#         try:
+#             # Load JSON data
+#             json_data = json.load(uploaded_file)
+#             errors = scan_json_for_invalid_chars(json_data)
+
+#             # If there are errors, clean the JSON
+#             fixed_json_data = clean_json(json_data) if errors else json_data
+
+#             return render(request, "json_validator.html", {
+#                 "original_json": json.dumps(json_data, indent=4),
+#                 "errors": errors,
+#                 "fixed_json": json.dumps(fixed_json_data, indent=4) if errors else None,
+#                 "filename": uploaded_file.name.replace(".json", "_fixed.json") if errors else None,
+#                 "is_valid": not bool(errors),  # True if no errors, False otherwise
+#             })
+
+#         except json.JSONDecodeError as e:
+#             return render(request, "json_validator.html", {"error": f"❌ Invalid JSON format: {e}"})
+
+#     return render(request, "json_validator.html")
+
+
+##################end here######################################
+
+
 
 #view for funding body /award/opportunity
 from django.shortcuts import render
@@ -2747,7 +3882,7 @@ def opportunity_view(request):
 
 # 17:40
 
-#view code of ingestion of files ###########################
+#################view code of ingestion of files ###########################
 ################################################################################################
 ##############################################################################################
 
@@ -2908,6 +4043,9 @@ def file_ingestion(request):
                             f"Ingestion ID: {ingestion_id}, ID: {ingestion_item_id}, Batch ID: {batch_id}"
                         )
                         logging.info(log_message)
+                        
+                        # Store details in the database
+                        store_ingestion_details(user_name, ingestion_id, ingestion_item_id, batch_id)
 
                     if response.status_code == 200:
                         context["message"] = "File ingested successfully!"
@@ -2951,6 +4089,34 @@ def file_ingestion(request):
 
     return render(request, "ingestion_template.html", context)
 
+
+
+
+#####view code for storing imgestion details in db  ##########
+
+from .models import IngestionLog  # Import the model
+
+def store_ingestion_details(user_name, ingestion_id, ingestion_item_id, batch_id):
+    """Store ingestion details in the database."""
+    IngestionLog.objects.create(
+        user_name=user_name,
+        ingestion_id=ingestion_id,
+        ingestion_item_id=ingestion_item_id,
+        batch_id=batch_id,
+        status="Success"  # Initially set status as Success, update if needed
+    )
+
+
+
+#############################end#########################################
+
+from django.contrib.auth.models import User  # If using a custom user model, import that
+from django.shortcuts import render
+
+@login_required
+def user_list(request):
+    users = User.objects.all()  # Fetch all users
+    return render(request, 'users_list.html', {'users': users})
 
 
 ###########################ending view of ingestion ###############################################################

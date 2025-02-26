@@ -389,7 +389,7 @@
 </head>
 <body>
     <header>
-        <img src="{% static 'images/logoimage.jpg' %}" alt="MPS Logo">
+        <img src="{% static 'images/logimage.png' %}" alt="MPS Logo">
         <h2> Manage Your Awards Data</h2>
         
     </header>
@@ -416,9 +416,9 @@
                 </li>
          <li><i class="fas fa-download"></i></i><a href="{% static 'pdfs/asjc_mapping.xlsx' %}"> ASJC Mapping Sheet</a></li>
               
-                <li><i class="fas fa-eye"></i><a href="{% url 'awards' %}">View Updated JSONs</a></li>
+                <li><i class="fas fa-eye"></i><a href="{% url 'user_list' %}">Active Users </a></li>
                 <li><i class="fas fa-plus"></i><a href="{% url 'awards' %}">View Added JSONs</a></li>
-                <li><i class="fas fa-history"></i><a href="{% url 'awards' %}">View History</a></li>
+                <li><i class="fas fa-history"></i><a href="{% url 'awards' %}">Ingestion log</a></li>
             </ul>
         </div>
 

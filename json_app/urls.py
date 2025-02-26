@@ -38,6 +38,16 @@ from .views import scraper_view
 from django.urls import include, path
 from .views import web_scraper_view
 
+from .views import asjc_matcher_view
+
+from .views import csv_validator_view
+
+from .views import scrapper_views, download_csv
+
+# from .views import json_validator_view
+from .views import user_list
+
+
 
 
 
@@ -77,16 +87,16 @@ urlpatterns = [
           
           
           
-  #ingestion view path
-  # path('ingestion_template/',views.file_ingestion, name='file_ingestion'),
-          path('ingestion_template/', views.file_ingestion, name='ingestion_template'),
-          # path('ingestion/', views.file_ingestion, name='file_ingestion'),
+    #ingestion view path
+    # path('ingestion_template/',views.file_ingestion, name='file_ingestion'),
+    path('ingestion_template/', views.file_ingestion, name='ingestion_template'),
+    # path('ingestion/', views.file_ingestion, name='file_ingestion'),
           
           
           
-          #date 15/01/2025
-          # path('admin/', admin.site.urls),
-          # path('accounts/', include('allauth.urls')), 
+    #date 15/01/2025
+    # path('admin/', admin.site.urls),
+    # path('accounts/', include('allauth.urls')), 
                
 
     # path('manage-files/', views.manage_files, name='manage_files'),
@@ -101,28 +111,40 @@ urlpatterns = [
     # Include allauth URLs
     path('accounts/', include('allauth.urls')),
     
-     path('dashboard/', views.dashboard_view, name='dashboard'),
+    path('dashboard/', views.dashboard_view, name='dashboard'),
      
-      path('qa-checklist/', views.qa_checklist, name='qa_checklist'),
+    path('qa-checklist/', views.qa_checklist, name='qa_checklist'),
       
-      path('toolbox/', views.toolbox, name='toolbox'),  # Toolbox page URL
-      
-      
+    path('toolbox/', views.toolbox, name='toolbox'),  # Toolbox page URL
       
       
-      path('pdf-viewer/', views.pdf_viewer, name='pdf_viewer'),
       
-     path('upload_file/', views.upload_file, name='upload_file'),
+      
+    path('pdf-viewer/', views.pdf_viewer, name='pdf_viewer'),
+      
+    path('upload_file/', views.upload_file, name='upload_file'),
      
      
      
 
-     path('scraper/', scraper_view, name='scraper_tool'),
+    path('scraper/', scraper_view, name='scraper_tool'),
      
-      path('web-scraper/', web_scraper_view, name='web_scraper_tool'),
+    path('web-scraper/', web_scraper_view, name='web_scraper_tool'),
+      
+    path('asjc-matcher/', asjc_matcher_view, name='asjc_matcher'),
+       
+    path("csv-validator/", csv_validator_view, name="csv_validator"),
+       
+    path("selenium_scrapper/", scrapper_views, name="selenium_scrapper"),
+    path("selenium_scrapper/download-csv/", download_csv, name="download_csv"),   
+       
+    # path("json-validator/", json_validator_view, name="json_validator"),
     
-]
+    
+      
+    path('users/', user_list, name='user_list'),
 
+]
 
 
 
