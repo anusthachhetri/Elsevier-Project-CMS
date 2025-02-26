@@ -23,20 +23,20 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myproject.settings')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+USE_X_FORWARDED_HOST = True
 
 
-
-<<<<<<< HEAD
+#<<<<<<< HEAD
 # from django.conf import settings
 # from django.conf.urls.static import static
 SITE_ID = 1
 # if settings.DEBUG:
-=======
+#=======
 
 #from django.conf import settings
 #from django.conf.urls.static import static
 #if settings.DEBUG:
->>>>>>> ed162d022ff3746cae44ae94bef7bcf6f8ae0812
+#>>>>>>> ed162d022ff3746cae44ae94bef7bcf6f8ae0812
 #     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
@@ -45,7 +45,7 @@ SITE_ID = 1
 
 from mongoengine import connect
 import mongoengine
-MONGO_DATABASE = 'test'  # The name of your MongoDB database
+MONGO_DATABASE = 'CMS'  # The name of your MongoDB database
 MONGO_HOST = '127.0.0.1'  # MongoDB host
 MONGO_PORT = 27017
 
@@ -63,7 +63,7 @@ SECRET_KEY = 'django-insecure-k@vs2$wy%^x9!q_t5=x26%klt2)3r*l55p1sxs!npmp^aun@ge
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True  # Set to False for production, but make sure ALLOWED_HOSTS is configured
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost','34.86.171.130','data-monitor-harvesting-rfp']  # Replace with your domains or IPs as needed
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost','35.245.126.111']  # Replace with your domains or IPs as needed
 
 
 
@@ -150,6 +150,9 @@ DATABASES = {
         'NAME': MONGO_DATABASE,
         'HOST': MONGO_HOST,
         'PORT': MONGO_PORT,
+         'username': 'admin',
+         'password': 'DDNAdminR!098',
+         'authSource': 'admin',
     }
 }
 
