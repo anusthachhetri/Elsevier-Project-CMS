@@ -46,6 +46,8 @@ from .views import scrapper_views, download_csv
 
 # from .views import json_validator_view
 from .views import user_list
+from .views import ingestion_prod
+from .views import ingestion_main_temp
 
 
 
@@ -143,6 +145,10 @@ urlpatterns = [
     
       
     path('users/', user_list, name='user_list'),
+
+    path('ingestemp_prod/', ingestion_prod, name='ingestemp_prod'),
+    
+    path('ingestion_main/', ingestion_main_temp, name='ingestion_main'),
 
 ]
 

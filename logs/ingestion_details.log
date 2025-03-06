@@ -15891,3 +15891,744 @@ django.urls.exceptions.NoReverseMatch: 'json_app' is not a registered namespace
 2025-02-26 14:59:12,208 - INFO - X:\json_project_1\json_app\models.py changed, reloading.
 2025-02-26 14:59:12,352 - INFO - X:\json_project_1\json_app\models.py changed, reloading.
 2025-02-26 15:15:08,474 - INFO - X:\json_project_1\json_app\models.py changed, reloading.
+2025-03-04 12:17:33,772 - INFO - Use pytorch device_name: cpu
+2025-03-04 12:17:33,772 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-04 12:17:52,490 - INFO - Use pytorch device_name: cpu
+2025-03-04 12:17:52,490 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-04 12:18:40,318 - INFO - Use pytorch device_name: cpu
+2025-03-04 12:18:40,318 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-04 12:18:55,314 - INFO - Use pytorch device_name: cpu
+2025-03-04 12:18:55,314 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-04 12:23:29,270 - WARNING - Not Found: /favicon.ico
+2025-03-04 12:24:08,231 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-04 12:24:09,033 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-04 12:24:09,110 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-04 12:37:28,144 - INFO - D:\Elsevier-Project-CMS\.venv\Lib\site-packages\sqlparse\tokens.py changed, reloading.
+2025-03-04 12:37:28,144 - INFO - D:\Elsevier-Project-CMS\.venv\Lib\site-packages\sqlparse\tokens.py changed, reloading.
+2025-03-04 12:37:28,206 - INFO - D:\Elsevier-Project-CMS\.venv\Lib\site-packages\sqlparse\formatter.py changed, reloading.
+2025-03-04 12:37:28,206 - INFO - D:\Elsevier-Project-CMS\.venv\Lib\site-packages\sqlparse\formatter.py changed, reloading.
+2025-03-04 12:37:28,271 - INFO - D:\Elsevier-Project-CMS\.venv\Lib\site-packages\sqlparse\engine\statement_splitter.py changed, reloading.
+2025-03-04 12:37:28,278 - INFO - D:\Elsevier-Project-CMS\.venv\Lib\site-packages\sqlparse\engine\filter_stack.py changed, reloading.
+2025-03-04 12:37:28,280 - INFO - D:\Elsevier-Project-CMS\.venv\Lib\site-packages\sqlparse\lexer.py changed, reloading.
+2025-03-04 12:37:28,298 - INFO - D:\Elsevier-Project-CMS\.venv\Lib\site-packages\sqlparse\tokens.py changed, reloading.
+2025-03-04 12:37:28,542 - INFO - D:\Elsevier-Project-CMS\.venv\Lib\site-packages\sqlparse\filters\__init__.py changed, reloading.
+2025-03-04 12:37:28,806 - INFO - D:\Elsevier-Project-CMS\.venv\Lib\site-packages\sqlparse\exceptions.py changed, reloading.
+2025-03-04 12:37:29,010 - INFO - D:\Elsevier-Project-CMS\.venv\Lib\site-packages\sqlparse\filters\aligned_indent.py changed, reloading.
+2025-03-04 12:37:29,057 - INFO - D:\Elsevier-Project-CMS\.venv\Lib\site-packages\sqlparse\lexer.py changed, reloading.
+2025-03-04 12:37:29,065 - INFO - D:\Elsevier-Project-CMS\.venv\Lib\site-packages\sqlparse\engine\statement_splitter.py changed, reloading.
+2025-03-04 12:37:29,131 - INFO - D:\Elsevier-Project-CMS\.venv\Lib\site-packages\sqlparse\filters\output.py changed, reloading.
+2025-03-04 12:37:29,261 - INFO - D:\Elsevier-Project-CMS\.venv\Lib\site-packages\sqlparse\engine\grouping.py changed, reloading.
+2025-03-04 12:41:16,276 - INFO - Use pytorch device_name: cpu
+2025-03-04 12:41:16,284 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-04 12:41:16,638 - INFO - Use pytorch device_name: cpu
+2025-03-04 12:41:16,639 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-04 12:41:17,242 - INFO - Use pytorch device_name: cpu
+2025-03-04 12:41:17,244 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-04 12:41:17,265 - INFO - Use pytorch device_name: cpu
+2025-03-04 12:41:17,266 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-04 12:41:19,563 - INFO - Use pytorch device_name: cpu
+2025-03-04 12:41:19,564 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-04 12:41:20,334 - INFO - Use pytorch device_name: cpu
+2025-03-04 12:41:20,335 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-04 12:41:27,851 - INFO - Use pytorch device_name: cpu
+2025-03-04 12:41:27,851 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-04 12:41:31,776 - INFO - Use pytorch device_name: cpu
+2025-03-04 12:41:31,776 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-04 12:41:31,931 - INFO - Use pytorch device_name: cpu
+2025-03-04 12:41:31,931 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-04 12:41:32,123 - INFO - Use pytorch device_name: cpu
+2025-03-04 12:41:32,123 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-04 12:41:32,957 - INFO - Use pytorch device_name: cpu
+2025-03-04 12:41:32,957 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-04 12:41:33,631 - INFO - Use pytorch device_name: cpu
+2025-03-04 12:41:33,631 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-04 12:41:34,894 - INFO - Use pytorch device_name: cpu
+2025-03-04 12:41:34,894 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-04 12:50:17,583 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-04 13:09:26,982 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-04 14:15:55,384 - INFO - D:\Elsevier-Project-CMS\json_app\models.py changed, reloading.
+2025-03-04 14:24:52,874 - INFO - D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\apps\__init__.py changed, reloading.
+2025-03-04 14:30:47,403 - WARNING - Not implemented alter command for SQL ALTER TABLE "json_app_jsonfile" ALTER COLUMN "id" TYPE int
+2025-03-04 15:11:02,267 - WARNING - Not Found: /favicon.ico
+2025-03-04 15:13:21,024 - INFO - Form submitted by user: 
+2025-03-04 15:13:22,678 - INFO - User:  - Token generation status: Success
+2025-03-04 15:14:30,623 - INFO - Form submitted by user: 
+2025-03-04 15:14:32,050 - INFO - User:  - Token generation status: Success
+2025-03-04 15:15:02,823 - INFO - Form submitted by user: 
+2025-03-04 15:15:03,781 - ERROR - User:  - Failed to create batch. Response Code: 412
+2025-03-04 15:15:11,627 - INFO - Form submitted by user: 
+2025-03-04 15:15:13,050 - INFO - User:  - Token generation status: Success
+2025-03-04 15:15:34,343 - INFO - Form submitted by user: 
+2025-03-04 15:15:34,763 - ERROR - User:  - Failed to create batch. Response Code: 412
+2025-03-04 15:20:42,903 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-04 15:21:27,204 - INFO - D:\Elsevier-Project-CMS\json_app\forms.py changed, reloading.
+2025-03-04 15:22:27,444 - INFO - Form submitted by user: 
+2025-03-04 15:22:28,673 - INFO - User:  - Token generation status: Success
+2025-03-04 15:22:38,122 - INFO - Form submitted by user: 
+2025-03-04 15:22:39,012 - ERROR - User:  - Failed to create batch. Response Code: 412
+2025-03-04 15:23:16,426 - INFO - Form submitted by user: 
+2025-03-04 15:23:17,208 - INFO - User:  - Token generation status: Success
+2025-03-04 15:23:56,649 - INFO - Form submitted by user: 
+2025-03-04 15:23:57,556 - ERROR - User:  - Failed to create batch. Response Code: 412
+2025-03-04 15:25:24,849 - INFO - D:\Elsevier-Project-CMS\json_app\models.py changed, reloading.
+2025-03-04 15:42:03,456 - WARNING - Not Found: /toolbox/funding_body_view/
+2025-03-04 15:50:34,771 - INFO - Form submitted by user: 
+2025-03-04 15:50:35,840 - INFO - User:  - Token generation status: Success
+2025-03-04 15:50:48,771 - INFO - Form submitted by user: 
+2025-03-04 15:50:49,583 - ERROR - User:  - Failed to create batch. Response Code: 412
+2025-03-04 15:51:51,542 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-04 15:52:30,933 - INFO - D:\Elsevier-Project-CMS\json_app\models.py changed, reloading.
+2025-03-04 15:54:26,632 - INFO - Form submitted by user: 
+2025-03-04 15:54:27,683 - INFO - User:  - Token generation status: Success
+2025-03-04 15:54:52,432 - INFO - Form submitted by user: 
+2025-03-04 15:54:53,689 - ERROR - User:  - Failed to create batch. Response Code: 412
+2025-03-04 16:24:44,632 - INFO - Form submitted by user: 
+2025-03-04 16:24:45,909 - INFO - User:  - Token generation status: Success
+2025-03-04 16:24:56,926 - INFO - Form submitted by user: 
+2025-03-04 16:24:58,908 - ERROR - User:  - Failed to create batch. Response Code: 412
+2025-03-04 16:26:51,594 - INFO - Form submitted by user: 
+2025-03-04 16:26:52,566 - INFO - User:  - Token generation status: Success
+2025-03-04 16:27:23,497 - INFO - Form submitted by user: 
+2025-03-04 16:27:24,444 - ERROR - User:  - Failed to create batch. Response Code: 412
+2025-03-04 16:29:09,403 - INFO - D:\Elsevier-Project-CMS\json_app\models.py changed, reloading.
+2025-03-04 16:31:17,260 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-04 16:32:56,012 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-04 16:34:18,983 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-04 17:32:55,099 - INFO - Form submitted by user: 
+2025-03-04 17:32:57,216 - INFO - User:  - Token generation status: Success
+2025-03-04 17:33:06,301 - INFO - Form submitted by user: 
+2025-03-04 17:33:08,168 - ERROR - User:  - Failed to create batch. Response Code: 412
+2025-03-04 17:34:45,831 - INFO - D:\Elsevier-Project-CMS\json_app\models.py changed, reloading.
+2025-03-04 17:34:45,851 - INFO - D:\Elsevier-Project-CMS\json_app\models.py changed, reloading.
+2025-03-04 17:53:20,916 - INFO - D:\Elsevier-Project-CMS\json_app\models.py changed, reloading.
+2025-03-04 17:53:21,068 - INFO - D:\Elsevier-Project-CMS\json_app\models.py changed, reloading.
+2025-03-04 18:03:49,360 - INFO - D:\Elsevier-Project-CMS\json_app\models.py changed, reloading.
+2025-03-04 18:03:49,496 - INFO - D:\Elsevier-Project-CMS\json_app\models.py changed, reloading.
+2025-03-04 18:15:57,826 - INFO - Form submitted by user: 
+2025-03-04 18:15:59,099 - INFO - User:  - Token generation status: Success
+2025-03-04 18:16:09,215 - INFO - Form submitted by user: 
+2025-03-04 18:16:09,850 - ERROR - User:  - Failed to create batch. Response Code: 412
+2025-03-04 18:17:34,357 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-04 18:17:34,441 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-04 18:17:34,495 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-04 18:20:58,501 - INFO - Form submitted by user: 
+2025-03-04 18:20:59,439 - INFO - User:  - Token generation status: Success
+2025-03-04 18:21:21,514 - INFO - Form submitted by user: 
+2025-03-04 18:21:21,966 - ERROR - User:  - Failed to create batch. Response Code: 412
+2025-03-04 18:25:07,826 - WARNING - Not Found: /favicon.ico
+2025-03-05 09:56:07,897 - WARNING - Not Found: /favicon.ico
+2025-03-05 09:56:34,752 - WARNING - Not Found: /favicon.ico
+2025-03-05 09:59:29,372 - INFO - D:\Elsevier-Project-CMS\json_project\urls.py changed, reloading.
+2025-03-05 10:02:24,000 - INFO - Form submitted by user: 
+2025-03-05 10:02:25,962 - INFO - User:  - Token generation status: Success
+2025-03-05 10:02:39,138 - INFO - Form submitted by user: 
+2025-03-05 10:02:41,317 - ERROR - User:  - Failed to create batch. Response Code: 412
+2025-03-05 10:06:52,754 - INFO - D:\Elsevier-Project-CMS\json_app\models.py changed, reloading.
+2025-03-05 10:06:52,860 - INFO - D:\Elsevier-Project-CMS\json_app\models.py changed, reloading.
+2025-03-05 10:09:03,030 - INFO - Form submitted by user: 
+2025-03-05 10:09:04,822 - INFO - User:  - Token generation status: Success
+2025-03-05 10:09:18,940 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 10:09:19,448 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 10:20:59,802 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 10:21:00,007 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 10:23:54,671 - INFO - Form submitted by user: 
+2025-03-05 10:23:55,854 - INFO - User:  - Token generation status: Success
+2025-03-05 10:24:07,066 - INFO - Form submitted by user: 
+2025-03-05 10:24:08,543 - ERROR - User:  - Failed to create batch. Response Code: 412
+2025-03-05 10:24:38,598 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 10:24:38,637 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 10:31:09,539 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 10:31:09,796 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 10:42:41,674 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 10:42:42,211 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 10:44:21,893 - INFO - D:\Elsevier-Project-CMS\json_app\models.py changed, reloading.
+2025-03-05 10:44:22,074 - INFO - D:\Elsevier-Project-CMS\json_app\models.py changed, reloading.
+2025-03-05 10:45:42,190 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 10:45:42,619 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 10:46:55,235 - INFO - Form submitted by user: 
+2025-03-05 10:46:56,809 - INFO - User:  - Token generation status: Success
+2025-03-05 10:47:07,528 - INFO - Form submitted by user: 
+2025-03-05 10:47:08,449 - ERROR - User:  - Failed to create batch. Response Code: 412
+2025-03-05 10:47:20,073 - INFO - D:\Elsevier-Project-CMS\json_app\models.py changed, reloading.
+2025-03-05 10:47:20,482 - INFO - D:\Elsevier-Project-CMS\json_app\models.py changed, reloading.
+2025-03-05 10:48:07,066 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 10:48:07,898 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 10:50:58,326 - INFO - D:\Elsevier-Project-CMS\json_app\models.py changed, reloading.
+2025-03-05 10:50:58,461 - INFO - D:\Elsevier-Project-CMS\json_app\models.py changed, reloading.
+2025-03-05 10:52:09,366 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 10:52:09,592 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 10:53:32,469 - INFO - Form submitted by user: 
+2025-03-05 10:53:33,623 - INFO - User:  - Token generation status: Success
+2025-03-05 10:53:46,794 - INFO - Form submitted by user: 
+2025-03-05 10:53:47,859 - ERROR - User:  - Failed to create batch. Response Code: 412
+2025-03-05 10:54:42,503 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 10:54:42,616 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 10:54:42,649 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 10:56:43,195 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 11:03:41,247 - INFO - Form submitted by user: 
+2025-03-05 11:03:42,602 - INFO - User:  - Token generation status: Success
+2025-03-05 11:03:53,972 - INFO - Form submitted by user: 
+2025-03-05 11:03:54,273 - INFO - User:  - Token generation status: Success
+2025-03-05 11:04:06,632 - INFO - Form submitted by user: 
+2025-03-05 11:04:07,994 - ERROR - User:  - Failed to create batch. Response Code: 412
+2025-03-05 11:05:02,361 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 11:05:02,551 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 11:05:02,692 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 11:06:21,080 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 11:06:21,244 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 11:06:21,412 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 11:07:23,763 - INFO - Form submitted by user: 
+2025-03-05 11:07:24,818 - INFO - User:  - Token generation status: Success
+2025-03-05 11:07:47,143 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 11:07:47,261 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 11:07:48,188 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 11:11:39,587 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 11:11:39,783 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 11:11:39,895 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 11:15:00,214 - INFO - Form submitted by user: 
+2025-03-05 11:15:01,523 - INFO - User:  - Token generation status: Success
+2025-03-05 11:15:14,003 - INFO - Form submitted by user: 
+2025-03-05 11:15:15,456 - ERROR - User:  - Failed to create batch. Response Code: 412
+2025-03-05 11:26:34,518 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 11:26:34,740 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 11:26:35,040 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 11:42:26,443 - INFO - ====== WebDriver manager ======
+2025-03-05 11:42:41,676 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 11:42:42,330 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 11:42:42,628 - INFO - There is no [win64] chromedriver "133.0.6943.141" for browser google-chrome "133.0.6943" in cache
+2025-03-05 11:42:42,629 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 11:42:43,098 - INFO - WebDriver version 133.0.6943.141 selected
+2025-03-05 11:42:43,099 - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/133.0.6943.141/win32/chromedriver-win32.zip
+2025-03-05 11:42:43,099 - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/133.0.6943.141/win32/chromedriver-win32.zip
+2025-03-05 11:42:43,237 - INFO - Driver downloading response is 200
+2025-03-05 11:42:43,956 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 11:42:44,463 - INFO - Driver has been saved in cache [C:\Users\mac012593\.wdm\drivers\chromedriver\win64\133.0.6943.141]
+2025-03-05 11:46:59,841 - INFO - Form submitted by user: 
+2025-03-05 11:47:00,919 - INFO - User:  - Token generation status: Success
+2025-03-05 11:47:10,723 - INFO - Form submitted by user: 
+2025-03-05 11:47:12,181 - ERROR - User:  - Failed to create batch. Response Code: 412
+2025-03-05 11:53:53,089 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 11:53:53,153 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 11:53:53,218 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 11:55:04,205 - INFO - Form submitted by user: 
+2025-03-05 11:55:05,276 - INFO - User:  - Token generation status: Success
+2025-03-05 11:55:17,951 - INFO - Form submitted by user: 
+2025-03-05 11:55:19,231 - ERROR - User:  - Failed to create batch. Response Code: 500
+2025-03-05 11:58:14,586 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 11:58:14,902 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 11:58:14,948 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 11:59:56,396 - INFO - Form submitted by user: 
+2025-03-05 11:59:57,525 - INFO - User:  - Token generation status: Success
+2025-03-05 12:00:10,119 - INFO - Form submitted by user: 
+2025-03-05 12:00:11,244 - ERROR - User:  - Failed to create batch. Response Code: 412
+2025-03-05 12:01:31,554 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:01:31,716 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:01:31,811 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:03:03,187 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:03:03,493 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:03:03,752 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:04:12,984 - INFO - Form submitted by user: 
+2025-03-05 12:04:14,332 - INFO - User:  - Token generation status: Success
+2025-03-05 12:04:24,615 - INFO - Form submitted by user: 
+2025-03-05 12:04:25,410 - ERROR - User:  - Failed to create batch. Response Code: 500
+2025-03-05 12:05:53,373 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:05:53,423 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:05:53,420 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:07:38,072 - INFO - Form submitted by user: 
+2025-03-05 12:07:39,165 - INFO - User:  - Token generation status: Success
+2025-03-05 12:07:48,258 - INFO - Form submitted by user: 
+2025-03-05 12:07:49,262 - ERROR - User:  - Failed to create batch. Response Code: 412
+2025-03-05 12:10:42,298 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:10:42,295 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:10:43,094 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:10:43,322 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:11:43,992 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:11:44,217 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:11:44,353 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:11:44,587 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:15:21,140 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:15:21,158 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:15:21,183 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:15:22,265 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:18:49,474 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:18:49,477 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:18:49,500 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:18:49,542 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:19:58,552 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:19:58,747 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:19:59,399 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:19:59,562 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:22:46,937 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:22:46,924 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:22:46,960 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:22:46,997 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:24:40,219 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:24:40,345 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:24:40,952 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:24:41,391 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:26:39,704 - INFO - Form submitted by user: 
+2025-03-05 12:26:40,808 - INFO - User:  - Token generation status: Success
+2025-03-05 12:26:50,984 - INFO - Form submitted by user: 
+2025-03-05 12:26:51,967 - ERROR - User:  - Failed to create batch. Response Code: 412
+2025-03-05 12:27:02,398 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:27:02,522 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:27:02,592 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:27:03,023 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:31:51,328 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:31:51,427 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:31:51,807 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:31:52,053 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:35:11,375 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:35:11,408 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:35:11,458 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:35:11,495 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:36:15,450 - INFO - Form submitted by user: 
+2025-03-05 12:36:16,602 - INFO - User:  - Token generation status: Success
+2025-03-05 12:36:24,822 - INFO - Form submitted by user: 
+2025-03-05 12:36:25,584 - ERROR - User:  - Failed to create batch. Response Code: 412
+2025-03-05 12:38:53,027 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:38:53,123 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:38:53,168 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:38:53,188 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:45:52,531 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:45:52,883 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:45:53,386 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:45:53,420 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:48:06,744 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:48:07,200 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:48:07,393 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:48:07,470 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:49:22,124 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:49:22,393 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:49:22,466 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:49:23,026 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:51:27,863 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:51:28,276 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:51:28,513 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:51:28,765 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:52:54,445 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:52:54,668 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:52:54,853 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:52:55,463 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:53:57,016 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:54:18,911 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:54:19,252 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:54:19,524 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:56:27,329 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:56:27,709 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:56:28,032 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:56:28,056 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 12:56:28,641 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 13:01:34,175 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 13:01:36,766 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 13:01:36,925 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 13:01:37,545 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 13:01:37,685 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:02:51,641 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:02:51,673 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:02:51,769 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:02:52,550 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:02:52,934 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:02:53,128 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:05:22,476 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:05:22,638 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:05:22,657 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:05:22,707 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:05:22,766 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:05:22,827 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:08:17,609 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:08:17,788 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:08:17,872 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:08:17,874 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:08:17,894 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:08:17,917 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:10:48,563 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:10:48,598 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:10:48,643 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:10:48,833 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:10:48,932 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:10:49,873 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:12:30,019 - INFO - Use pytorch device_name: cpu
+2025-03-05 15:12:30,019 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-05 15:12:30,976 - INFO - Use pytorch device_name: cpu
+2025-03-05 15:12:30,976 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-05 15:12:31,002 - INFO - Use pytorch device_name: cpu
+2025-03-05 15:12:31,002 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-05 15:12:32,498 - INFO - Use pytorch device_name: cpu
+2025-03-05 15:12:32,498 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-05 15:12:32,707 - INFO - Use pytorch device_name: cpu
+2025-03-05 15:12:32,707 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-05 15:12:34,110 - INFO - Use pytorch device_name: cpu
+2025-03-05 15:12:34,110 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-05 15:12:43,816 - INFO - D:\Elsevier-Project-CMS\json_app\models.py changed, reloading.
+2025-03-05 15:12:44,828 - INFO - D:\Elsevier-Project-CMS\json_app\models.py changed, reloading.
+2025-03-05 15:12:45,086 - INFO - D:\Elsevier-Project-CMS\json_app\models.py changed, reloading.
+2025-03-05 15:12:45,221 - INFO - D:\Elsevier-Project-CMS\json_app\models.py changed, reloading.
+2025-03-05 15:12:45,297 - INFO - D:\Elsevier-Project-CMS\json_app\models.py changed, reloading.
+2025-03-05 15:12:45,836 - INFO - D:\Elsevier-Project-CMS\json_app\models.py changed, reloading.
+2025-03-05 15:14:16,679 - INFO - Use pytorch device_name: cpu
+2025-03-05 15:14:16,679 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-05 15:14:16,803 - INFO - Use pytorch device_name: cpu
+2025-03-05 15:14:16,804 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-05 15:14:16,844 - INFO - Use pytorch device_name: cpu
+2025-03-05 15:14:16,844 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-05 15:14:18,102 - INFO - Use pytorch device_name: cpu
+2025-03-05 15:14:18,102 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-05 15:14:19,390 - INFO - Use pytorch device_name: cpu
+2025-03-05 15:14:19,391 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-05 15:14:19,451 - INFO - Use pytorch device_name: cpu
+2025-03-05 15:14:19,451 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-05 15:15:03,521 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:15:03,566 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:15:03,691 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:15:03,769 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:15:04,706 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:15:04,850 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:16:29,732 - INFO - Use pytorch device_name: cpu
+2025-03-05 15:16:29,732 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-05 15:16:30,979 - INFO - Use pytorch device_name: cpu
+2025-03-05 15:16:30,979 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-05 15:16:32,300 - INFO - Use pytorch device_name: cpu
+2025-03-05 15:16:32,300 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-05 15:16:33,027 - INFO - Use pytorch device_name: cpu
+2025-03-05 15:16:33,027 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-05 15:16:33,491 - INFO - Use pytorch device_name: cpu
+2025-03-05 15:16:33,491 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-05 15:16:33,595 - INFO - Use pytorch device_name: cpu
+2025-03-05 15:16:33,596 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-05 15:17:39,202 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:17:39,206 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:17:39,296 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:17:39,520 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:17:40,109 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:17:40,507 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:19:02,431 - INFO - Use pytorch device_name: cpu
+2025-03-05 15:19:02,431 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-05 15:19:02,436 - INFO - Use pytorch device_name: cpu
+2025-03-05 15:19:02,436 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-05 15:19:02,987 - INFO - Use pytorch device_name: cpu
+2025-03-05 15:19:02,987 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-05 15:19:03,693 - INFO - Use pytorch device_name: cpu
+2025-03-05 15:19:03,694 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-05 15:19:03,829 - INFO - Use pytorch device_name: cpu
+2025-03-05 15:19:03,830 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-05 15:19:04,200 - INFO - Use pytorch device_name: cpu
+2025-03-05 15:19:04,200 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-05 15:23:41,334 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:23:41,348 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:23:41,348 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:23:41,401 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:23:41,462 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:23:42,153 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:25:12,198 - INFO - Use pytorch device_name: cpu
+2025-03-05 15:25:12,199 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-05 15:25:12,810 - INFO - Use pytorch device_name: cpu
+2025-03-05 15:25:12,811 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-05 15:25:12,900 - INFO - Use pytorch device_name: cpu
+2025-03-05 15:25:12,900 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-05 15:25:13,334 - INFO - Use pytorch device_name: cpu
+2025-03-05 15:25:13,334 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-05 15:25:13,662 - INFO - Use pytorch device_name: cpu
+2025-03-05 15:25:13,663 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-05 15:25:13,732 - INFO - Use pytorch device_name: cpu
+2025-03-05 15:25:13,732 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-05 15:25:25,999 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:25:26,104 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:25:26,344 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:25:26,649 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:25:27,221 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:25:27,716 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 15:27:16,184 - INFO - Use pytorch device_name: cpu
+2025-03-05 15:27:16,185 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-05 15:27:17,420 - INFO - Use pytorch device_name: cpu
+2025-03-05 15:27:17,420 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-05 15:27:17,855 - INFO - Use pytorch device_name: cpu
+2025-03-05 15:27:17,855 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-05 15:27:18,369 - INFO - Use pytorch device_name: cpu
+2025-03-05 15:27:18,369 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-05 15:27:18,464 - INFO - Use pytorch device_name: cpu
+2025-03-05 15:27:18,465 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-05 15:27:18,620 - INFO - Use pytorch device_name: cpu
+2025-03-05 15:27:18,621 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-05 15:31:15,316 - INFO - D:\Elsevier-Project-CMS\json_app\models.py changed, reloading.
+2025-03-05 15:31:15,348 - INFO - D:\Elsevier-Project-CMS\json_app\models.py changed, reloading.
+2025-03-05 15:31:15,430 - INFO - D:\Elsevier-Project-CMS\json_app\models.py changed, reloading.
+2025-03-05 15:31:15,516 - INFO - D:\Elsevier-Project-CMS\json_app\models.py changed, reloading.
+2025-03-05 15:31:15,626 - INFO - D:\Elsevier-Project-CMS\json_app\models.py changed, reloading.
+2025-03-05 15:31:16,255 - INFO - D:\Elsevier-Project-CMS\json_app\models.py changed, reloading.
+2025-03-05 15:40:23,098 - INFO - D:\Elsevier-Project-CMS\json_app\urls.py changed, reloading.
+2025-03-05 15:40:24,001 - INFO - D:\Elsevier-Project-CMS\json_app\urls.py changed, reloading.
+2025-03-05 15:40:24,051 - INFO - D:\Elsevier-Project-CMS\json_app\urls.py changed, reloading.
+2025-03-05 15:40:24,123 - INFO - D:\Elsevier-Project-CMS\json_app\urls.py changed, reloading.
+2025-03-05 15:40:24,342 - INFO - D:\Elsevier-Project-CMS\json_app\urls.py changed, reloading.
+2025-03-05 15:40:24,369 - INFO - D:\Elsevier-Project-CMS\json_app\urls.py changed, reloading.
+2025-03-05 15:42:55,081 - INFO - D:\Elsevier-Project-CMS\json_app\urls.py changed, reloading.
+2025-03-05 15:42:55,140 - INFO - D:\Elsevier-Project-CMS\json_app\urls.py changed, reloading.
+2025-03-05 15:42:55,196 - INFO - D:\Elsevier-Project-CMS\json_app\urls.py changed, reloading.
+2025-03-05 15:42:55,229 - INFO - D:\Elsevier-Project-CMS\json_app\urls.py changed, reloading.
+2025-03-05 15:42:55,240 - INFO - D:\Elsevier-Project-CMS\json_app\urls.py changed, reloading.
+2025-03-05 15:42:55,602 - INFO - D:\Elsevier-Project-CMS\json_app\urls.py changed, reloading.
+2025-03-05 15:46:28,675 - WARNING - Not Found: /favicon.ico
+2025-03-05 15:47:09,768 - WARNING - Not Found: /favicon.ico
+2025-03-05 15:47:13,611 - INFO - Form submitted by user: 
+2025-03-05 15:47:16,120 - INFO - User:  - Token generation status: Success
+2025-03-05 16:06:23,935 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:06:24,137 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:06:24,317 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:06:24,379 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:06:24,673 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:06:24,724 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:06:24,953 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:08:20,088 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:08:20,162 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:08:20,612 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:08:20,701 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:08:20,713 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:08:20,921 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:08:21,002 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:09:41,617 - INFO - D:\Elsevier-Project-CMS\json_app\urls.py changed, reloading.
+2025-03-05 16:09:41,855 - INFO - D:\Elsevier-Project-CMS\json_app\urls.py changed, reloading.
+2025-03-05 16:09:42,041 - INFO - D:\Elsevier-Project-CMS\json_app\urls.py changed, reloading.
+2025-03-05 16:09:43,004 - INFO - D:\Elsevier-Project-CMS\json_app\urls.py changed, reloading.
+2025-03-05 16:09:43,110 - INFO - D:\Elsevier-Project-CMS\json_app\urls.py changed, reloading.
+2025-03-05 16:09:43,221 - INFO - D:\Elsevier-Project-CMS\json_app\urls.py changed, reloading.
+2025-03-05 16:09:43,241 - INFO - D:\Elsevier-Project-CMS\json_app\urls.py changed, reloading.
+2025-03-05 16:12:56,485 - WARNING - Not Found: /favicon.ico
+2025-03-05 16:21:00,837 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:21:00,944 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:21:01,361 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:21:01,655 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:21:01,743 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:21:01,812 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:21:01,821 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:22:18,538 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:23:17,957 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:23:17,982 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:23:18,053 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:23:18,079 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:23:18,130 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:23:18,138 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:23:18,228 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:25:26,027 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:25:26,221 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:25:26,333 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:25:26,595 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:25:26,620 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:25:26,648 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:25:26,706 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:27:11,165 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:27:11,377 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:27:11,510 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:27:11,874 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:27:11,979 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:27:12,040 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:27:12,335 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:28:29,375 - WARNING - Not Found: /favicon.ico
+2025-03-05 16:30:17,255 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:30:17,302 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:30:17,442 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:30:17,398 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:30:17,588 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:30:18,127 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:30:18,199 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-05 16:31:31,745 - WARNING - Not Found: /favicon.ico
+2025-03-05 17:21:03,776 - WARNING - Not Found: /favicon.ico
+2025-03-05 17:44:20,013 - ERROR - Internal Server Error: /toolbox/ingestion_template/
+Traceback (most recent call last):
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\json_app\views.py", line 3490, in file_ingestion
+    return render(request, "ingestion_template.html", context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\template\loaders\base.py", line 29, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\template\base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\template\base.py", line 193, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\template\loader_tags.py", line 270, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\template\loader_tags.py", line 209, in do_block
+    raise TemplateSyntaxError("'%s' tag with name '%s' appears more than once" % (bits[0], block_name))
+django.template.exceptions.TemplateSyntaxError: 'block' tag with name 'title' appears more than once
+2025-03-05 17:45:21,508 - ERROR - Internal Server Error: /toolbox/ingestemp_prod/
+Traceback (most recent call last):
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\json_app\views.py", line 3721, in ingestion_prod
+    return render(request, "ingestemp_prod.html", context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\template\loaders\base.py", line 29, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\template\base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\template\base.py", line 193, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\template\loader_tags.py", line 270, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\template\loader_tags.py", line 209, in do_block
+    raise TemplateSyntaxError("'%s' tag with name '%s' appears more than once" % (bits[0], block_name))
+django.template.exceptions.TemplateSyntaxError: 'block' tag with name 'title' appears more than once
+2025-03-05 18:15:29,196 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-05 18:15:29,424 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-05 18:15:29,437 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-05 18:15:29,584 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-05 18:15:29,760 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-05 18:15:30,446 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-05 18:15:30,521 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-05 18:15:30,873 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-06 10:08:36,678 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-06 10:08:36,743 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-06 10:08:36,823 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-06 10:08:36,853 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-06 10:08:37,790 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-06 10:08:37,832 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-06 10:08:37,974 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-06 10:08:38,008 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-06 10:23:49,060 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-06 10:23:51,978 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-06 10:23:52,948 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-06 10:23:53,016 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-06 10:23:53,038 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-06 10:23:54,128 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-06 10:23:54,226 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-06 10:23:54,276 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-06 11:10:59,741 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 11:11:01,912 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 11:11:01,947 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 11:11:01,942 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 11:11:02,601 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 11:11:02,780 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 11:11:03,760 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 11:11:04,191 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 11:11:04,301 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 11:29:50,484 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 11:29:51,190 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 11:29:51,448 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 11:29:51,472 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 11:29:51,483 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 11:29:51,515 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 11:29:51,574 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 11:29:51,623 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 11:29:51,755 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 11:32:13,252 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 11:32:13,346 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 11:32:13,446 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 11:32:13,784 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 11:32:13,841 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 11:32:13,861 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 11:32:13,990 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 11:32:14,035 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 11:32:14,618 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 11:34:45,304 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 11:34:45,495 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 11:34:47,378 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 11:34:48,672 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 11:34:48,789 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 11:34:49,339 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 11:34:49,682 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 11:34:50,198 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 11:52:22,941 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 11:59:26,326 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-06 11:59:26,470 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-06 11:59:26,500 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-06 11:59:26,584 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-06 11:59:26,713 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-06 11:59:27,013 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-06 11:59:27,036 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-06 11:59:27,728 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-06 11:59:27,899 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-06 12:08:18,075 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-06 12:08:18,929 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-06 12:08:19,312 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-06 12:08:19,325 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-06 12:08:19,362 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 12:08:19,395 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-06 12:08:19,445 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 12:08:19,466 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-06 12:08:19,480 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 12:08:19,942 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.

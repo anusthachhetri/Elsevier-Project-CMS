@@ -1449,157 +1449,10 @@ collection = db['Elsevier_Batch']
 
 
 
-# #upload json code for storing json data in mongodb
-# def upload_json(request):
-#     if request.method == 'POST':
-#         # Access uploaded files
-#         json_files = request.FILES.getlist('files')
-#         if not json_files:
-#             return JsonResponse({'error': 'No files uploaded'}, status=400)
 
-#         response_data = []
-
-#         try:
-#             for json_file in json_files:
-#                 try:
-#                     # Load JSON content from the file
-#                     json_data = json.load(json_file)
-#                 except json.JSONDecodeError:
-#                     response_data.append({
-#                         'file': json_file.name,
-#                         'status': 'error',
-#                         'message': 'Invalid JSON format'
-#                     })
-#                     continue
-
-#                 # Extract the batchId (for camelCase) or batch_id (for snake_case)
-#                 batch_id = None
-#                 if isinstance(json_data, list) and json_data:
-#                     batch_id = json_data[0].get('batchId') or json_data[0].get('batch_id')
-#                 elif isinstance(json_data, dict):
-#                     batch_id = json_data.get('batchId') or json_data.get('batch_id')
-
-#                 # Check if batch_id is found
-#                 if not batch_id:
-#                     response_data.append({
-#                         'file': json_file.name,
-#                         'status': 'error',
-#                         'message': 'batchId or batch_id not found in the JSON file. Ensure "batchId" exists in the JSON object or list items.'
-#                     })
-#                     continue
-
-#                 # Save metadata to the model
-#                 JSONFile.objects.create(
-#                     batch_id=batch_id,
-#                     file_name=json_file.name,
-#                     version=1
-#                 )
-
-#                 # Insert JSON data into MongoDB
-#                 if isinstance(json_data, list):
-#                     for item in json_data:
-#                         item['batchId'] = batch_id  # Ensure batchId consistency in MongoDB
-#                     collection.insert_many(json_data)
-#                 else:
-#                     json_data['batchId'] = batch_id  # Ensure batchId consistency in MongoDB
-#                     collection.insert_one(json_data)
-
-#                 # Append success response for the current file
-#                 response_data.append({
-#                     'file': json_file.name,
-#                     'status': 'success',
-#                     'batchId': batch_id
-#                 })
-
-#             return JsonResponse({'message': 'Files processed', 'details': response_data})
-
-#         except Exception as e:
-#             return JsonResponse({'error': str(e)}, status=400)
-
-#     # Render the upload template for non-POST requests
-#     return render(request, 'upload.html')
-
-############code for uploading data into database
+############code for uploading data into database############################
 ########################################################################
 
-# def upload_json(request):
-#     if request.method == 'POST':
-#         # Access uploaded files
-#         json_files = request.FILES.getlist('files')
-#         if not json_files:
-#             return JsonResponse({'error': 'No files uploaded'}, status=400)
-
-#         response_data = []
-
-#         try:
-#             for json_file in json_files:
-#                 try:
-#                     # Load JSON content from the file
-#                     json_data = json.load(json_file)
-#                 except json.JSONDecodeError:
-#                     response_data.append({
-#                         'file': json_file.name,
-#                         'status': 'error',
-#                         'message': 'Invalid JSON format'
-#                     })
-#                     continue
-
-#                 # Extract the batchId (for camelCase) or batch_id (for snake_case)
-#                 batch_id = None
-#                 if isinstance(json_data, list) and json_data:
-#                     batch_id = json_data[0].get('batchId') or json_data[0].get('batch_id')
-#                 elif isinstance(json_data, dict):
-#                     batch_id = json_data.get('batchId') or json_data.get('batch_id')
-
-#                 # Check if batch_id is found
-#                 if not batch_id:
-#                     response_data.append({
-#                         'file': json_file.name,
-#                         'status': 'error',
-#                         'message': 'batchId or batch_id not found in the JSON file. Ensure "batchId" exists in the JSON object or list items.'
-#                     })
-#                     continue
-
-#                 # Check if batchId already exists in MongoDB
-#                 existing_record = collection.find_one({'batchId': batch_id})
-#                 if existing_record:
-#                     response_data.append({
-#                         'file': json_file.name,
-#                         'status': 'error',
-#                         'message': f'File with batchId {batch_id} already exists in the database.'
-#                     })
-#                     continue
-
-#                 # Save metadata to the model (using Django ORM)
-#                 JSONFile.objects.create(
-#                     batch_id=batch_id,
-#                     file_name=json_file.name,
-#                     version=1
-#                 )
-
-#                 # Insert JSON data into MongoDB
-#                 if isinstance(json_data, list):
-#                     for item in json_data:
-#                         item['batchId'] = batch_id  # Ensure batchId consistency in MongoDB
-#                     collection.insert_many(json_data)
-#                 else:
-#                     json_data['batchId'] = batch_id  # Ensure batchId consistency in MongoDB
-#                     collection.insert_one(json_data)
-
-#                 # Append success response for the current file
-#                 response_data.append({
-#                     'file': json_file.name,
-#                     'status': 'success',
-#                     'batchId': batch_id
-#                 })
-
-#             return JsonResponse({'message': 'Files processed', 'details': response_data})
-
-#         except Exception as e:
-#             return JsonResponse({'error': str(e)}, status=400)
-
-#     # Render the upload template for non-POST requests
-#     return render(request, 'upload.html')
 
 @login_required
 def upload_json(request):
@@ -1737,147 +1590,6 @@ def upload_json(request):
 
 ###########################code for view data in table view that is uplaoded by user##################################################################
 ###########################################################################################################################################
-# from django.shortcuts import render
-# from django.http import HttpResponse
-# from django.urls import reverse
-# from datetime import datetime, timedelta
-# from .models import JSONFile
-
-# def getdata(request):
-#     try:
-#         # Fetch date filters from the request
-#         start_date = request.GET.get('start_date')
-#         end_date = request.GET.get('end_date')
-
-#         # Filter metadata based on date range
-#         metadata = JSONFile.objects.all()
-
-#         if start_date:
-#             try:
-#                 start_date_obj = datetime.strptime(start_date, '%Y-%m-%d')
-#                 metadata = metadata.filter(uploaded_at__gte=start_date_obj)
-#             except ValueError:
-#                 return HttpResponse("Invalid start date format. Use YYYY-MM-DD.", status=400)
-
-#         if end_date:
-#             try:
-#                 end_date_obj = datetime.strptime(end_date, '%Y-%m-%d') + timedelta(days=1) - timedelta(seconds=1)
-#                 metadata = metadata.filter(uploaded_at__lte=end_date_obj)
-#             except ValueError:
-#                 return HttpResponse("Invalid end date format. Use YYYY-MM-DD.", status=400)
-
-#         # Start building the metadata table
-#         metadata_table = """
-#         <h1 style="background-color:#f5a142; height: 50px; color: white; text-align: center; z-index: 1000; position: fixed; width: 100%; margin: 0; top: 0; left: 0;">Metadata Table</h1>
-#         <div style="margin-top: 60px; padding: 10px; background-color: #f5a142; text-align: right; margin-right: 20px;">
-#             <form method="get" style="display: flex; align-items: center; justify-content: flex-end; gap: 15px;">
-#                 <h4 style="margin: 0; color: white;">Search Data</h4>
-#                 <div>
-#                     <label for="start_date" style="margin-right: 5px; color: white;">Start Date:</label>
-#                     <input type="date" id="start_date" name="start_date" value="{start_date or ''}" class="filter-input">
-#                 </div>
-#                 <div>
-#                     <label for="end_date" style="margin-right: 5px; color: white;">End Date:</label>
-#                     <input type="date" id="end_date" name="end_date" value="{end_date or ''}" class="filter-input">
-#                 </div>
-#                 <button type="submit" class="filter-btn">Filter</button>
-#             </form>
-#         </div>
-#         <table border="1" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
-#             <thead>
-#                 <tr>
-#                     <th>Sr. No</th>
-#                     <th>MPS Id</th>
-#                     <th>Uploader Name</th>
-#                     <th>File Name</th>
-#                     <th>File Type</th>
-#                     <th>Version</th>
-#                     <th>Uploaded At</th>
-#                     <th>View File</th>
-#                     <th>Download File</th>
-#                 </tr>
-#             </thead>
-#             <tbody>
-#         """
-
-#         for idx, file in enumerate(metadata, start=1):
-#             batch_id = file.batch_id
-#             uploader_name = file.uploader_name
-#             file_type = file.file_type
-#             view_url = reverse('view_json', args=[batch_id])
-#             download_url = reverse('download_json', args=[batch_id])
-
-#             metadata_table += f"""
-#             <tr>
-#                 <td>{idx}</td>
-#                 <td>{file.batch_id}</td>
-#                 <td>{uploader_name}</td>
-#                 <td>{file.file_name}</td>
-#                 <td>{file_type}</td>
-#                 <td>{file.version}</td>
-#                 <td>{file.uploaded_at}</td>
-#                 <td>
-#                     <a href="{view_url}" style="text-decoration: none; color: blue;">View</a>
-#                 </td>
-#                 <td>
-#                     <a href="{download_url}" style="text-decoration: none; color: green;">Download</a>
-#                 </td>
-#             </tr>
-#             """
-#         metadata_table += "</tbody></table>"
-
-#         # Combine and return the complete HTML response
-#         html_response = f"""
-#         <html>
-#         <head>
-#             <title>Data Table</title>
-#             <style>
-#                 table {{ border: 1px solid black; border-collapse: collapse; width: 100%; background-color: #ffffff; }}
-#                 th, td {{ padding: 10px; text-align: left; border: 1px solid black; background-color: #ffffff; border: 1px solid #ddd; }}
-#                 th {{ background-color:#f5a142; color: white; }}
-
-#                 .filter-input, .filter-btn {{
-#                     padding: 8px 15px;
-#                     border-radius: 5px;
-#                     border: 1px solid #f5a142;
-#                     font-size: 14px;
-#                 }}
-
-#                 .filter-input {{
-#                     background-color: white;
-#                     color: #333;
-#                     transition: background-color 0.3s ease;
-#                 }}
-
-#                 .filter-input:hover {{
-#                     background-color: #f5a142;
-#                     color: white;
-#                 }}
-
-#                 .filter-btn {{
-#                     background-color: #f5a142;
-#                     color: white;
-#                     border: none;
-#                     cursor: pointer;
-#                     transition: background-color 0.3s ease;
-#                 }}
-
-#                 .filter-btn:hover {{
-#                     background-color: #e58a3d;
-#                 }}
-#             </style>
-#         </head>
-#         <body>
-#             {metadata_table}
-#         </body>
-#         </html>
-#         """
-#         return HttpResponse(html_response)
-
-#     except Exception as e:
-#         print(f"Error: {str(e)}")
-#         return HttpResponse(f"Error: {str(e)}", status=500)
-#code edited  
 
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -2034,361 +1746,8 @@ def getdata(request):
         print(f"Error: {str(e)}")
         return HttpResponse(f"Error: {str(e)}", status=500)
 
-# from django.http import JsonResponse
 
-# def view_json(request, batch_id):
-#     try:
-#         # Fetch the JSON data from MongoDB
-#         json_data = collection.find_one({'batch_id': batch_id}, {'_id': 0})
-
-#         if not json_data:
-#             return JsonResponse({'error': f'No data found for batch_id: {batch_id}'}, status=404)
-
-#         # Return the JSON data as an indented response
-#         return JsonResponse(json_data, safe=False, json_dumps_params={'indent': 4})
-#     except Exception as e:
-#         return JsonResponse({'error': str(e)}, status=500)
-    
-# from django.http import HttpResponse
-
-# def view_json(request, batch_id):
-#     try:
-#         # Fetch JSON data from MongoDB for the given batch_id
-#         json_data = collection.find_one({'batch_id': batch_id}, {'_id': 0})
-
-#         if not json_data:
-#             return HttpResponse(f"<h1 style='color:red;'>No data found for batch_id: {batch_id}</h1>", status=404)
-
-#         # Convert JSON data to an HTML form
-#         form_content = f"""
-#         <html>
-#         <head>
-#             <title>JSON Form View</title>
-#             <style>
-#                 body {{
-#                     font-family: Arial, sans-serif;
-#                     margin: 0 auto;
-#                     padding: 20px;
-#                     width: 80%;
-#                     background-color: #f7f7f7;
-#                 }}
-#                 h1 {{
-#                     text-align: center;
-#                     background-color: #2a9d8f;
-#                     color: white;
-#                     padding: 10px;
-#                 }}
-#                 .form-container {{
-#                     background: #fff;
-#                     border-radius: 8px;
-#                     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-#                     padding: 20px;
-#                 }}
-#                 .form-group {{
-#                     margin-bottom: 15px;
-#                 }}
-#                 label {{
-#                     font-weight: bold;
-#                     color: #2a9d8f;
-#                 }}
-#                 input, textarea {{
-#                     width: 100%;
-#                     padding: 8px;
-#                     border: 1px solid #ccc;
-#                     border-radius: 4px;
-#                     box-sizing: border-box;
-#                 }}
-#                 .nested-title {{
-#                     color: #2a9d8f;
-#                     font-style: italic;
-#                 }}
-#             </style>
-#         </head>
-#         <body>
-#             <h1>JSON To HTML Form View</h1>
-#             <div class="form-container">
-#                 {json_to_form(json_data)}
-#             </div>
-#         </body>
-#         </html>
-#         """
-#         return HttpResponse(form_content)
-#     except Exception as e:
-#         return HttpResponse(f"<h1 style='color:red;'>Error: {str(e)}</h1>", status=500)
-
-# def json_to_form(json_data):
-#     """
-#     Converts JSON data into HTML form fields recursively.
-#     Supports nested objects and lists.
-#     """
-#     html = ""
-#     if isinstance(json_data, dict):
-#         for key, value in json_data.items():
-#             html += '<div class="form-group">'
-#             html += f"<label>{key}</label>"
-
-#             # Handle nested dictionaries or lists recursively
-#             if isinstance(value, dict) or isinstance(value, list):
-#                 html += f"<div class='nested-title'>{key} (Nested):</div>"
-#                 html += json_to_form(value)
-#             else:
-#                 html += f'<input type="text" value="{value}" readonly>'
-#             html += "</div>"
-#     elif isinstance(json_data, list):
-#         for index, item in enumerate(json_data):
-#             html += f'<div class="form-group"><label>Item {index + 1}</label>'
-#             html += json_to_form(item)
-#             html += "</div>"
-#     else:
-#         html += f'<input type="text" value="{json_data}" readonly>'
-#     return html
-
-
-
-################functions for viewing data into table view and that data in html form format extracting in ui  ##########################
-########################################################
-
-
-
-
-# from django.http import HttpResponse, JsonResponse
-# from pymongo import MongoClient
-# def json_to_html_form(data, level=0, parent_id="root"):
-#     """
-#     Recursive function to generate an expandable/collapsible HTML form representation of JSON data.
-#     """
-#     html = ""
-#     current_id = f"{parent_id}_{level}"
-
-#     if isinstance(data, dict):
-#         for key, value in data.items():
-#             item_id = f"{current_id}_{key}"
-#             if isinstance(value, (dict, list)):
-#                 # Expandable section for nested fields
-#                 html += f"""
-#                 <div style="margin-left: {20 * level}px; padding: 5px;">
-#                     <span style="cursor: pointer; color: blue;" onclick="toggle('{item_id}')">
-#                         ▶ <b>{key}</b>
-#                     </span>
-#                     <div id="{item_id}" style="display: none; margin-top: 5px;">
-#                         {json_to_html_form(value, level + 1, item_id)}
-#                     </div>
-#                 </div>
-#                 """
-#             else:
-#                 # Form input for plain key-value pair
-#                 html += f"""
-#                 <div style="margin-left: {20 * level}px; padding: 5px;">
-#                     <label style="font-weight: bold;" for="{item_id}">{key}:</label>
-#                     <input type="text" id="{item_id}" value="{value}" 
-#                            style="margin-left: 10px; padding: 7px; width:400px;" readonly/>
-#                 </div>
-#                 """
-
-#     elif isinstance(data, list):
-#         for idx, item in enumerate(data):
-#             item_id = f"{current_id}_item_{idx}"
-#             if isinstance(item, (dict, list)):
-#                 # Expandable section for list items
-#                 html += f"""
-#                 <div style="margin-left: {20 * level}px; padding: 5px;">
-#                     <span style="cursor: pointer; color: green;" onclick="toggle('{item_id}')">
-#                         ▶ <b>Item {idx + 1}</b>
-#                     </span>
-#                     <div id="{item_id}" style="display: none; margin-top: 5px;">
-#                         {json_to_html_form(item, level + 1, item_id)}
-#                     </div>
-#                 </div>
-#                 """
-#             else:
-#                 # Form input for plain list items
-#                 html += f"""
-#                 <div style="margin-left: {20 * level}px; padding: 5px;">
-#                     <label style="font-weight: bold; ">Item {idx + 1}:</label>
-#                     <input type="text" value="{item}" style="margin-left: 10px; padding: 3px;" readonly/>
-#                 </div>
-#                 """
-
-#     else:
-#         # If value is plain text or a number
-#         html += f"""
-#         <div style="margin-left: {20 * level}px;">
-#             <input type="text" value="{data}" style="padding: 3px;" readonly/>
-#         </div>
-#         """
-
-#     return html
-
-#correct code############date 31-01-2025  json view of html form 
-
-# from django.http import HttpResponse, JsonResponse
-# from pymongo import MongoClient
-
-
-# def json_to_html_form(data, level=0, parent_id="root"):
-#     """
-#     Recursive function to generate an expandable/collapsible HTML form representation of JSON data.
-#     Fields with missing data are highlighted in red.
-#     """
-#     html = ""
-#     current_id = f"{parent_id}_{level}"
-
-#     if isinstance(data, dict):
-#         for key, value in data.items():
-#             item_id = f"{current_id}_{key}"
-#             if isinstance(value, (dict, list)):
-#                 # Expandable section for nested fields
-#                 html += f"""
-#                 <div style="margin-left: {20 * level}px; padding: 5px;">
-#                     <span style="cursor: pointer; color: blue;" onclick="toggle('{item_id}')">
-#                         ▶ <b>{key}</b>
-#                     </span>
-#                     <div id="{item_id}" style="display: none; margin-top: 5px;">
-#                         {json_to_html_form(value, level + 1, item_id)}
-#                     </div>
-#                 </div>
-#                 """
-#             else:
-#                 # Highlight fields with missing or 'not found' data
-#                 highlight_style = "border: 2px solid red; background-color: #ffe6e6;" if value in [None, "", "not found","not available","NOT FOUND"] else ""
-#                 html += f"""
-#                 <div style="margin-left: {20 * level}px; padding: 5px;">
-#                     <label style="font-weight: bold;" for="{item_id}">{key}:</label>
-#                     <input type="text" id="{item_id}" value="{value}" 
-#                            style="margin-left: 10px; padding: 7px; width:400px; {highlight_style}" readonly/>
-#                 </div>
-#                 """
-
-#     elif isinstance(data, list):
-#         for idx, item in enumerate(data):
-#             item_id = f"{current_id}_item_{idx}"
-#             if isinstance(item, (dict, list)):
-#                 # Expandable section for list items
-#                 html += f"""
-#                 <div style="margin-left: {20 * level}px; padding: 5px;">
-#                     <span style="cursor: pointer; color: green;" onclick="toggle('{item_id}')">
-#                         ▶ <b>Item {idx + 1}</b>
-#                     </span>
-#                     <div id="{item_id}" style="display: none; margin-top: 5px;">
-#                         {json_to_html_form(item, level + 1, item_id)}
-#                     </div>
-#                 </div>
-#                 """
-#             else:
-#                 # Highlight fields with missing or 'not found' data
-#                 highlight_style = "border: 2px solid red; background-color: #ffe6e6;" if item in [None, "", "not found","not available","NOT FOUND"] else ""
-#                 html += f"""
-#                 <div style="margin-left: {20 * level}px; padding: 5px;">
-#                     <label style="font-weight: bold; ">Item {idx + 1}:</label>
-#                     <input type="text" value="{item}" style="margin-left: 10px; padding: 3px; {highlight_style}" readonly/>
-#                 </div>
-#                 """
-
-#     else:
-#         # Highlight if the plain value is missing or 'not found'
-#         highlight_style = "border: 2px solid red; background-color: #ffe6e6;" if data in [None, "", "not found","not available","NOT FOUND"] else ""
-#         html += f"""
-#         <div style="margin-left: {20 * level}px;">
-#             <input type="text" value="{data}" style="padding: 3px; {highlight_style}" readonly/>
-#         </div>
-#         """
-
-#     return html
-
-
-# def view_json(request, batch_id):
-#     """
-#     View function to fetch JSON data from MongoDB and render it as an expandable HTML form view.
-#     """
-#     try:
-#         # Debugging: Print field names in MongoDB
-#         sample_data = collection.find_one({}, {'_id': 0})
-#         print("Sample Data Keys:", list(sample_data.keys()) if sample_data else "No sample data")
-
-#         # Fetch JSON data from MongoDB - query for flexible batch_id fields
-#         query = {
-#             '$or': [
-#                 {'batch_id': batch_id},
-#                 {'batchId': batch_id},
-#                 {'BatchId': batch_id},
-#                 {'batchid': batch_id}
-#             ]
-#         }
-#         json_data = collection.find_one(query, {'_id': 0})
-
-#         # Debugging: Log the query result
-#         print("Query Result:", json_data)
-
-#         # Return error if no data is found
-#         if not json_data:
-#             return HttpResponse(
-#                 f"<h1 style='color: red;'>No data found for batch_id: {batch_id}</h1>", status=404
-#             )
-
-#         # Generate HTML with expandable/collapsible functionality
-#         html_content = f"""
-#         <html>
-#         <head>
-#             <title>JSON Data View</title>
-#             <style>
-#                 body {{
-#                     font-family: Arial, sans-serif;
-#                     margin: 20px;
-#                     background-color: #f7f7f7;
-#                 }}
-#                 h1 {{
-#                     text-align: center;
-#                     background-color:#f5a142;
-#                     color: white;
-#                     padding: 10px;
-#                 }}
-#                 .container {{
-#                     background-color: #ffffff;
-#                     padding: 10px;
-#                     border: 1px solid #ddd;
-#                     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-#                 }}
-#                 input {{
-#                     border: 1px solid #ccc;
-#                     border-radius: 4px;
-#                     padding: 3px 5px;
-#                 }}
-#                 label {{
-#                     font-weight: bold;
-#                     display: inline-block;
-#                     width: 150px;
-#                 }}
-#             </style>
-#             <script>
-#                 function toggle(id) {{
-#                     var element = document.getElementById(id);
-#                     var span = event.target;
-
-#                     if (element.style.display === "none") {{
-#                         element.style.display = "block";
-#                         span.innerHTML = "▼ " + span.innerHTML.slice(2);
-#                     }} else {{
-#                         element.style.display = "none";
-#                         span.innerHTML = "▶ " + span.innerHTML.slice(2);
-#                     }}
-#                 }}
-#             </script>
-#         </head>
-#         <body>
-#             <h1>JSON Data for Batch ID: {batch_id}</h1>
-#             <div class="container">
-#                 {json_to_html_form(json_data)}
-#             </div>
-#         </body>
-#         </html>
-#         """
-#         return HttpResponse(html_content)
-
-#     except Exception as e:
-#         # Debugging: Log the exception
-#         print("Error occurred:", str(e))
-#         return JsonResponse({'error': str(e)}, status=500)
-
+###################adding feild descriptions####################################33
 from django.http import HttpResponse, JsonResponse
 from pymongo import MongoClient
 
@@ -2644,19 +2003,6 @@ def view_json(request, batch_id):
 ####################end#################
 
 
-# import json
-# from django.http import HttpResponse
-# from django.http import HttpResponse
-
-# def download_json(request, batch_id):
-#     json_data = collection.find_one({"batch_id": batch_id}, {"_id": 0})
-#     if not json_data:
-#         return JsonResponse({"error": f"No data found for batch_id: {batch_id}"}, status=404)
-    
-#     response = HttpResponse(content_type="application/json")
-#     response['Content-Disposition'] = f'attachment; filename="{batch_id}.json"'
-#     response.write(json.dumps(json_data, indent=4))
-#     return response
 
 
 
@@ -2866,7 +2212,7 @@ def upload_source_metadata(request):
 
 
 
- # View source metadata
+ ############################## View source metadata#####################################
 @login_required
 def view_source_metadata(request):
     # Fetch all source metadata records from MongoDB
@@ -2875,119 +2221,11 @@ def view_source_metadata(request):
         print(i)
 
     return render(request, 'view_source_metadata.html', {'source_metadata_list': source_metadata_list})
-#worked on 22-01-2025
 
-# Edit view
-# def edit_source_metadata(request, metadata_id):
-#     try:
-#         # Try fetching the object from the MongoDB database
-#         source_metadata = SourceMetadata.objects.get(id=metadata_id)
-#     except SourceMetadata.DoesNotExist:
-#         raise Http404("SourceMetadata not found")
 
-#     if request.method == 'POST':
-#         form = SourceMetadataForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             # Update the metadata object
-#             source_metadata.import_url = form.cleaned_data['import_url']
-#             source_metadata.date_of_arrival = form.cleaned_data['date_of_arrival']
-#             source_metadata.assigned_to = form.cleaned_data['assigned_to']
-#             source_metadata.frequency_of_site_updates = form.cleaned_data['frequency_of_site_updates']
-#             source_metadata.site_last_checked = form.cleaned_data['site_last_checked']
-#             source_metadata.source_file_upload = form.cleaned_data.get('source_file_upload') or source_metadata.source_file_upload
-#             source_metadata.json_file_name = form.cleaned_data['json_file_name']
-#             source_metadata.json_upload_date = form.cleaned_data['json_upload_date']
-#             source_metadata.sup_id = form.cleaned_data['sup_id']
-#             source_metadata.sme_comments = form.cleaned_data['sme_comments']
-#             source_metadata.screenshots_taken = form.cleaned_data['screenshots_taken']
-            
-#             # QA fields
-#             source_metadata.qa_comment = form.cleaned_data.get('qa_comment')
-#             source_metadata.qa_name = form.cleaned_data.get('qa_name')
-#             source_metadata.qa_issue = form.cleaned_data.get('qa_issue')
-            
-#             source_metadata.save()  # Save changes to the database
-#             return redirect('view_source_metadata')  # Redirect to the list view after saving
-#     else:
-#         # Pre-fill the form with existing metadata
-#         initial_data = {
-#             'import_url': source_metadata.import_url,
-#             'date_of_arrival': source_metadata.date_of_arrival,
-#             'assigned_to': source_metadata.assigned_to,
-#             'frequency_of_site_updates': source_metadata.frequency_of_site_updates,
-#             'site_last_checked': source_metadata.site_last_checked,
-#             'source_file_upload': source_metadata.source_file_upload,
-#             'json_file_name': source_metadata.json_file_name,
-#             'json_upload_date': source_metadata.json_upload_date,
-#             'sup_id': source_metadata.sup_id,
-#             'sme_comments': source_metadata.sme_comments,
-#             'screenshots_taken': source_metadata.screenshots_taken,
-#             'qa_comment': source_metadata.qa_comment,
-#             'qa_name': source_metadata.qa_name,
-#             'qa_issue': source_metadata.qa_issue,
-#         }
-#         form = SourceMetadataForm(initial=initial_data)
 
-#     return render(request, 'upload_source_metadata.html', {'form': form, 'metadata': source_metadata})
-# from django.http import HttpResponseForbidden
 
-# def edit_source_metadata(request, metadata_id):
-#     try:
-#         # Try fetching the object from the MongoDB database
-#         source_metadata = SourceMetadata.objects.get(id=metadata_id)
-#     except SourceMetadata.DoesNotExist:
-#         raise Http404("SourceMetadata not found")
-
-#     # Restrict access: Only the assigned user or a superuser can edit
-#     if request.user.username != source_metadata.assigned_to and not request.user.is_superuser:
-#         return HttpResponseForbidden("You are not allowed to edit this entry.")
-
-#     if request.method == 'POST':
-#         form = SourceMetadataForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             # Update the metadata object
-#             source_metadata.import_url = form.cleaned_data['import_url']
-#             source_metadata.date_of_arrival = form.cleaned_data['date_of_arrival']
-#             source_metadata.assigned_to = form.cleaned_data['assigned_to']
-#             source_metadata.frequency_of_site_updates = form.cleaned_data['frequency_of_site_updates']
-#             source_metadata.site_last_checked = form.cleaned_data['site_last_checked']
-#             source_metadata.source_file_upload = form.cleaned_data.get('source_file_upload') or source_metadata.source_file_upload
-#             source_metadata.json_file_name = form.cleaned_data['json_file_name']
-#             source_metadata.json_upload_date = form.cleaned_data['json_upload_date']
-#             source_metadata.sup_id = form.cleaned_data['sup_id']
-#             source_metadata.sme_comments = form.cleaned_data['sme_comments']
-#             source_metadata.screenshots_taken = form.cleaned_data['screenshots_taken']
-            
-#             # QA fields
-#             source_metadata.qa_comment = form.cleaned_data.get('qa_comment')
-#             source_metadata.qa_name = form.cleaned_data.get('qa_name')
-#             source_metadata.qa_issue = form.cleaned_data.get('qa_issue')
-            
-#             source_metadata.save()  # Save changes to the database
-#             return redirect('view_source_metadata')  # Redirect to the list view after saving
-#     else:
-#         # Pre-fill the form with existing metadata
-#         initial_data = {
-#             'import_url': source_metadata.import_url,
-#             'date_of_arrival': source_metadata.date_of_arrival,
-#             'assigned_to': source_metadata.assigned_to,
-#             'frequency_of_site_updates': source_metadata.frequency_of_site_updates,
-#             'site_last_checked': source_metadata.site_last_checked,
-#             'source_file_upload': source_metadata.source_file_upload,
-#             'json_file_name': source_metadata.json_file_name,
-#             'json_upload_date': source_metadata.json_upload_date,
-#             'sup_id': source_metadata.sup_id,
-#             'sme_comments': source_metadata.sme_comments,
-#             'screenshots_taken': source_metadata.screenshots_taken,
-#             'qa_comment': source_metadata.qa_comment,
-#             'qa_name': source_metadata.qa_name,
-#             'qa_issue': source_metadata.qa_issue,
-#         }
-#         form = SourceMetadataForm(initial=initial_data)
-
-#     return render(request, 'upload_source_metadata.html', {'form': form, 'metadata': source_metadata})
-
-#code for edit sourcemetadata
+###############################code for edit sourcemetadata############################
 
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import Http404, HttpResponseForbidden
@@ -3265,624 +2503,16 @@ def opportunity_view(request):
 #file ingestion view function for json ############################
 ###################################################################
 
-# import base64
-# import logging
-# import requests
-# import os
-# from datetime import datetime
-# from django.shortcuts import render
-# from django.views.decorators.csrf import csrf_exempt
-# from django.core.files.storage import default_storage
-# from .forms import FileIngestionForm
-
-# global_token = None
-
-# def get_oauth_token(key, secret):
-#     url = "https://uat.business.api.elsevier.com/token"
-#     credentials = f"{key}:{secret}"
-#     encoded_credentials = base64.b64encode(credentials.encode()).decode()
-#     headers = {
-#         "Authorization": f"Basic {encoded_credentials}",
-#         "Content-Type": "application/x-www-form-urlencoded"
-#     }
-#     data = {"grant_type": "client_credentials"}
-#     response = requests.post(url, headers=headers, data=data)
-#     if response.status_code == 200:
-#         return response.json().get("access_token")
-#     return None
-
-# @csrf_exempt
-# def file_ingestion(request):
-#     global global_token
-#     context = {"form": FileIngestionForm()}
-
-#     if request.method == "POST":
-#         form = FileIngestionForm(request.POST, request.FILES)
-        
-#         if form.is_valid():
-#             action = form.cleaned_data["action"]
-
-#             if action == "generate_token":
-#                 key = "H0g93ZOVfg77MoAKCTLvCZZtTFoBir2o"  # Replace with your actual key
-#                 secret = "T9wS2s4wUQG31k6kv2lJ0SCbNdhHuDgv"  # Replace with your actual secret
-#                 global_token = get_oauth_token(key, secret)
-#                 context["token"] = global_token
-#                 context["message"] = "Token generated successfully!" if global_token else "Failed to generate token."
-
-#             elif action == "create_batch":
-#                 if not global_token:
-#                     context["message"] = "Token is not available. Please generate a token first."
-#                     return render(request, "ingestion_template.html", context)
-
-#                 uploaded_file = request.FILES.get("file_location")
-#                 if not uploaded_file:
-#                     context["message"] = "No file uploaded."
-#                     return render(request, "ingestion_template.html", context)
-
-#                 headers = {
-#                     "Authorization": f"Bearer {global_token}",
-#                     "accept": "*/*",
-#                 }
-
-#                 # Save the uploaded file to a temporary location
-#                 temp_file_path = os.path.join(default_storage.location, uploaded_file.name)
-#                 if not os.path.exists(default_storage.location):
-#                     os.makedirs(default_storage.location)
-
-#                 with default_storage.open(temp_file_path, 'wb+') as temp_file:
-#                     for chunk in uploaded_file.chunks():
-#                         temp_file.write(chunk)
-
-#                 # Open the saved file in binary mode and send the POST request
-#                 with open(temp_file_path, 'rb') as file:
-#                     files = {'file': file}
-#                     response = requests.post(
-#                         "https://uat.business.api.elsevier.com/v1/funding-ingestion/vtool",
-#                         headers=headers,
-#                         files=files,
-#                     )
-
-#                 if response.status_code == 200:
-#                     batch_id = response.json().get("batchId")
-#                     if batch_id:
-#                         context["batch_id"] = batch_id
-#                         context["message"] = f"Batch created successfully! Batch ID: {batch_id}"
-#                     else:
-#                         context["message"] = "Batch creation successful but no batch ID returned."
-#                 else:
-#                     context["message"] = f"Failed to create batch. Response Code: {response.status_code}"
-
-#             elif action == "ingest_file":
-#                 if not global_token:
-#                     context["message"] = "Token is not available. Please generate a token first."
-#                     return render(request, "ingestion_template.html", context)
-
-#                 ingestion_type = form.cleaned_data["ingestion_type"]
-#                 batch_id = request.POST.get("batch_id")
-#                 file = request.FILES.get("json_location")
-#                 data_type = form.cleaned_data["data_type"]
-
-#                 if not file:
-#                     context["message"] = "No file provided for ingestion."
-#                     return render(request, "ingestion_template.html", context)
-
-#                 base_url = "https://uat.business.api.elsevier.com/v1/funding-ingestion"
-#                 url = f"{base_url}/{data_type}"
-#                 if ingestion_type == "batch":
-#                     url += "/bulk"
-#                 headers = {
-#                     "accept": "application/json",
-#                     'callbackUrl': 'https://callbackapi-elsevier.mpsinsight.com/callbackapi/callback',
-#                     "Content-Type": "application/json",
-#                     "batchId": batch_id,
-#                     "Authorization": f"Bearer {global_token}",
-#                 }
-
-#                 if ingestion_type == "batch":
-#                     files = {"file": file}
-#                     response = requests.post(url, headers=headers, files=files)
-#                 else:
-#                     response = requests.post(url, headers=headers, data=file.read())
-
-#                 if response.status_code == 200:
-#                     context["message"] = "File ingested successfully!"
-#                 else:
-#                     context["message"] = f"Failed to ingest file: {response.text}"
-
-#     return render(request, "ingestion_template.html", context)
-
-
-
-#code for adding ingestion 2 ##################
-# import os
-# import base64
-# import logging
-# import requests
-# from datetime import datetime
-# from django.shortcuts import render
-# from django.views.decorators.csrf import csrf_exempt
-# from django.core.files.storage import default_storage
-# from .forms import FileIngestionForm
-
-# # Create logs directory in the project root
-# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-# LOG_DIR = os.path.join(BASE_DIR, "logs")
-# if not os.path.exists(LOG_DIR):
-#     os.makedirs(LOG_DIR)
-
-# # Configure logging
-# LOG_FILE = os.path.join(LOG_DIR, "ingestion_details.log")
-# logging.basicConfig(
-#     filename=LOG_FILE,
-#     level=logging.INFO,
-#     format="%(asctime)s - %(levelname)s - %(message)s",
-# )
-
-# # Global token variable
-# global_token = None
-
-
-# def get_oauth_token(key, secret):
-#     url = "https://uat.business.api.elsevier.com/token"
-#     credentials = f"{key}:{secret}"
-#     encoded_credentials = base64.b64encode(credentials.encode()).decode()
-#     headers = {
-#         "Authorization": f"Basic {encoded_credentials}",
-#         "Content-Type": "application/x-www-form-urlencoded",
-#     }
-#     data = {"grant_type": "client_credentials"}
-#     response = requests.post(url, headers=headers, data=data)
-#     if response.status_code == 200:
-#         return response.json().get("access_token")
-#     return None
-
-
-# @csrf_exempt
-# def file_ingestion(request):
-#     global global_token
-#     context = {"form": FileIngestionForm()}
-
-#     if request.method == "POST":
-#         form = FileIngestionForm(request.POST, request.FILES)
-
-#         if form.is_valid():
-#             action = form.cleaned_data["action"]
-
-#             if action == "generate_token":
-#                 key = "H0g93ZOVfg77MoAKCTLvCZZtTFoBir2o"  # Replace with your actual key
-#                 secret = "T9wS2s4wUQG31k6kv2lJ0SCbNdhHuDgv"  # Replace with your actual secret
-#                 global_token = get_oauth_token(key, secret)
-#                 context["token"] = global_token
-#                 context["message"] = "Token generated successfully!" if global_token else "Failed to generate token."
-#                 logging.info("Token generated successfully!" if global_token else "Failed to generate token.")
-
-#             elif action == "create_batch":
-#                 if not global_token:
-#                     context["message"] = "Token is not available. Please generate a token first."
-#                     return render(request, "ingestion_template.html", context)
-
-#                 uploaded_file = request.FILES.get("file_location")
-#                 if not uploaded_file:
-#                     context["message"] = "No file uploaded."
-#                     return render(request, "ingestion_template.html", context)
-
-#                 headers = {
-#                     "Authorization": f"Bearer {global_token}",
-#                     "accept": "*/*",
-#                 }
-
-#                 temp_file_path = os.path.join(default_storage.location, uploaded_file.name)
-#                 if not os.path.exists(default_storage.location):
-#                     os.makedirs(default_storage.location)
-
-#                 with default_storage.open(temp_file_path, 'wb+') as temp_file:
-#                     for chunk in uploaded_file.chunks():
-#                         temp_file.write(chunk)
-
-#                 with open(temp_file_path, 'rb') as file:
-#                     files = {'file': file}
-#                     response = requests.post(
-#                         "https://uat.business.api.elsevier.com/v1/funding-ingestion/vtool",
-#                         headers=headers,
-#                         files=files,
-#                     )
-
-#                 if response.status_code == 200:
-#                     batch_id = response.json().get("batchId")
-#                     if batch_id:
-#                         context["batch_id"] = batch_id
-#                         context["message"] = f"Batch created successfully! Batch ID: {batch_id}"
-#                         logging.info(f"Batch created successfully! Batch ID: {batch_id}")
-#                     else:
-#                         context["message"] = "Batch creation successful but no batch ID returned."
-#                         logging.warning("Batch creation successful but no batch ID returned.")
-#                 else:
-#                     context["message"] = f"Failed to create batch. Response Code: {response.status_code}"
-#                     logging.error(f"Failed to create batch. Response Code: {response.status_code}")
-
-#             elif action == "ingest_file":
-#                 if not global_token:
-#                     context["message"] = "Token is not available. Please generate a token first."
-#                     return render(request, "ingestion_template.html", context)
-
-#                 ingestion_type = form.cleaned_data["ingestion_type"]
-#                 batch_id = request.POST.get("batch_id")
-#                 file = request.FILES.get("json_location")
-#                 data_type = form.cleaned_data["data_type"]
-
-#                 if not file:
-#                     context["message"] = "No file provided for ingestion."
-#                     return render(request, "ingestion_template.html", context)
-
-#                 base_url = "https://uat.business.api.elsevier.com/v1/funding-ingestion"
-#                 url = f"{base_url}/{data_type}"
-#                 if ingestion_type == "batch":
-#                     url += "/bulk"
-
-#                 headers = {
-#                     "accept": "application/json",
-#                     "callbackUrl": "https://callbackapi-elsevier.mpsinsight.com/callbackapi/callback",
-#                     "Content-Type": "application/json",
-#                     "batchId": batch_id,
-#                     "Authorization": f"Bearer {global_token}",
-#                 }
-
-#                 try:
-#                     response = requests.post(url, headers=headers, data=file.read())
-#                     ingestion_response = response.json()
-
-#                     ingestion_id = ingestion_response.get("ingestionId")
-#                     ingestion_item_id = ingestion_response.get("id")
-
-#                     if ingestion_id and ingestion_item_id:
-#                         log_message = (
-#                             f"Timestamp: {datetime.now()} - "
-#                             f"Ingestion ID: {ingestion_id}, ID: {ingestion_item_id}, Batch ID: {batch_id}"
-#                         )
-#                         logging.info(log_message)
-
-#                     if response.status_code == 200:
-#                         context["message"] = "File ingested successfully!"
-#                     else:
-#                         context["message"] = f"Failed to ingest file: {response.text}"
-#                         logging.error(f"Failed to ingest file: {response.text}")
-
-#                 except Exception as e:
-#                     context["message"] = "An error occurred during file ingestion."
-#                     logging.exception(f"Exception occurred during file ingestion: {e}")
-
-#     return render(request, "ingestion_template.html", context)
-
-#date 13-01-2025
-# import os
-# import base64
-# import logging
-# import requests
-# from datetime import datetime
-# from django.shortcuts import render
-# from django.views.decorators.csrf import csrf_exempt
-# from django.core.files.storage import default_storage
-# from .forms import FileIngestionForm
-
-# # Create logs directory in the project root
-# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-# LOG_DIR = os.path.join(BASE_DIR, "logs")
-# if not os.path.exists(LOG_DIR):
-#     os.makedirs(LOG_DIR)
-
-# # Configure logging
-# LOG_FILE = os.path.join(LOG_DIR, "ingestion_details.log")
-# logging.basicConfig(
-#     filename=LOG_FILE,
-#     level=logging.INFO,
-#     format="%(asctime)s - %(levelname)s - %(message)s",
-# )
-
-# # Global token variable
-# global_token = None
-
-
-# def get_oauth_token(key, secret):
-#     url = "https://uat.business.api.elsevier.com/token"
-#     credentials = f"{key}:{secret}"
-#     encoded_credentials = base64.b64encode(credentials.encode()).decode()
-#     headers = {
-#         "Authorization": f"Basic {encoded_credentials}",
-#         "Content-Type": "application/x-www-form-urlencoded",
-#     }
-#     data = {"grant_type": "client_credentials"}
-#     response = requests.post(url, headers=headers, data=data)
-#     if response.status_code == 200:
-#         return response.json().get("access_token")
-#     return None
-
-
-# @csrf_exempt
-# def file_ingestion(request):
-#     global global_token
-#     context = {"form": FileIngestionForm()}
-
-#     if request.method == "POST":
-#         form = FileIngestionForm(request.POST, request.FILES)
-
-#         if form.is_valid():
-#             action = form.cleaned_data["action"]
-#             user_name = form.cleaned_data.get("user_name", "Unknown User")  # Default to 'Unknown User' if not provided
-
-#             if action == "generate_token":
-#                 key = "H0g93ZOVfg77MoAKCTLvCZZtTFoBir2o"  # Replace with your actual key
-#                 secret = "T9wS2s4wUQG31k6kv2lJ0SCbNdhHuDgv"  # Replace with your actual secret
-#                 global_token = get_oauth_token(key, secret)
-#                 context["token"] = global_token
-#                 context["message"] = "Token generated successfully!" if global_token else "Failed to generate token."
-#                 log_message = f"User: {user_name} - Token generation status: {'Success' if global_token else 'Failure'}"
-#                 logging.info(log_message)
-
-#             elif action == "create_batch":
-#                 if not global_token:
-#                     context["message"] = "Token is not available. Please generate a token first."
-#                     return render(request, "ingestion_template.html", context)
-
-#                 uploaded_file = request.FILES.get("file_location")
-#                 if not uploaded_file:
-#                     context["message"] = "No file uploaded."
-#                     return render(request, "ingestion_template.html", context)
-
-#                 headers = {
-#                     "Authorization": f"Bearer {global_token}",
-#                     "accept": "*/*",
-#                 }
-
-#                 temp_file_path = os.path.join(default_storage.location, uploaded_file.name)
-#                 if not os.path.exists(default_storage.location):
-#                     os.makedirs(default_storage.location)
-
-#                 with default_storage.open(temp_file_path, 'wb+') as temp_file:
-#                     for chunk in uploaded_file.chunks():
-#                         temp_file.write(chunk)
-
-#                 with open(temp_file_path, 'rb') as file:
-#                     files = {'file': file}
-#                     response = requests.post(
-#                         "https://uat.business.api.elsevier.com/v1/funding-ingestion/vtool",
-#                         headers=headers,
-#                         files=files,
-#                     )
-
-#                 if response.status_code == 200:
-#                     batch_id = response.json().get("batchId")
-#                     if batch_id:
-#                         context["batch_id"] = batch_id
-#                         context["message"] = f"Batch created successfully! Batch ID: {batch_id}"
-#                         log_message = f"User: {user_name} - Batch created successfully! Batch ID: {batch_id}"
-#                         logging.info(log_message)
-#                     else:
-#                         context["message"] = "Batch creation successful but no batch ID returned."
-#                         logging.warning(f"User: {user_name} - Batch creation successful but no batch ID returned.")
-#                 else:
-#                     context["message"] = f"Failed to create batch. Response Code: {response.status_code}"
-#                     logging.error(f"User: {user_name} - Failed to create batch. Response Code: {response.status_code}")
-
-#             elif action == "ingest_file":
-#                 if not global_token:
-#                     context["message"] = "Token is not available. Please generate a token first."
-#                     return render(request, "ingestion_template.html", context)
-
-#                 ingestion_type = form.cleaned_data["ingestion_type"]
-#                 batch_id = request.POST.get("batch_id")
-#                 file = request.FILES.get("json_location")
-#                 data_type = form.cleaned_data["data_type"]
-
-#                 if not file:
-#                     context["message"] = "No file provided for ingestion."
-#                     return render(request, "ingestion_template.html", context)
-
-#                 base_url = "https://uat.business.api.elsevier.com/v1/funding-ingestion"
-#                 url = f"{base_url}/{data_type}"
-#                 if ingestion_type == "batch":
-#                     url += "/bulk"
-
-#                 headers = {
-#                     "accept": "application/json",
-#                     "callbackUrl": "https://callbackapi-elsevier.mpsinsight.com/callbackapi/callback",
-#                     "Content-Type": "application/json",
-#                     "batchId": batch_id,
-#                     "Authorization": f"Bearer {global_token}",
-#                 }
-
-#                 try:
-#                     response = requests.post(url, headers=headers, data=file.read())
-#                     ingestion_response = response.json()
-
-#                     ingestion_id = ingestion_response.get("ingestionId")
-#                     ingestion_item_id = ingestion_response.get("id")
-
-#                     if ingestion_id and ingestion_item_id:
-#                         log_message = (
-#                             f"User: {user_name} - Timestamp: {datetime.now()} - "
-#                             f"Ingestion ID: {ingestion_id}, ID: {ingestion_item_id}, Batch ID: {batch_id}"
-#                         )
-#                         logging.info(log_message)
-
-#                     if response.status_code == 200:
-#                         context["message"] = "File ingested successfully!"
-#                     else:
-#                         context["message"] = f"Failed to ingest file: {response.text}"
-#                         logging.error(f"User: {user_name} - Failed to ingest file: {response.text}")
-
-#                 except Exception as e:
-#                     context["message"] = "An error occurred during file ingestion."
-#                     logging.exception(f"User: {user_name} - Exception occurred during file ingestion: {e}")
-
-#     return render(request, "ingestion_template.html", context)
-
-
-# import os
-# import base64
-# import logging
-# import requests
-# from datetime import datetime
-# from django.shortcuts import render
-# from django.views.decorators.csrf import csrf_exempt
-# from django.core.files.storage import default_storage
-# from .forms import FileIngestionForm
-
-# # Create logs directory in the project root
-# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-# LOG_DIR = os.path.join(BASE_DIR, "logs")
-# if not os.path.exists(LOG_DIR):
-#     os.makedirs(LOG_DIR)
-
-# # Configure logging
-# LOG_FILE = os.path.join(LOG_DIR, "ingestion_details.log")
-# logging.basicConfig(
-#     filename=LOG_FILE,
-#     level=logging.INFO,
-#     format="%(asctime)s - %(levelname)s - %(message)s",
-# )
-
-# # Global token variable
-# global_token = None
-
-
-# def get_oauth_token(key, secret):
-#     url = "https://uat.business.api.elsevier.com/token"
-#     credentials = f"{key}:{secret}"
-#     encoded_credentials = base64.b64encode(credentials.encode()).decode()
-#     headers = {
-#         "Authorization": f"Basic {encoded_credentials}",
-#         "Content-Type": "application/x-www-form-urlencoded",
-#     }
-#     data = {"grant_type": "client_credentials"}
-#     response = requests.post(url, headers=headers, data=data)
-#     if response.status_code == 200:
-#         return response.json().get("access_token")
-#     return None
-
-
-# @csrf_exempt
-# def file_ingestion(request):
-#     global global_token
-#     context = {"form": FileIngestionForm()}
-
-#     if request.method == "POST":
-#         form = FileIngestionForm(request.POST, request.FILES)
-
-#         if form.is_valid():
-#             action = form.cleaned_data["action"]
-#             user_name = form.cleaned_data.get("user_name", "Unknown User")  # Default to 'Unknown User' if not provided
-
-#             if action == "generate_token":
-#                 key = "H0g93ZOVfg77MoAKCTLvCZZtTFoBir2o"  # Replace with your actual key
-#                 secret = "T9wS2s4wUQG31k6kv2lJ0SCbNdhHuDgv"  # Replace with your actual secret
-#                 global_token = get_oauth_token(key, secret)
-#                 context["token"] = global_token
-#                 context["message"] = "Token generated successfully!" if global_token else "Failed to generate token."
-#                 log_message = f"User: {user_name} - Token generation status: {'Success' if global_token else 'Failure'}"
-#                 logging.info(log_message)
-
-#             elif action == "create_batch":
-#                 if not global_token:
-#                     context["message"] = "Token is not available. Please generate a token first."
-#                     return render(request, "ingestion_template.html", context)
-
-#                 uploaded_file = request.FILES.get("file_location")
-#                 if not uploaded_file:
-#                     context["message"] = "No file uploaded."
-#                     return render(request, "ingestion_template.html", context)
-
-#                 headers = {
-#                     "Authorization": f"Bearer {global_token}",
-#                     "accept": "*/*",
-#                 }
-
-#                 temp_file_path = os.path.join(default_storage.location, uploaded_file.name)
-#                 if not os.path.exists(default_storage.location):
-#                     os.makedirs(default_storage.location)
-
-#                 with default_storage.open(temp_file_path, 'wb+') as temp_file:
-#                     for chunk in uploaded_file.chunks():
-#                         temp_file.write(chunk)
-
-#                 with open(temp_file_path, 'rb') as file:
-#                     files = {'file': file}
-#                     response = requests.post(
-#                         "https://uat.business.api.elsevier.com/v1/funding-ingestion/vtool",
-#                         headers=headers,
-#                         files=files,
-#                     )
-
-#                 if response.status_code == 200:
-#                     batch_id = response.json().get("batchId")
-#                     if batch_id:
-#                         context["batch_id"] = batch_id
-#                         context["message"] = f"Batch created successfully! Batch ID: {batch_id}"
-#                         log_message = f"User: {user_name} - Batch created successfully! Batch ID: {batch_id}"
-#                         logging.info(log_message)
-#                     else:
-#                         context["message"] = "Batch creation successful but no batch ID returned."
-#                         logging.warning(f"User: {user_name} - Batch creation successful but no batch ID returned.")
-#                 else:
-#                     context["message"] = f"Failed to create batch. Response Code: {response.status_code}"
-#                     logging.error(f"User: {user_name} - Failed to create batch. Response Code: {response.status_code}")
-
-#             elif action == "ingest_file":
-#                 if not global_token:
-#                     context["message"] = "Token is not available. Please generate a token first."
-#                     return render(request, "ingestion_template.html", context)
-
-#                 ingestion_type = form.cleaned_data["ingestion_type"]
-#                 batch_id = request.POST.get("batch_id")
-#                 file = request.FILES.get("json_location")
-#                 data_type = form.cleaned_data["data_type"]
-
-#                 if not file:
-#                     context["message"] = "No file provided for ingestion."
-#                     return render(request, "ingestion_template.html", context)
-
-#                 base_url = "https://uat.business.api.elsevier.com/v1/funding-ingestion"
-#                 url = f"{base_url}/{data_type}"
-#                 if ingestion_type == "batch":
-#                     url += "/bulk"
-
-#                 headers = {
-#                     "accept": "application/json",
-#                     "callbackUrl": "https://callbackapi-elsevier.mpsinsight.com/callbackapi/callback",
-#                     "Content-Type": "application/json",
-#                     "batchId": batch_id,
-#                     "Authorization": f"Bearer {global_token}",
-#                 }
-
-#                 try:
-#                     response = requests.post(url, headers=headers, data=file.read())
-#                     ingestion_response = response.json()
-
-#                     ingestion_id = ingestion_response.get("ingestionId")
-#                     ingestion_item_id = ingestion_response.get("id")
-
-#                     if ingestion_id and ingestion_item_id:
-#                         log_message = (
-#                             f"User: {user_name} - Timestamp: {datetime.now()} - "
-#                             f"Ingestion ID: {ingestion_id}, ID: {ingestion_item_id}, Batch ID: {batch_id}"
-#                         )
-#                         logging.info(log_message)
-
-#                     if response.status_code == 200:
-#                         context["message"] = "File ingested successfully!"
-#                     else:
-#                         context["message"] = f"Failed to ingest file: {response.text}"
-#                         logging.error(f"User: {user_name} - Failed to ingest file: {response.text}")
-
-#                 except Exception as e:
-#                     context["message"] = "An error occurred during file ingestion."
-#                     logging.exception(f"User: {user_name} - Exception occurred during file ingestion: {e}")
-
-#     return render(request, "ingestion_template.html", context)
 
 
 # 17:40
+#view code for ingestion main page#############################3
 
-#################view code of ingestion of files ###########################
+def ingestion_main_temp(request):
+    return render(request, 'ingestion_main.html')  # Page with Tabs
+
+
+#################view code of ingestion of files for uat  ###########################
 ################################################################################################
 ##############################################################################################
 
@@ -3896,6 +2526,7 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from django.core.files.storage import default_storage
 from .forms import FileIngestionForm
+from .models import IngestionLog
 
 # Create logs directory in the project root
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -3932,6 +2563,7 @@ def get_oauth_token(key, secret):
 
 @csrf_exempt
 @login_required
+
 def file_ingestion(request):
     global global_token
     context = {"form": FileIngestionForm()}
@@ -3971,6 +2603,7 @@ def file_ingestion(request):
                 headers = {
                     "Authorization": f"Bearer {global_token}",
                     "accept": "*/*",
+
                 }
 
                 temp_file_path = os.path.join(default_storage.location, uploaded_file.name)
@@ -3987,7 +2620,9 @@ def file_ingestion(request):
                         "https://uat.business.api.elsevier.com/v1/funding-ingestion/vtool",
                         headers=headers,
                         files=files,
+                        
                     )
+                   
 
                 if response.status_code == 200:
                     batch_id = response.json().get("batchId")
@@ -4088,13 +2723,12 @@ def file_ingestion(request):
                     context["ingestion_status_message"] = "Failed to fetch status."
 
     return render(request, "ingestion_template.html", context)
+    
 
 
 
-
-#####view code for storing imgestion details in db  ##########
-
-from .models import IngestionLog  # Import the model
+################view code for storing imgestion details in db  ##########
+from .models import IngestionLog
 
 def store_ingestion_details(user_name, ingestion_id, ingestion_item_id, batch_id):
     """Store ingestion details in the database."""
@@ -4108,7 +2742,237 @@ def store_ingestion_details(user_name, ingestion_id, ingestion_item_id, batch_id
 
 
 
+
 #############################end#########################################
+#################view code of ingestion of files for prod ###########################
+################################################################################################
+
+from django import forms
+import os
+import base64
+import logging
+import requests
+from datetime import datetime
+from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
+from django.core.files.storage import default_storage
+from .forms import IngestionProd
+from .models import IngestProd
+
+# Create logs directory in the project root
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+LOG_DIR = os.path.join(BASE_DIR, "logs")
+if not os.path.exists(LOG_DIR):
+    os.makedirs(LOG_DIR)
+
+# Configure logging
+LOG_FILE = os.path.join(LOG_DIR, "ingest_logs.log")
+logging.basicConfig(
+    filename=LOG_FILE,
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+)
+
+# Global token variable
+global_token = None
+
+
+def get_oauth_token(key, secret):
+    url = "https://business.api.elsevier.com/token"
+    credentials = f"{key}:{secret}"
+    encoded_credentials = base64.b64encode(credentials.encode()).decode()
+    headers = {
+        "Authorization": f"Basic {encoded_credentials}",
+        "Content-Type": "application/x-www-form-urlencoded",
+    }
+    data = {"grant_type": "client_credentials"}
+    response = requests.post(url, headers=headers, data=data)
+    if response.status_code == 200:
+        return response.json().get("access_token")
+    return None
+
+
+@csrf_exempt
+@login_required
+
+def ingestion_prod(request):
+    global global_token
+    context = {"form": IngestionProd()}
+
+    if request.method == "POST":
+        form = IngestionProd(request.POST, request.FILES)
+
+        if form.is_valid():
+            action = form.cleaned_data["action"]
+            # Ensure `user_name` defaults to "Unknown User" if not provided
+            user_name = form.cleaned_data.get("user_name", "Unknown User")
+
+            # Debugging log to verify if user_name is correctly passed from the form
+            logging.info(f"Form submitted by user: {user_name}")
+
+            if action == "generate_token":
+                key = "P2jBnk8mUNIHqBHNE4SXs4QhklMdB25F"  # Replace with your actual key
+                secret = "BUZ1r7FWxpJOswJIMrZV4FkgmOrUBC2S"  # Replace with your actual secret
+                global_token = get_oauth_token(key, secret)
+                context["token"] = global_token
+                context["message"] = (
+                    "Token generated successfully!" if global_token else "Failed to generate token."
+                )
+                log_message = f"User: {user_name} - Token generation status: {'Success' if global_token else 'Failure'}"
+                logging.info(log_message)
+
+            elif action == "create_batch":
+                if not global_token:
+                    context["message"] = "Token is not available. Please generate a token first."
+                    return render(request, "ingestemp_prod.html", context)
+
+                uploaded_file = request.FILES.get("file_location")
+                if not uploaded_file:
+                    context["message"] = "No file uploaded."
+                    return render(request, "ingestemp_prod.html", context)
+
+                headers = {
+                    "Authorization": f"Bearer {global_token}",
+                    "accept": "*/*",
+
+                }
+
+                temp_file_path = os.path.join(default_storage.location, uploaded_file.name)
+                if not os.path.exists(default_storage.location):
+                    os.makedirs(default_storage.location)
+
+                with default_storage.open(temp_file_path, 'wb+') as temp_file:
+                    for chunk in uploaded_file.chunks():
+                        temp_file.write(chunk)
+
+                with open(temp_file_path, 'rb') as file:
+                    files = {'file': file}
+                    response = requests.post(
+                        "https://uat.business.api.elsevier.com/v1/funding-ingestion/vtool",
+                        headers=headers,
+                        files=files,
+                        
+                    )
+                   
+
+                if response.status_code == 200:
+                    batch_id = response.json().get("batchId")
+                    if batch_id:
+                        context["batch_id"] = batch_id
+                        context["message"] = f"Batch created successfully! Batch ID: {batch_id}"
+                        log_message = f"User: {user_name} - Batch created successfully! Batch ID: {batch_id}"
+                        logging.info(log_message)
+                    else:
+                        context["message"] = "Batch creation successful but no batch ID returned."
+                        logging.warning(f"User: {user_name} - Batch creation successful but no batch ID returned.")
+                else:
+                    context["message"] = f"Failed to create batch. Response Code: {response.status_code}"
+                    logging.error(f"User: {user_name} - Failed to create batch. Response Code: {response.status_code}")
+
+            elif action == "ingest_file":
+                if not global_token:
+                    context["message"] = "Token is not available. Please generate a token first."
+                    return render(request, "ingestemp_prod.html", context)
+
+                ingestion_type = form.cleaned_data["ingestion_type"]
+                batch_id = request.POST.get("batch_id")
+                file = request.FILES.get("json_location")
+                data_type = form.cleaned_data["data_type"]
+
+                if not file:
+                    context["message"] = "No file provided for ingestion."
+                    return render(request, "ingestemp_prod.html", context)
+
+                base_url = "https://uat.business.api.elsevier.com/v1/funding-ingestion"
+                url = f"{base_url}/{data_type}"
+                if ingestion_type == "batch":
+                    url += "/bulk"
+
+                headers = {
+                    "accept": "application/json",
+                    "callbackUrl": "https://callbackapi-elsevier.mpsinsight.com/callbackapi/callback",
+                    "Content-Type": "application/json",
+                    "batchId": batch_id,
+                    "Authorization": f"Bearer {global_token}",
+                }
+
+                try:
+                    response = requests.post(url, headers=headers, data=file.read())
+                    ingestion_response = response.json()
+
+                    ingestion_id = ingestion_response.get("ingestionId")
+                    ingestion_item_id = ingestion_response.get("id")
+
+                    if ingestion_id and ingestion_item_id:
+                        log_message = (
+                            f"User: {user_name} - Timestamp: {datetime.now()} - "
+                            f"Ingestion ID: {ingestion_id}, ID: {ingestion_item_id}, Batch ID: {batch_id}"
+                        )
+                        logging.info(log_message)
+                        
+                        # Store details in the database
+                        reserve_ingestion_log(user_name, ingestion_id, ingestion_item_id, batch_id)
+
+                    if response.status_code == 200:
+                        context["message"] = "File ingested successfully!"
+                    else:
+                        context["message"] = f"Failed to ingest file: {response.text}"
+                        logging.error(f"User: {user_name} - Failed to ingest file: {response.text}")
+
+                except Exception as e:
+                    context["message"] = "An error occurred during file ingestion."
+                    logging.exception(f"User: {user_name} - Exception occurred during file ingestion: {e}")
+                    
+ # Step 5: Check Ingestion Status
+            elif action == "check_ingestion_status":
+                ingestion_id = request.POST.get("ingestion_id")
+                data_type = request.POST.get("data_type")
+
+                if not ingestion_id:
+                    context["ingestion_status_message"] = "Please provide an ingestion ID."
+                    return render(request, "ingestemp_prod.html", context)
+
+                base_urls = {
+                    "award": "https://uat.business.api.elsevier.com/v1/funding-ingestion/award/",
+                    "opportunity": "https://uat.business.api.elsevier.com/v1/funding-ingestion/opportunity/",
+                    "funding-body": "https://uat.business.api.elsevier.com/v1/funding-ingestion/funding-body/"
+                }
+
+                url = f"{base_urls[data_type]}{ingestion_id}"
+                headers = {"accept": "application/json", "Authorization": f"Bearer {global_token}"}
+
+                try:
+                    response = requests.get(url, headers=headers)
+                    if response.status_code == 200:
+                        response_data = response.json()
+                        context["ingestion_status_message"] = f"Status: {response_data.get('status', 'Unknown')}"
+                    else:
+                        context["ingestion_status_message"] = f"Failed to fetch status. Response Code: {response.status_code}"
+                except Exception as e:
+                    context["ingestion_status_message"] = "An error occurred while checking ingestion status."
+                    logging.exception(f"User: {user_name} - Exception during status check: {e}")
+                    context["ingestion_status_message"] = "Failed to fetch status."
+
+    return render(request, "ingestemp_prod.html", context)
+    
+
+
+
+################view code for storing imgestion details in db  ##########
+from .models import IngestionLog
+
+def reserve_ingestion_log(user_name, ingestion_id, ingestion_item_id, batch_id):
+    """Store ingestion details in the database."""
+    IngestionLog.objects.create(
+        user_name=user_name,
+        ingestion_id=ingestion_id,
+        ingestion_item_id=ingestion_item_id,
+        batch_id=batch_id,
+        status="Success"  # Initially set status as Success, update if needed
+    )
+
+
+##############################################################################################
 
 from django.contrib.auth.models import User  # If using a custom user model, import that
 from django.shortcuts import render
@@ -4123,284 +2987,7 @@ def user_list(request):
 
 
 
-# views.py   view for dashbaord
-# import pandas as pd
-# import matplotlib.pyplot as plt
-# from io import BytesIO
-# from django.shortcuts import render
-# from .models import SourceMetadata
-# from datetime import datetime
-# import base64
-
-# def dashboard_view(request):
-#     # Fetch all source metadata records from MongoDB
-#     source_metadata_list = SourceMetadata.objects.all()
-
-#     # Convert QuerySet to list of dictionaries manually
-#     data = []
-#     for item in source_metadata_list:
-#         data.append({
-#             'import_url': item.import_url,
-#             'date_of_arrival': item.date_of_arrival,
-#             'assigned_to': item.assigned_to,
-#             'frequency_of_site_updates': item.frequency_of_site_updates,
-#             'site_last_checked': item.site_last_checked,
-#             'source_file_upload': item.source_file_upload,
-#             'json_file_name': item.json_file_name,
-#             'json_upload_date': item.json_upload_date,
-#             'sup_id': item.sup_id,
-#             'sme_comments': item.sme_comments,
-#             'screenshots_taken': item.screenshots_taken,
-#             'qa_comment': item.qa_comment,
-#             'qa_name': item.qa_name,
-#             'file_status': item.file_status,
-#             'qa_issue': item.qa_issue,
-#             'created_at': item.created_at,
-#         })
-
-#     # Convert the data to a Pandas DataFrame for easy processing
-#     df = pd.DataFrame(data)
-
-#     # Calculate metrics for the dashboard
-#     if not df.empty:
-#         total_sources = len(df)
-#         total_files = df['source_file_upload'].notna().sum()
-#         qa_pending = df[df['file_status'] == 'Pending'].shape[0]
-#         completed_tasks = df[df['file_status'] == 'Completed'].shape[0]
-#         in_progress_tasks = df[df['file_status'] == 'In Progress'].shape[0]
-
-#         # Prepare the data for chart (Tasks per User)
-#         user_task_counts = df['assigned_to'].value_counts()
-
-#         # Create Matplotlib chart (Bar Chart)
-#         fig, ax = plt.subplots(figsize=(10, 6))
-#         ax.bar(user_task_counts.index, user_task_counts.values, color='skyblue')
-
-#         ax.set_xlabel('Users')
-#         ax.set_ylabel('Number of Tasks')
-#         ax.set_title('Tasks per User')
-
-#         # Save the chart to a BytesIO object to embed it in the HTML
-#         buf = BytesIO()
-#         plt.tight_layout()
-#         fig.savefig(buf, format='png')
-#         buf.seek(0)
-#         chart_data = base64.b64encode(buf.read()).decode('utf-8')
-#         buf.close()
-#     else:
-#         total_sources = total_files = qa_pending = completed_tasks = in_progress_tasks = 0
-#         chart_data = None
-
-#     context = {
-#         'total_sources': total_sources,
-#         'total_files': total_files,
-#         'qa_pending': qa_pending,
-#         'completed_tasks': completed_tasks,
-#         'in_progress_tasks': in_progress_tasks,
-#         'source_metadata_list': source_metadata_list,
-#         'chart_data': chart_data,  # Pass the chart data to the template
-#     }
-
-#     return render(request, 'dashboard.html', context)
-
-
-#coreect code27-01-2025
-# import pandas as pd
-# import matplotlib.pyplot as plt
-# from io import BytesIO
-# from django.shortcuts import render
-# from .models import SourceMetadata
-# from datetime import datetime
-# import base64
-
-# def dashboard_view(request):
-#     # Fetch all source metadata records from MongoDB
-#     source_metadata_list = SourceMetadata.objects.all()
-
-#     # Convert QuerySet to list of dictionaries manually
-#     data = []
-#     for item in source_metadata_list:
-#         data.append({
-#             'import_url': item.import_url,
-#             'date_of_arrival': item.date_of_arrival,
-#             'assigned_to': item.assigned_to,
-#             'frequency_of_site_updates': item.frequency_of_site_updates,
-#             'site_last_checked': item.site_last_checked,
-#             'source_file_upload': item.source_file_upload,
-#             'json_file_name': item.json_file_name,
-#             'json_upload_date': item.json_upload_date,
-#             'sup_id': item.sup_id,
-#             'sme_comments': item.sme_comments,
-#             'screenshots_taken': item.screenshots_taken,
-#             'qa_comment': item.qa_comment,
-#             'qa_name': item.qa_name,
-#             'file_status': item.file_status,
-#             'qa_issue': item.qa_issue,
-#             'created_at': item.created_at,
-#         })
-
-#     # Convert the data to a Pandas DataFrame for easy processing
-#     df = pd.DataFrame(data)
-
-#     # Calculate metrics for the dashboard
-#     if not df.empty:
-#         total_sources = len(df)
-#         total_files = df['source_file_upload'].notna().sum()
-#         qa_pending = df[df['file_status'] == 'Pending'].shape[0]
-#         completed_tasks = df[df['file_status'] == 'Completed'].shape[0]
-#         in_progress_tasks = df[df['file_status'] == 'In Progress'].shape[0]
-        
-#         # Calculate Accepted and Rejected Files
-#         accepted_files = df[df['file_status'] == 'Accepted'].shape[0]
-#         rejected_files = df[df['file_status'] == 'Rejected'].shape[0]
-
-#         # Prepare the data for chart (Tasks per User)
-#         user_task_counts = df['assigned_to'].value_counts()
-
-#         # Create Matplotlib chart (Bar Chart)
-#         fig, ax = plt.subplots(figsize=(10, 6))
-#         ax.bar(user_task_counts.index, user_task_counts.values, color='skyblue')
-
-#         ax.set_xlabel('Users')
-#         ax.set_ylabel('Number of Tasks')
-#         ax.set_title('Tasks per User')
-
-#         # Save the chart to a BytesIO object to embed it in the HTML
-#         buf = BytesIO()
-#         plt.tight_layout()
-#         fig.savefig(buf, format='png')
-#         buf.seek(0)
-#         chart_data = base64.b64encode(buf.read()).decode('utf-8')
-#         buf.close()
-#     else:
-#         total_sources = total_files = qa_pending = completed_tasks = in_progress_tasks = 0
-#         accepted_files = rejected_files = 0
-#         chart_data = None
-
-#     context = {
-#         'total_sources': total_sources,
-#         'total_files': total_files,
-#         'qa_pending': qa_pending,
-#         'completed_tasks': completed_tasks,
-#         'in_progress_tasks': in_progress_tasks,
-#         'accepted_files': accepted_files,  # Pass accepted file count to the template
-#         'rejected_files': rejected_files,  # Pass rejected file count to the template
-#         'source_metadata_list': source_metadata_list,
-#         'chart_data': chart_data,  # Pass the chart data to the template
-#     }
-
-#     return render(request, 'dashboard.html', context)
-
-
-#corect code on 3:44 date 27-01-2025
-# import pandas as pd
-# import matplotlib.pyplot as plt
-# from io import BytesIO
-# from django.shortcuts import render
-# from .models import SourceMetadata
-# from collections import defaultdict
-# import base64
-
-# def dashboard_view(request):
-#     # Fetch all source metadata records from MongoDB
-#     source_metadata_list = SourceMetadata.objects.all()
-
-#     # Convert QuerySet to list of dictionaries manually
-#     data = []
-#     for item in source_metadata_list:
-#         data.append({
-#             'import_url': item.import_url,
-#             'date_of_arrival': item.date_of_arrival,
-#             'assigned_to': item.assigned_to,
-#             'frequency_of_site_updates': item.frequency_of_site_updates,
-#             'site_last_checked': item.site_last_checked,
-#             'source_file_upload': item.source_file_upload,
-#             'json_file_name': item.json_file_name,
-#             'json_upload_date': item.json_upload_date,
-#             'sup_id': item.sup_id,
-#             'sme_comments': item.sme_comments,
-#             'screenshots_taken': item.screenshots_taken,
-#             'qa_comment': item.qa_comment,
-#             'qa_name': item.qa_name,
-#             'file_status': item.file_status,
-#             'qa_issue': item.qa_issue,
-#             'created_at': item.created_at,
-#         })
-
-#     # Convert the data to a Pandas DataFrame for easy processing
-#     df = pd.DataFrame(data)
-
-#     # Initialize variables for dashboard metrics
-#     total_sources = total_files = qa_pending = completed_tasks = in_progress_tasks = 0
-#     accepted_files = rejected_files = 0
-#     user_metrics = defaultdict(lambda: {
-#         'total_files': 0,
-#         'accepted': 0,
-#         'rejected': 0,
-#         'in_progress': 0,
-#         'reprocessing': 0,
-#         'qa_name': None,
-#     })
-
-#     # Calculate metrics if the DataFrame is not empty
-#     if not df.empty:
-#         total_sources = len(df)
-#         total_files = df['source_file_upload'].notna().sum()
-#         qa_pending = df[df['file_status'] == 'Pending'].shape[0]
-#         completed_tasks = df[df['file_status'] == 'Completed'].shape[0]
-#         in_progress_tasks = df[df['file_status'] == 'In Progress'].shape[0]
-
-#         # Calculate Accepted and Rejected Files
-#         accepted_files = df[df['file_status'] == 'Accepted'].shape[0]
-#         rejected_files = df[df['file_status'] == 'Rejected'].shape[0]
-
-#         # Prepare user-specific metrics
-#         for _, row in df.iterrows():
-#             user = row['assigned_to']
-#             user_metrics[user]['total_files'] += 1
-#             user_metrics[user]['qa_name'] = row['qa_name']
-
-#             if row['file_status'] == 'Accepted':
-#                 user_metrics[user]['accepted'] += 1
-#             elif row['file_status'] == 'Rejected':
-#                 user_metrics[user]['rejected'] += 1
-#             elif row['file_status'] == 'In Progress':
-#                 user_metrics[user]['in_progress'] += 1
-#             elif row['file_status'] == 'Reprocessing':
-#                 user_metrics[user]['reprocessing'] += 1
-
-#         # Prepare the data for chart (Tasks per User)
-#         user_task_counts = df['assigned_to'].value_counts()
-
-#         # Create Matplotlib chart (Bar Chart)
-#         fig, ax = plt.subplots(figsize=(10, 6))
-#         ax.bar(user_task_counts.index, user_task_counts.values, color='#f5a142')
-
-#         ax.set_xlabel('Users')
-#         ax.set_ylabel('Number of Tasks')
-#         ax.set_title('Tasks per User')
-
-#         # Save the chart to a BytesIO object to embed it in the HTML
-#         buf = BytesIO()
-#         plt.tight_layout()
-#         fig.savefig(buf, format='png')
-#         buf.seek(0)
-#         chart_data = base64.b64encode(buf.read()).decode('utf-8')
-#         buf.close()
-
-#     context = {
-#         'total_sources': total_sources,
-#         'total_files': total_files,
-#         'qa_pending': qa_pending,
-#         'completed_tasks': completed_tasks,
-#         'in_progress_tasks': in_progress_tasks,
-#         'accepted_files': accepted_files,
-#         'rejected_files': rejected_files,
-#         'chart_data': chart_data,
-#         'user_metrics': user_metrics.items(),  # Ensure items() is passed
-#     }
-
-#     return render(request, 'dashboard.html', context)
+# ############# ################### view for dashbaord##############################
 
 
 from django.contrib.auth.models import User

@@ -222,9 +222,32 @@ class SourceMetadataForm(forms.Form):
 #     )
 
 #now 13-01-2025
+#uat form for ui
 from django import forms
 
 class FileIngestionForm(forms.Form):
+    action = forms.CharField(widget=forms.HiddenInput())
+    user_name = forms.CharField(required=False)  # Optional field
+    file_location = forms.FileField(required=False)
+    ingestion_type = forms.ChoiceField(
+        choices=[("single", "Single File"), ("batch", "Batch")],
+        required=False,
+    )
+    data_type = forms.ChoiceField(
+        choices=[
+            ("award", "Award"),
+            ("opportunity", "Opportunity"),
+            ("funding-body", "Funding"),
+        ],
+        required=False,
+    )
+    json_location = forms.FileField(required=False)
+    
+    
+#prod form for ui
+from django import forms
+
+class IngestionProd(forms.Form):
     action = forms.CharField(widget=forms.HiddenInput())
     user_name = forms.CharField(required=False)  # Optional field
     file_location = forms.FileField(required=False)
