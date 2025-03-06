@@ -3225,7 +3225,7 @@ def run_java_tool(request):
     command = [
         'java',
         '-jar',
-        r'X:\json_project_1\Vtool-5.93.1-p1\Vtool.jar',
+        r' X:\json_project_1\Vtool-5.93.1-p1\Vtool.jar',
         '--vjson', 'grant',
         '-file', json_file,
         '-log', log_file
