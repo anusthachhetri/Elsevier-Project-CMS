@@ -16632,3 +16632,13 @@ django.template.exceptions.TemplateSyntaxError: 'block' tag with name 'title' ap
 2025-03-06 12:08:19,466 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
 2025-03-06 12:08:19,480 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
 2025-03-06 12:08:19,942 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 12:22:18,036 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 12:22:18,060 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 12:22:18,023 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 12:22:18,336 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 12:22:19,306 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 12:22:19,589 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 12:22:19,640 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 12:22:19,648 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 12:22:19,918 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-06 12:22:19,925 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
