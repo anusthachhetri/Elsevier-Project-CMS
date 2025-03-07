@@ -80,7 +80,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'json_app',
     'allauth.account',
-    'allauth.socialaccount',
+    #'allauth.socialaccount',
    
 
 ]
@@ -116,7 +116,10 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     #'allauth.middleware.AccountMiddleware',
-    'allauth.account.middleware.AccountMiddleware',
+    #'allauth.account.middleware.AccountMiddleware',
+
+
+    
 ]
 
 ROOT_URLCONF = 'json_project.urls'

@@ -1438,7 +1438,7 @@ def pdf_viewer(request):
 
 # MongoDB setup
 client = MongoClient('mongodb://127.0.0.1:27017/')
-db = client['test']
+db = client['CMS']
 collection = db['Elsevier_Batch']
 
 
@@ -2232,11 +2232,18 @@ from django.http import Http404, HttpResponseForbidden
 from .forms import SourceMetadataForm
 from .models import SourceMetadata
 from datetime import datetime
+from django.http import HttpResponseBadRequest
 
+from bson import ObjectId
 def edit_source_metadata(request, metadata_id):
+    #print(f"Received metadata_id: {metadata_id}")  #Debugging
+
+    if not metadata_id or metadata_id == "None":
+        return HttpResponseBadRequest("Invalid metadata ID")
     try:
         # Try fetching the object from the MongoDB database
-        source_metadata = SourceMetadata.objects.get(id=metadata_id)
+        object_id = ObjectId(metadata_id) 
+        source_metadata = SourceMetadata.objects.get(id=object_id)
     except SourceMetadata.DoesNotExist:
         raise Http404("SourceMetadata not found")
 
@@ -2546,7 +2553,7 @@ logging.basicConfig(
 global_token = None
 
 
-def get_oauth_token(key, secret):
+def oauth_token(key, secret):
     url = "https://uat.business.api.elsevier.com/token"
     credentials = f"{key}:{secret}"
     encoded_credentials = base64.b64encode(credentials.encode()).decode()
@@ -2582,7 +2589,7 @@ def file_ingestion(request):
             if action == "generate_token":
                 key = "H0g93ZOVfg77MoAKCTLvCZZtTFoBir2o"  # Replace with your actual key
                 secret = "T9wS2s4wUQG31k6kv2lJ0SCbNdhHuDgv"  # Replace with your actual secret
-                global_token = get_oauth_token(key, secret)
+                global_token = oauth_token(key, secret)
                 context["token"] = global_token
                 context["message"] = (
                     "Token generated successfully!" if global_token else "Failed to generate token."
@@ -2728,7 +2735,7 @@ def file_ingestion(request):
 
 
 ################view code for storing imgestion details in db  ##########
-from .models import IngestionLog
+
 
 def store_ingestion_details(user_name, ingestion_id, ingestion_item_id, batch_id):
     """Store ingestion details in the database."""
@@ -2848,7 +2855,7 @@ def ingestion_prod(request):
                 with open(temp_file_path, 'rb') as file:
                     files = {'file': file}
                     response = requests.post(
-                        "https://uat.business.api.elsevier.com/v1/funding-ingestion/vtool",
+                        "https://business.api.elsevier.com/v1/funding-ingestion/vtool",
                         headers=headers,
                         files=files,
                         
@@ -2883,7 +2890,7 @@ def ingestion_prod(request):
                     context["message"] = "No file provided for ingestion."
                     return render(request, "ingestemp_prod.html", context)
 
-                base_url = "https://uat.business.api.elsevier.com/v1/funding-ingestion"
+                base_url = "https://business.api.elsevier.com/v1/funding-ingestion"
                 url = f"{base_url}/{data_type}"
                 if ingestion_type == "batch":
                     url += "/bulk"
@@ -2933,9 +2940,9 @@ def ingestion_prod(request):
                     return render(request, "ingestemp_prod.html", context)
 
                 base_urls = {
-                    "award": "https://uat.business.api.elsevier.com/v1/funding-ingestion/award/",
-                    "opportunity": "https://uat.business.api.elsevier.com/v1/funding-ingestion/opportunity/",
-                    "funding-body": "https://uat.business.api.elsevier.com/v1/funding-ingestion/funding-body/"
+                    "award": "https://business.api.elsevier.com/v1/funding-ingestion/award/",
+                    "opportunity": "https://business.api.elsevier.com/v1/funding-ingestion/opportunity/",
+                    "funding-body": "https://business.api.elsevier.com/v1/funding-ingestion/funding-body/"
                 }
 
                 url = f"{base_urls[data_type]}{ingestion_id}"
@@ -2960,7 +2967,6 @@ def ingestion_prod(request):
 
 ################view code for storing imgestion details in db  ##########
 from .models import IngestionLog
-
 def reserve_ingestion_log(user_name, ingestion_id, ingestion_item_id, batch_id):
     """Store ingestion details in the database."""
     IngestionLog.objects.create(

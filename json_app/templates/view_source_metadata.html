@@ -458,6 +458,7 @@
                             <!-- Restrict Edit button to assigned user, QA user, or superuser -->
                             {% if request.user.username == metadata.assigned_to or request.user.username == metadata.qa_name or request.user.is_superuser %}
                                 <a href="{% url 'edit_source_metadata' metadata.id %}" class="edit-button">Edit</a>
+                                 <!--<p>Metadata ID: {{ metadata.id }}</p>-->
                             {% endif %}
                         </td>
                     </tr>

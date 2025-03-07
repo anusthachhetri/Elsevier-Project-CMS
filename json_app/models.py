@@ -47,8 +47,9 @@ class JSONFile(models.Model):
 ####################creating a new model for this 
 # models.py
 #from mongoengine import Document, StringField, DateField, DateTimeField, FileField, BooleanField
-
+from bson import ObjectId
 class SourceMetadata(models.Model):
+    id = models.ObjectIdField(primary_key=True, default=ObjectId)
     #_id = models.AutoField()
     import_url = models.CharField(max_length=255)
     date_of_arrival = models.DateField()
