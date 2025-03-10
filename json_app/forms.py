@@ -296,7 +296,7 @@ class UserRegistrationForm(forms.ModelForm):
     
     
     
-    #json creator form code
+#json creator form code
 from django import forms
 class CSVInputForm(forms.Form):    
         csv_file = forms.FileField(label='Select a CSV file')    

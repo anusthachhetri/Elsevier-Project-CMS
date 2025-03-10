@@ -23,6 +23,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myproject.settings')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 USE_X_FORWARDED_HOST = True
 
 USE_X_FORWARDED_HOST = True
@@ -119,7 +120,7 @@ MIDDLEWARE = [
     #'allauth.account.middleware.AccountMiddleware',
 
 
-    
+
 ]
 
 ROOT_URLCONF = 'json_project.urls'

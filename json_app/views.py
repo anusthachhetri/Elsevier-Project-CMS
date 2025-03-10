@@ -2567,7 +2567,7 @@ def oauth_token(key, secret):
         return response.json().get("access_token")
     return None
 
-
+from django.core.files.base import ContentFile
 @csrf_exempt
 @login_required
 
@@ -2612,38 +2612,74 @@ def file_ingestion(request):
                     "accept": "*/*",
 
                 }
-
-                temp_file_path = os.path.join(default_storage.location, uploaded_file.name)
                 if not os.path.exists(default_storage.location):
-                    os.makedirs(default_storage.location)
+                    os.makedirs(default_storage.location, exist_ok=True)
 
-                with default_storage.open(temp_file_path, 'wb+') as temp_file:
-                    for chunk in uploaded_file.chunks():
-                        temp_file.write(chunk)
+                #temp_file_path = os.path.join(default_storage.location, uploaded_file.name)
+                #if not os.path.exists(default_storage.location):
+                #    os.makedirs(default_storage.location)
 
-                with open(temp_file_path, 'rb') as file:
-                    files = {'file': file}
-                    response = requests.post(
-                        "https://uat.business.api.elsevier.com/v1/funding-ingestion/vtool",
-                        headers=headers,
-                        files=files,
+                #with default_storage.open(temp_file_path, 'wb+') as temp_file:
+                #    for chunk in uploaded_file.chunks():
+                #        temp_file.write(chunk)
+                try:
+                    file_path = os.path.join("uploads", uploaded_file.name)
+                    file_name = default_storage.save(file_path, ContentFile(uploaded_file.read()))
+                    full_file_path = default_storage.path(file_name)  # Get full path
+                    logging.info(f"File saved at: {full_file_path}")
+
+
+                    with open(full_file_path, 'rb') as file:
+                        files = {'file': file}
+                        response = requests.post(
+                            "https://uat.business.api.elsevier.com/v1/funding-ingestion/vtool",
+                            headers=headers,
+                            files=files,
+                        )
+
+                    if response.status_code == 200:
+                        batch_id = response.json().get("batchId")
+                        if batch_id:
+                            context["batch_id"] = batch_id
+                            context["message"] = f"Batch created successfully! Batch ID: {batch_id}"
+                            logging.info(f"User: {user_name} - Batch ID: {batch_id}")
+                        else:
+                            context["message"] = "Batch creation successful but no batch ID returned."
+                            logging.warning(f"User: {user_name} - Batch created, but no batch ID.")
+                    else:
+                        context["message"] = f"Failed to create batch. Response Code: {response.status_code}"
+                        logging.error(f"User: {user_name} - Batch creation failed. Response: {response.text}")
+
+                except PermissionError as e:
+                    context["message"] = "Permission denied while saving the file."
+                    logging.error(f"User: {user_name} - PermissionError: {e}")
+
+                except Exception as e:
+                    context["message"] = "An error occurred while saving the file."
+                    logging.exception(f"User: {user_name} - Exception: {e}")
+                #with open(temp_file_path, 'rb') as file:
+                #    files = {'file': file}
+                #    response = requests.post(
+                #        "https://uat.business.api.elsevier.com/v1/funding-ingestion/vtool",
+                #        headers=headers,
+                #        files=files,
                         
-                    )
+                #    )
                    
 
-                if response.status_code == 200:
-                    batch_id = response.json().get("batchId")
-                    if batch_id:
-                        context["batch_id"] = batch_id
-                        context["message"] = f"Batch created successfully! Batch ID: {batch_id}"
-                        log_message = f"User: {user_name} - Batch created successfully! Batch ID: {batch_id}"
-                        logging.info(log_message)
-                    else:
-                        context["message"] = "Batch creation successful but no batch ID returned."
-                        logging.warning(f"User: {user_name} - Batch creation successful but no batch ID returned.")
-                else:
-                    context["message"] = f"Failed to create batch. Response Code: {response.status_code}"
-                    logging.error(f"User: {user_name} - Failed to create batch. Response Code: {response.status_code}")
+                #if response.status_code == 200:
+                #    batch_id = response.json().get("batchId")
+                #    if batch_id:
+                #        context["batch_id"] = batch_id
+                #        context["message"] = f"Batch created successfully! Batch ID: {batch_id}"
+                #        log_message = f"User: {user_name} - Batch created successfully! Batch ID: {batch_id}"
+                ##        logging.info(log_message)
+                 #   else:
+                 #       context["message"] = "Batch creation successful but no batch ID returned."
+                 #       logging.warning(f"User: {user_name} - Batch creation successful but no batch ID returned.")
+                #else:
+                #    context["message"] = f"Failed to create batch. Response Code: {response.status_code}"
+                #    logging.error(f"User: {user_name} - Failed to create batch. Response Code: {response.status_code}")
 
             elif action == "ingest_file":
                 if not global_token:
