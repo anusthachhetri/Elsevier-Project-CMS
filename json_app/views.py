@@ -2572,8 +2572,9 @@ from django.core.files.base import ContentFile
 @login_required
 
 def file_ingestion(request):
-    global global_token
+    # global global_token
     context = {"form": FileIngestionForm()}
+    global_token = request.session.get("oauth_token")
 
     if request.method == "POST":
         form = FileIngestionForm(request.POST, request.FILES)
@@ -2590,12 +2591,21 @@ def file_ingestion(request):
                 key = "H0g93ZOVfg77MoAKCTLvCZZtTFoBir2o"  # Replace with your actual key
                 secret = "T9wS2s4wUQG31k6kv2lJ0SCbNdhHuDgv"  # Replace with your actual secret
                 global_token = oauth_token(key, secret)
-                context["token"] = global_token
-                context["message"] = (
-                    "Token generated successfully!" if global_token else "Failed to generate token."
-                )
-                log_message = f"User: {user_name} - Token generation status: {'Success' if global_token else 'Failure'}"
-                logging.info(log_message)
+                #context["token"] = global_token
+                #context["message"] = (
+                #    "Token generated successfully!" if global_token else "Failed to generate token."
+                #)
+                #log_message = f"User: {user_name} - Token generation status: {'Success' if global_token else 'Failure'}"
+                #logging.info(log_message)
+                if global_token:
+                    request.session["oauth_token"] = global_token  # Store token in session
+                    request.session.set_expiry(3600)  # Optional: Set expiry to 1 hour (adjust as needed)
+                    context["token"] = global_token
+                    context["message"] = "Token generated successfully!"
+                    logging.info(f"User: {user_name} - Token generated successfully!")
+                else:
+                    context["message"] = "Failed to generate token."
+                    logging.warning(f"User: {user_name} - Token generation failed.")
 
             elif action == "create_batch":
                 if not global_token:

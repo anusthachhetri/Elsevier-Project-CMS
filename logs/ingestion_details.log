@@ -22598,3 +22598,736 @@ ValueError: Field 'id' expected a number but got 'None'.
 2025-03-10 16:10:29,944 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
 2025-03-10 16:10:30,234 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
 2025-03-10 16:10:30,295 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-10 16:13:31,769 - INFO - Form submitted by user: 
+2025-03-10 16:13:32,904 - INFO - User:  - Token generation status: Success
+2025-03-10 16:14:20,119 - INFO - Form submitted by user: 
+2025-03-10 16:14:20,165 - INFO - File saved at: D:\Elsevier-Project-CMS\media\uploads\link_new_2_json_xsl2921_fp_HhzqhD2.json
+2025-03-10 16:14:21,848 - ERROR - User:  - Batch creation failed. Response: {"message":"Signature comparison failure...","statusCode":412}
+2025-03-10 16:16:57,609 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-10 16:16:57,798 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-10 16:16:57,847 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-10 16:16:57,891 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-10 16:16:57,964 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-10 16:16:57,979 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-10 16:16:58,103 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-10 17:42:57,145 - INFO - Form submitted by user: 
+2025-03-10 18:09:42,334 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-10 18:09:42,338 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-10 18:09:42,555 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-10 18:09:42,639 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-10 18:09:43,060 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-10 18:09:43,185 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-10 18:09:43,686 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-10 18:19:42,444 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-10 18:19:42,493 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-10 18:19:42,649 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-10 18:19:42,765 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-10 18:19:43,425 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-10 18:19:43,815 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-10 18:19:43,986 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-10 18:23:07,669 - INFO - Form submitted by user: 
+2025-03-10 18:23:09,262 - INFO - User:  - Token generated successfully!
+2025-03-10 18:23:18,389 - INFO - Form submitted by user: 
+2025-03-10 18:23:19,277 - INFO - User:  - Token generated successfully!
+2025-03-10 18:25:10,263 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-10 18:25:10,671 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-10 18:25:10,820 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-10 18:25:10,849 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-10 18:25:11,008 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-10 18:25:11,109 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-10 18:25:11,177 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-10 18:25:11,245 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-10 18:27:55,154 - INFO - Form submitted by user: 
+2025-03-10 18:27:57,012 - INFO - User:  - Token generated successfully!
+2025-03-10 18:28:18,180 - INFO - Form submitted by user: 
+2025-03-10 18:28:18,304 - INFO - File saved at: D:\Elsevier-Project-CMS\media\uploads\link_new_2_json_xsl2921_fp_7dCtOXZ.json
+2025-03-10 18:28:19,547 - ERROR - User:  - Batch creation failed. Response: {"message":"Signature comparison failure...","statusCode":412}
+2025-03-11 10:29:25,824 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 10:29:26,073 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 10:29:26,192 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 10:29:26,604 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 10:29:26,810 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 10:29:26,967 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 10:29:27,004 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 10:29:27,013 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 10:49:11,623 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-11 10:49:11,637 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-11 10:49:11,789 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-11 10:49:11,806 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-11 10:49:11,823 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-11 10:49:11,862 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-11 10:49:12,755 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-11 10:49:13,095 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-11 10:54:50,686 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-11 10:54:50,962 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-11 10:54:51,463 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-11 10:54:51,527 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-11 10:54:51,645 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-11 10:54:51,678 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-11 10:54:51,706 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-11 10:54:51,776 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-11 10:59:39,750 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-11 10:59:39,864 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-11 10:59:39,923 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-11 10:59:40,025 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-11 10:59:40,145 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-11 10:59:40,164 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-11 10:59:40,186 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-11 10:59:40,240 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-11 10:59:41,277 - INFO - D:\Elsevier-Project-CMS\json_app\views.py changed, reloading.
+2025-03-11 11:59:01,164 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 11:59:01,257 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 11:59:01,283 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 11:59:01,431 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 11:59:01,436 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 11:59:01,560 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 11:59:01,668 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 11:59:01,706 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 11:59:01,711 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 12:12:44,157 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 12:12:44,229 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 12:12:44,257 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 12:12:44,260 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 12:12:44,274 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 12:12:44,282 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 12:12:44,376 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 12:12:44,400 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 12:12:44,475 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 12:22:22,712 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 12:22:23,500 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 12:22:23,535 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 12:22:23,548 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 12:22:23,556 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 12:22:23,638 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 12:22:23,658 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 12:22:23,912 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 12:22:23,986 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 12:39:09,875 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 12:39:10,431 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 12:39:10,877 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 12:39:11,231 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 12:39:11,256 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 12:39:12,577 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 12:39:12,797 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 12:39:12,807 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 12:39:13,871 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 12:52:24,484 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 12:52:24,584 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 12:52:24,605 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 12:52:24,971 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 12:52:25,681 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 12:52:25,820 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 12:52:25,832 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 12:52:25,960 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 12:52:26,012 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 13:05:00,203 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 13:05:00,600 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 13:05:00,619 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 13:05:00,718 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 13:05:00,740 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 13:05:00,855 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 13:05:01,515 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 13:05:01,719 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 13:05:01,839 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:09:24,619 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:09:24,718 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:09:24,874 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:09:24,941 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:09:24,987 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:09:25,019 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:09:25,043 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:09:25,124 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:09:25,155 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:23:38,486 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:23:38,483 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:23:38,399 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:23:38,732 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:23:38,757 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:23:39,581 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:23:39,845 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:23:39,940 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:23:40,076 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:34:33,740 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:34:34,207 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:34:36,210 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:34:36,303 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:34:36,535 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:34:36,606 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:34:36,629 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:34:36,645 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:34:36,663 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:43:09,533 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:43:10,210 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:43:10,384 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:43:10,439 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:43:10,732 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:43:10,767 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:43:10,844 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:43:10,932 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:43:11,002 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:43:11,079 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:51:48,951 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:51:49,221 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:51:50,746 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:51:50,734 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:51:50,725 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:51:50,772 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:51:50,893 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:51:52,223 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:51:52,441 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:51:52,658 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:56:48,178 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:56:48,199 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:56:49,078 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:56:49,219 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:56:49,267 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:56:49,382 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:56:49,433 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:56:49,536 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:56:49,541 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:56:49,593 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 14:56:49,631 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:11:10,867 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:11:11,148 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:11:11,506 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:11:11,540 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:11:11,547 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:11:11,573 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:11:11,866 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:11:11,947 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:11:12,066 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:11:12,161 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:11:12,431 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:11:12,511 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:12:51,065 - WARNING - Not Found: /home
+2025-03-11 15:15:03,117 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:15:03,215 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:15:03,433 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:15:03,506 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:15:03,578 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:15:03,737 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:15:03,702 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:15:03,841 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:15:03,866 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:15:04,652 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:15:04,826 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:15:05,315 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:15:05,539 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:22:13,184 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:22:13,490 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:22:13,456 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:22:13,504 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:22:13,621 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:22:13,678 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:22:13,711 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:22:13,832 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:22:13,841 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:22:13,853 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:22:13,929 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:22:14,148 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:22:14,847 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:31:16,362 - WARNING - Not Found: /home
+2025-03-11 15:33:16,419 - ERROR - Internal Server Error: /toolbox/upload-source-metadata/
+Traceback (most recent call last):
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\sql2mongo\query.py", line 854, in parse
+    return handler(self, statement)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\sql2mongo\query.py", line 925, in _insert
+    query = InsertQuery(self, self.db, self.connection_properties, sm, self._params)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\sql2mongo\query.py", line 340, in __init__
+    super().__init__(*args)
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\sql2mongo\query.py", line 62, in __init__
+    self.parse()
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\sql2mongo\query.py", line 408, in parse
+    self._table(statement)
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\sql2mongo\query.py", line 345, in _table
+    if collection not in self.connection_properties.cached_collections:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\base.py", line 31, in __contains__
+    self.update(self.db.list_collection_names())
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\pymongo\database.py", line 863, in list_collection_names
+    for result in self.list_collections(session=session, **kwargs)]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\pymongo\database.py", line 825, in list_collections
+    return self.__client._retryable_read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\pymongo\mongo_client.py", line 1460, in _retryable_read
+    server = self._select_server(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\pymongo\mongo_client.py", line 1278, in _select_server
+    server = topology.select_server(server_selector)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\pymongo\topology.py", line 241, in select_server
+    return random.choice(self.select_servers(selector,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\pymongo\topology.py", line 199, in select_servers
+    server_descriptions = self._select_servers_loop(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\pymongo\topology.py", line 215, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it, Timeout: 30s, Topology Description: <TopologyDescription id: 67d00a25e1317876c39b1775, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it')>]>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\cursor.py", line 51, in execute
+    self.result = Query(
+                  ^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\sql2mongo\query.py", line 781, in __init__
+    self._query = self.parse()
+                  ^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\sql2mongo\query.py", line 882, in parse
+    raise exe from e
+djongo.exceptions.SQLDecodeError: 
+
+	Keyword: None
+	Sub SQL: None
+	FAILED SQL: INSERT INTO "source_metadata" ("id", "import_url", "date_of_arrival", "assigned_to", "frequency_of_site_updates", "site_last_checked", "source_file_upload", "json_file_name", "json_upload_date", "sup_id", "sme_comments", "screenshots_taken", "created_at", "file_status", "qa_comment", "qa_name", "qa_issue") VALUES (%(0)s, %(1)s, %(2)s, %(3)s, %(4)s, %(5)s, %(6)s, %(7)s, %(8)s, %(9)s, %(10)s, %(11)s, %(12)s, %(13)s, %(14)s, %(15)s, %(16)s)
+	Params: [ObjectId('67d00a25e1317876c39b1774'), 'https://myrovlytistrust.org/currently-funded-research-bhd/', datetime.datetime(2025, 3, 11, 0, 0), 'Deepanshu', 'Weekly', datetime.datetime(2025, 3, 11, 0, 0), None, '', None, '', '', 'Yes', datetime.datetime(2025, 3, 11, 10, 2, 13, 800622), 'Accepted', '', 'Deepanshu', 'batchid']
+	Version: 1.3.7
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\cursor.py", line 59, in execute
+    raise db_exe from e
+djongo.database.DatabaseError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\json_app\views.py", line 2202, in upload_source_metadata
+    source_metadata.save()  # Save the document into MongoDB
+    ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\models\base.py", line 753, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\models\base.py", line 790, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\models\base.py", line 895, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\models\base.py", line 933, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\models\query.py", line 1254, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1397, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in _execute
+    with self.db.wrap_database_errors:
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\cursor.py", line 59, in execute
+    raise db_exe from e
+django.db.utils.DatabaseError
+2025-03-11 15:34:07,296 - ERROR - Internal Server Error: /toolbox/upload-source-metadata/
+Traceback (most recent call last):
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\sql2mongo\query.py", line 854, in parse
+    return handler(self, statement)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\sql2mongo\query.py", line 925, in _insert
+    query = InsertQuery(self, self.db, self.connection_properties, sm, self._params)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\sql2mongo\query.py", line 340, in __init__
+    super().__init__(*args)
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\sql2mongo\query.py", line 62, in __init__
+    self.parse()
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\sql2mongo\query.py", line 408, in parse
+    self._table(statement)
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\sql2mongo\query.py", line 345, in _table
+    if collection not in self.connection_properties.cached_collections:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\base.py", line 31, in __contains__
+    self.update(self.db.list_collection_names())
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\pymongo\database.py", line 863, in list_collection_names
+    for result in self.list_collections(session=session, **kwargs)]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\pymongo\database.py", line 825, in list_collections
+    return self.__client._retryable_read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\pymongo\mongo_client.py", line 1460, in _retryable_read
+    server = self._select_server(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\pymongo\mongo_client.py", line 1278, in _select_server
+    server = topology.select_server(server_selector)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\pymongo\topology.py", line 241, in select_server
+    return random.choice(self.select_servers(selector,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\pymongo\topology.py", line 199, in select_servers
+    server_descriptions = self._select_servers_loop(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\pymongo\topology.py", line 215, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it, Timeout: 30s, Topology Description: <TopologyDescription id: 67d00a25e1317876c39b1775, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it')>]>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\cursor.py", line 51, in execute
+    self.result = Query(
+                  ^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\sql2mongo\query.py", line 781, in __init__
+    self._query = self.parse()
+                  ^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\sql2mongo\query.py", line 882, in parse
+    raise exe from e
+djongo.exceptions.SQLDecodeError: 
+
+	Keyword: None
+	Sub SQL: None
+	FAILED SQL: INSERT INTO "source_metadata" ("id", "import_url", "date_of_arrival", "assigned_to", "frequency_of_site_updates", "site_last_checked", "source_file_upload", "json_file_name", "json_upload_date", "sup_id", "sme_comments", "screenshots_taken", "created_at", "file_status", "qa_comment", "qa_name", "qa_issue") VALUES (%(0)s, %(1)s, %(2)s, %(3)s, %(4)s, %(5)s, %(6)s, %(7)s, %(8)s, %(9)s, %(10)s, %(11)s, %(12)s, %(13)s, %(14)s, %(15)s, %(16)s)
+	Params: [ObjectId('67d00a5ae1317876c39b1776'), 'https://action.org.uk/', datetime.datetime(2025, 3, 11, 0, 0), 'Vijay', 'Weekly', datetime.datetime(2025, 3, 8, 0, 0), None, '', None, '', '', 'Yes', datetime.datetime(2025, 3, 11, 10, 3, 6, 601889), 'Accepted', '', 'Saurabh', 'batchid']
+	Version: 1.3.7
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\cursor.py", line 59, in execute
+    raise db_exe from e
+djongo.database.DatabaseError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\json_app\views.py", line 2202, in upload_source_metadata
+    source_metadata.save()  # Save the document into MongoDB
+    ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\models\base.py", line 753, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\models\base.py", line 790, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\models\base.py", line 895, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\models\base.py", line 933, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\models\query.py", line 1254, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1397, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in _execute
+    with self.db.wrap_database_errors:
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\cursor.py", line 59, in execute
+    raise db_exe from e
+django.db.utils.DatabaseError
+2025-03-11 15:34:16,753 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:35:37,975 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:38:36,945 - ERROR - Internal Server Error: /toolbox/upload-source-metadata/
+Traceback (most recent call last):
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\sql2mongo\query.py", line 854, in parse
+    return handler(self, statement)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\sql2mongo\query.py", line 925, in _insert
+    query = InsertQuery(self, self.db, self.connection_properties, sm, self._params)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\sql2mongo\query.py", line 340, in __init__
+    super().__init__(*args)
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\sql2mongo\query.py", line 62, in __init__
+    self.parse()
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\sql2mongo\query.py", line 408, in parse
+    self._table(statement)
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\sql2mongo\query.py", line 345, in _table
+    if collection not in self.connection_properties.cached_collections:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\base.py", line 31, in __contains__
+    self.update(self.db.list_collection_names())
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\pymongo\database.py", line 863, in list_collection_names
+    for result in self.list_collections(session=session, **kwargs)]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\pymongo\database.py", line 825, in list_collections
+    return self.__client._retryable_read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\pymongo\mongo_client.py", line 1460, in _retryable_read
+    server = self._select_server(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\pymongo\mongo_client.py", line 1278, in _select_server
+    server = topology.select_server(server_selector)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\pymongo\topology.py", line 241, in select_server
+    return random.choice(self.select_servers(selector,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\pymongo\topology.py", line 199, in select_servers
+    server_descriptions = self._select_servers_loop(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\pymongo\topology.py", line 215, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it, Timeout: 30s, Topology Description: <TopologyDescription id: 67d00b67e559059e3e8b3b69, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it')>]>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\cursor.py", line 51, in execute
+    self.result = Query(
+                  ^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\sql2mongo\query.py", line 781, in __init__
+    self._query = self.parse()
+                  ^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\sql2mongo\query.py", line 882, in parse
+    raise exe from e
+djongo.exceptions.SQLDecodeError: 
+
+	Keyword: None
+	Sub SQL: None
+	FAILED SQL: INSERT INTO "source_metadata" ("id", "import_url", "date_of_arrival", "assigned_to", "frequency_of_site_updates", "site_last_checked", "source_file_upload", "json_file_name", "json_upload_date", "sup_id", "sme_comments", "screenshots_taken", "created_at", "file_status", "qa_comment", "qa_name", "qa_issue") VALUES (%(0)s, %(1)s, %(2)s, %(3)s, %(4)s, %(5)s, %(6)s, %(7)s, %(8)s, %(9)s, %(10)s, %(11)s, %(12)s, %(13)s, %(14)s, %(15)s, %(16)s)
+	Params: [ObjectId('67d00b67e559059e3e8b3b68'), 'https://action.org.uk/', datetime.datetime(2025, 3, 11, 0, 0), 'Deepanshu', 'Weekly', datetime.datetime(2025, 3, 11, 0, 0), None, '', None, '', '', 'Yes', datetime.datetime(2025, 3, 11, 10, 7, 35, 969964), 'Accepted', '', 'Devansh', 'batchid']
+	Version: 1.3.7
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\cursor.py", line 59, in execute
+    raise db_exe from e
+djongo.database.DatabaseError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\json_app\views.py", line 2202, in upload_source_metadata
+    source_metadata.save()  # Save the document into MongoDB
+    ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\models\base.py", line 753, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\models\base.py", line 790, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\models\base.py", line 895, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\models\base.py", line 933, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\models\query.py", line 1254, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1397, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in _execute
+    with self.db.wrap_database_errors:
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\cursor.py", line 59, in execute
+    raise db_exe from e
+django.db.utils.DatabaseError
+2025-03-11 15:38:55,245 - ERROR - Internal Server Error: /toolbox/upload-source-metadata/
+Traceback (most recent call last):
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\sql2mongo\query.py", line 854, in parse
+    return handler(self, statement)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\sql2mongo\query.py", line 925, in _insert
+    query = InsertQuery(self, self.db, self.connection_properties, sm, self._params)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\sql2mongo\query.py", line 340, in __init__
+    super().__init__(*args)
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\sql2mongo\query.py", line 62, in __init__
+    self.parse()
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\sql2mongo\query.py", line 408, in parse
+    self._table(statement)
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\sql2mongo\query.py", line 345, in _table
+    if collection not in self.connection_properties.cached_collections:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\base.py", line 31, in __contains__
+    self.update(self.db.list_collection_names())
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\pymongo\database.py", line 863, in list_collection_names
+    for result in self.list_collections(session=session, **kwargs)]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\pymongo\database.py", line 825, in list_collections
+    return self.__client._retryable_read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\pymongo\mongo_client.py", line 1460, in _retryable_read
+    server = self._select_server(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\pymongo\mongo_client.py", line 1278, in _select_server
+    server = topology.select_server(server_selector)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\pymongo\topology.py", line 241, in select_server
+    return random.choice(self.select_servers(selector,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\pymongo\topology.py", line 199, in select_servers
+    server_descriptions = self._select_servers_loop(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\pymongo\topology.py", line 215, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it, Timeout: 30s, Topology Description: <TopologyDescription id: 67d00b67e559059e3e8b3b69, topology_type: Single, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it')>]>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\cursor.py", line 51, in execute
+    self.result = Query(
+                  ^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\sql2mongo\query.py", line 781, in __init__
+    self._query = self.parse()
+                  ^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\sql2mongo\query.py", line 882, in parse
+    raise exe from e
+djongo.exceptions.SQLDecodeError: 
+
+	Keyword: None
+	Sub SQL: None
+	FAILED SQL: INSERT INTO "source_metadata" ("id", "import_url", "date_of_arrival", "assigned_to", "frequency_of_site_updates", "site_last_checked", "source_file_upload", "json_file_name", "json_upload_date", "sup_id", "sme_comments", "screenshots_taken", "created_at", "file_status", "qa_comment", "qa_name", "qa_issue") VALUES (%(0)s, %(1)s, %(2)s, %(3)s, %(4)s, %(5)s, %(6)s, %(7)s, %(8)s, %(9)s, %(10)s, %(11)s, %(12)s, %(13)s, %(14)s, %(15)s, %(16)s)
+	Params: [ObjectId('67d00b79e559059e3e8b3b6a'), 'https://action.org.uk/', datetime.datetime(2025, 3, 11, 0, 0), 'Deepanshu', 'Weekly', datetime.datetime(2025, 3, 11, 0, 0), None, '', None, '', '', 'Yes', datetime.datetime(2025, 3, 11, 10, 7, 53, 580535), 'Accepted', '', 'Devansh', 'batchid']
+	Version: 1.3.7
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\cursor.py", line 59, in execute
+    raise db_exe from e
+djongo.database.DatabaseError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\json_app\views.py", line 2202, in upload_source_metadata
+    source_metadata.save()  # Save the document into MongoDB
+    ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\models\base.py", line 753, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\models\base.py", line 790, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\models\base.py", line 895, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\models\base.py", line 933, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\models\query.py", line 1254, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1397, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in _execute
+    with self.db.wrap_database_errors:
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Elsevier-Project-CMS\.venv\Lib\site-packages\djongo\cursor.py", line 59, in execute
+    raise db_exe from e
+django.db.utils.DatabaseError
+2025-03-11 15:39:28,668 - ERROR - Internal Server Error: /toolbox/getdata/
+2025-03-11 15:40:26,941 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:42:59,203 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
+2025-03-11 15:46:20,965 - INFO - Form submitted by user: 
+2025-03-11 15:46:23,434 - INFO - User:  - Token generated successfully!
+2025-03-11 15:46:55,245 - INFO - D:\Elsevier-Project-CMS\json_project\settings.py changed, reloading.
