@@ -48,7 +48,8 @@ from .views import scrapper_views, download_csv
 from .views import user_list
 from .views import ingestion_prod
 from .views import ingestion_main_temp
-
+from .views import ingestion_logs_view
+from .views import ingest_prod_view
 
 
 
@@ -149,6 +150,10 @@ urlpatterns = [
     path('ingestemp_prod/', ingestion_prod, name='ingestemp_prod'),
     
     path('ingestion_main/', ingestion_main_temp, name='ingestion_main'),
+    path('ingestion-logs/', ingestion_logs_view, name='ingestion_logs'),
+
+    path('ingest_prod_logs/', ingest_prod_view, name='ingest_prod_logs'),
+
 
 ]
 

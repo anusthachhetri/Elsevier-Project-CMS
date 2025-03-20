@@ -22,7 +22,7 @@ def home(request):
 
 
 
-#scrapper tool#######################################################
+#####################scrapper tool#######################################################
 ######################################################################################3
 
 def scraper_tool(request):
@@ -2793,6 +2793,20 @@ def store_ingestion_details(user_name, ingestion_id, ingestion_item_id, batch_id
         status="Success"  # Initially set status as Success, update if needed
     )
 
+####################code for displaying ingestion details in table view in ui##################################
+from django.shortcuts import render
+from .models import IngestionLog
+
+@login_required
+def ingestion_logs_view(request):
+    # Fetch all ingestion logs from the database
+    ingestion_logs = IngestionLog.objects.all()
+
+    context = {
+        'ingestion_logs': ingestion_logs
+    }
+    return render(request, 'ingestion_logs.html', context)
+
 
 
 
@@ -2845,12 +2859,14 @@ def get_oauth_token(key, secret):
     return None
 
 
+from django.core.files.base import ContentFile
 @csrf_exempt
 @login_required
 
 def ingestion_prod(request):
-    global global_token
+    #global global_token
     context = {"form": IngestionProd()}
+    global_token = request.session.get("get_oauth_token")
 
     if request.method == "POST":
         form = IngestionProd(request.POST, request.FILES)
@@ -2867,12 +2883,23 @@ def ingestion_prod(request):
                 key = "P2jBnk8mUNIHqBHNE4SXs4QhklMdB25F"  # Replace with your actual key
                 secret = "BUZ1r7FWxpJOswJIMrZV4FkgmOrUBC2S"  # Replace with your actual secret
                 global_token = get_oauth_token(key, secret)
-                context["token"] = global_token
-                context["message"] = (
-                    "Token generated successfully!" if global_token else "Failed to generate token."
-                )
-                log_message = f"User: {user_name} - Token generation status: {'Success' if global_token else 'Failure'}"
-                logging.info(log_message)
+                # context["token"] = global_token
+                # context["message"] = (
+                #     "Token generated successfully!" if global_token else "Failed to generate token."
+                # )
+                # log_message = f"User: {user_name} - Token generation status: {'Success' if global_token else 'Failure'}"
+                # logging.info(log_message)
+                if global_token:
+                    request.session["get_oauth_token"] = global_token  # Store token in session
+                    request.session.set_expiry(3600)  # Optional: Set expiry to 1 hour (adjust as needed)
+                    context["token"] = global_token
+                    context["message"] = "Token generated successfully!"
+                    logging.info(f"User: {user_name} - Token generated successfully!")
+                else:
+                    context["message"] = "Failed to generate token."
+                    logging.warning(f"User: {user_name} - Token generation failed.")
+
+
 
             elif action == "create_batch":
                 if not global_token:
@@ -2889,38 +2916,101 @@ def ingestion_prod(request):
                     "accept": "*/*",
 
                 }
-
-                temp_file_path = os.path.join(default_storage.location, uploaded_file.name)
                 if not os.path.exists(default_storage.location):
-                    os.makedirs(default_storage.location)
+                    os.makedirs(default_storage.location, exist_ok=True)
 
-                with default_storage.open(temp_file_path, 'wb+') as temp_file:
-                    for chunk in uploaded_file.chunks():
-                        temp_file.write(chunk)
+                #temp_file_path = os.path.join(default_storage.location, uploaded_file.name)
+                #if not os.path.exists(default_storage.location):
+                #    os.makedirs(default_storage.location)
 
-                with open(temp_file_path, 'rb') as file:
-                    files = {'file': file}
-                    response = requests.post(
-                        "https://business.api.elsevier.com/v1/funding-ingestion/vtool",
-                        headers=headers,
-                        files=files,
+                #with default_storage.open(temp_file_path, 'wb+') as temp_file:
+                #    for chunk in uploaded_file.chunks():
+                #        temp_file.write(chunk)
+                try:
+                    file_path = os.path.join("uploads", uploaded_file.name)
+                    file_name = default_storage.save(file_path, ContentFile(uploaded_file.read()))
+                    full_file_path = default_storage.path(file_name)  # Get full path
+                    logging.info(f"File saved at: {full_file_path}")
+
+
+                    with open(full_file_path, 'rb') as file:
+                        files = {'file': file}
+                        response = requests.post(
+                            "https://business.api.elsevier.com/v1/funding-ingestion/vtool",
+                            headers=headers,
+                            files=files,
+                        )
+
+                    if response.status_code == 200:
+                        batch_id = response.json().get("batchId")
+                        if batch_id:
+                            context["batch_id"] = batch_id
+                            context["message"] = f"Batch created successfully! Batch ID: {batch_id}"
+                            logging.info(f"User: {user_name} - Batch ID: {batch_id}")
+                        else:
+                            context["message"] = "Batch creation successful but no batch ID returned."
+                            logging.warning(f"User: {user_name} - Batch created, but no batch ID.")
+                    else:
+                        context["message"] = f"Failed to create batch. Response Code: {response.status_code}"
+                        logging.error(f"User: {user_name} - Batch creation failed. Response: {response.text}")
+
+                except PermissionError as e:
+                    context["message"] = "Permission denied while saving the file."
+                    logging.error(f"User: {user_name} - PermissionError: {e}")
+
+                except Exception as e:
+                    context["message"] = "An error occurred while saving the file."
+                    logging.exception(f"User: {user_name} - Exception: {e}")
+
+            # elif action == "create_batch":
+            #     if not global_token:
+            #         context["message"] = "Token is not available. Please generate a token first."
+            #         return render(request, "ingestemp_prod.html", context)
+
+            #     uploaded_file = request.FILES.get("file_location")
+            #     if not uploaded_file:
+            #         context["message"] = "No file uploaded."
+            #         return render(request, "ingestemp_prod.html", context)
+
+            #     headers = {
+            #         "Authorization": f"Bearer {global_token}",
+            #         "accept": "*/*",
+
+            #     }
+            #     if not os.path.exists(default_storage.location):
+            #         os.makedirs(default_storage.location, exist_ok=True)
+
+            #     # temp_file_path = os.path.join(default_storage.location, uploaded_file.name)
+            #     # if not os.path.exists(default_storage.location):
+            #     #     os.makedirs(default_storage.location)
+
+            #     # with default_storage.open(temp_file_path, 'wb+') as temp_file:
+            #     #     for chunk in uploaded_file.chunks():
+            #     #         temp_file.write(chunk)
+
+            #     with open(temp_file_path, 'rb') as file:
+            #         files = {'file': file}
+            #         response = requests.post(
+            #             "https://business.api.elsevier.com/v1/funding-ingestion/vtool",
+            #             headers=headers,
+            #             files=files,
                         
-                    )
+            #         )
                    
 
-                if response.status_code == 200:
-                    batch_id = response.json().get("batchId")
-                    if batch_id:
-                        context["batch_id"] = batch_id
-                        context["message"] = f"Batch created successfully! Batch ID: {batch_id}"
-                        log_message = f"User: {user_name} - Batch created successfully! Batch ID: {batch_id}"
-                        logging.info(log_message)
-                    else:
-                        context["message"] = "Batch creation successful but no batch ID returned."
-                        logging.warning(f"User: {user_name} - Batch creation successful but no batch ID returned.")
-                else:
-                    context["message"] = f"Failed to create batch. Response Code: {response.status_code}"
-                    logging.error(f"User: {user_name} - Failed to create batch. Response Code: {response.status_code}")
+            #     if response.status_code == 200:
+            #         batch_id = response.json().get("batchId")
+            #         if batch_id:
+            #             context["batch_id"] = batch_id
+            #             context["message"] = f"Batch created successfully! Batch ID: {batch_id}"
+            #             log_message = f"User: {user_name} - Batch created successfully! Batch ID: {batch_id}"
+            #             logging.info(log_message)
+            #         else:
+            #             context["message"] = "Batch creation successful but no batch ID returned."
+            #             logging.warning(f"User: {user_name} - Batch creation successful but no batch ID returned.")
+            #     else:
+            #         context["message"] = f"Failed to create batch. Response Code: {response.status_code}"
+            #         logging.error(f"User: {user_name} - Failed to create batch. Response Code: {response.status_code}")
 
             elif action == "ingest_file":
                 if not global_token:
@@ -3012,16 +3102,31 @@ def ingestion_prod(request):
 
 
 ################view code for storing imgestion details in db  ##########
-from .models import IngestionLog
+
 def reserve_ingestion_log(user_name, ingestion_id, ingestion_item_id, batch_id):
     """Store ingestion details in the database."""
-    IngestionLog.objects.create(
+    IngestProd.objects.create(
         user_name=user_name,
         ingestion_id=ingestion_id,
         ingestion_item_id=ingestion_item_id,
         batch_id=batch_id,
         status="Success"  # Initially set status as Success, update if needed
     )
+
+####################code for displaying ingestion details in table view in ui##################################
+from django.shortcuts import render
+from .models import IngestProd
+
+@login_required
+def ingest_prod_view(request):
+    """Fetch all ingestion logs and render them in a table UI."""
+    ingest_logs = IngestProd.objects.all().order_by("-id")  # Get logs sorted by latest entries
+
+    context = {
+        "ingest_logs": ingest_logs
+    }
+    return render(request, "ingest_prod_logs.html", context)
+
 
 
 ##############################################################################################
@@ -3039,9 +3144,7 @@ def user_list(request):
 
 
 
-# ############# ################### view for dashbaord##############################
-
-
+# ################################# view for dashbaord##############################
 from django.contrib.auth.models import User
 from django.shortcuts import render
 import pandas as pd
@@ -3049,11 +3152,20 @@ import matplotlib.pyplot as plt
 from io import BytesIO
 from collections import defaultdict
 import base64
-from .models import SourceMetadata
+from .models import SourceMetadata,IngestionLog
+from .models import IngestProd
 @login_required
 def dashboard_view(request):
     # Fetch all source metadata records from MongoDB
     source_metadata_list = SourceMetadata.objects.all()
+
+    # Fetch count of successfully ingested files
+    total_ingested_files = IngestionLog.objects.filter(status="Success").count()
+
+    # Fetch count of successfully ingested files in prod
+    ingest_prod_files = IngestProd.objects.filter(status="Success").count()
+
+
 
     # Convert QuerySet to list of dictionaries manually
     data = []
@@ -3081,7 +3193,7 @@ def dashboard_view(request):
     df = pd.DataFrame(data)
 
     # Initialize variables for dashboard metrics
-    total_sources = total_files = qa_pending = completed_tasks = in_progress_tasks = 0
+    total_sources = total_files = qa_pending  = in_progress_tasks = 0     #= completed_tasks
     accepted_files = rejected_files = 0
     user_metrics = defaultdict(lambda: {
         'total_files': 0,
@@ -3097,7 +3209,7 @@ def dashboard_view(request):
         total_sources = len(df)
         total_files = df['source_file_upload'].notna().sum()
         qa_pending = df[df['file_status'] == 'Pending'].shape[0]
-        completed_tasks = df[df['file_status'] == 'Completed'].shape[0]
+        # completed_tasks = df[df['file_status'] == 'Completed'].shape[0]
         in_progress_tasks = df[df['file_status'] == 'In Progress'].shape[0]
 
         # Calculate Accepted and Rejected Files
@@ -3161,7 +3273,8 @@ def dashboard_view(request):
         'total_sources': total_sources,
         'total_files': total_files,
         'qa_pending': qa_pending,
-        'completed_tasks': completed_tasks,
+        # 'completed_tasks': completed_tasks,
+        'ingest_prod_files':ingest_prod_files,
         'in_progress_tasks': in_progress_tasks,
         'accepted_files': accepted_files,
         'rejected_files': rejected_files,
@@ -3169,6 +3282,7 @@ def dashboard_view(request):
         'pie_chart_data': pie_chart_data,  # Pie chart
         'user_metrics': user_metrics.items(),  # Ensure items() is passed
         'total_users': total_users,  # Include total users
+        'total_ingested_files': total_ingested_files,  # Include ingested file count
     }
 
     return render(request, 'dashboard.html', context)
