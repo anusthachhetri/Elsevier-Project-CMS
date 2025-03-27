@@ -3120,12 +3120,12 @@ from .models import IngestProd
 @login_required
 def ingest_prod_view(request):
     """Fetch all ingestion logs and render them in a table UI."""
-    ingest_logs = IngestProd.objects.all().order_by("-id")  # Get logs sorted by latest entries
+    ingest_logs = IngestProd.objects.all()  # Get logs sorted by latest entries
 
     context = {
         "ingest_logs": ingest_logs
     }
-    return render(request, "ingest_prod_logs.html", context)
+    return render(request, "ingest_prod_logs.html", context) 
 
 
 
